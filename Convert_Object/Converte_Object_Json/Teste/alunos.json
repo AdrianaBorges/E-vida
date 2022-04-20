@@ -1,0 +1,12 @@
+﻿{
+  "alunos": [
+    {
+      "nome": "Jose Carlos",
+      "sobrenome": "Macoratti"
+    },
+    {
+      "nome": "Paulo",
+      "sobrenome": "Silveira"
+    }
+  ]
+}

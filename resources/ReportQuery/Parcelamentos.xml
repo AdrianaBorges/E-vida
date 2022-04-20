@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+	  b.cd_alternativo,
+       b.nm_beneficiario,
+       p.cd_grupo_lancto,
+      p.dt_ano_mes_ref,
+       p.nr_parcelas,
+       p.nr_parcelas_geradas
+  </Fields>
+  <From>isa_hc.hc_parcelamento   p,
+       isa_hc.hc_v_beneficiario b</From>
+  <OrderBy>b.cd_alternativo, b.nm_beneficiario, p.dt_ano_mes_ref</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+	b.cd_beneficiario = p.cd_beneficiario
+	]]></FixedFilter>
+  <Filters>
+  </Filters>
+</ReportQuery>	

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+		a.dt_ano_mes_ref,
+		d.nr_cnpj_cpf,
+		d.nm_razao_social,
+		c.ds_servico,
+		c.cd_mascara,
+		COUNT (DISTINCT (a.cd_beneficiario_titular)) qtd_empregados,
+		SUM (b.vl_quantidade) qtd_atendimentos,
+		e.cd_regional,
+		d.st_credenciado,
+		null as cd_item_custo,
+		null as ds_plano,
+		null as tp_plano,
+		null as nm_beneficiario,
+		null as cd_municipio,
+		null as ds_municipio,
+		null as cd_uf,
+		null as cd_situacao_benef,
+		null as tp_sistema_atend,
+		null as nr_atendimento,
+		null as vl_calculado,
+		NULL AS VL_APRESENTADO
+	</Fields>
+	<From>
+		isa_hc.hc_atendimento a,
+		isa_hc.hc_item_atendimento b,
+		isa_hc.hc_servico c,
+		isa_hc.hc_v_credenciado d,
+		isa_hc.hc_credenciado_regional e
+	</From>
+	<OrderBy>a.dt_ano_mes_ref, c.ds_servico, d.nm_razao_social</OrderBy>
+	<GroupBy>a.dt_ano_mes_ref, d.nr_cnpj_cpf, d.nm_razao_social, c.ds_servico, c.cd_mascara, e.cd_regional, d.st_credenciado</GroupBy>
+	<FixedFilter>
+		<![CDATA[
+			a.cd_organizacao = b.cd_organizacao
+			AND a.nr_atendimento = b.nr_atendimento
+			AND b.cd_servico = c.cd_servico
+			AND a.cd_credenciado = d.cd_credenciado
+			and d.cd_credenciado = e.cd_credenciado 
+	]]>
+	</FixedFilter>
+	<Filters>
+		<ReportFilterQuery>
+			<Name>mascara</Name>
+			<Expression>c.cd_mascara IN (:mascara) </Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>regional</Name>
+			<Expression>e.cd_regional IN (:regional) </Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>periodo</Name>
+			<Expression>a.dt_ano_mes_ref BETWEEN :periodo1 AND :periodo2 </Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+		a.dt_ano_mes_ref,
+		a.tp_sistema_atend,
+        a.nr_atendimento,
+		ia.vl_calculado vl_calculado,
+		ia.VL_APRESENTADO VL_APRESENTADO,
+		ia.cd_mascara,
+		ia.ds_servico, 
+		c.nr_cnpj_cpf, 
+		c.nm_razao_social, 
+		bpTitular.ds_plano,
+		bpTitular.tp_plano,
+		b.nm_beneficiario,
+		ce.cd_municipio, 
+		ce.DS_municipio, 
+		ce.CD_UF, 
+		c.st_credenciado, 
+		b.cd_situacao_benef,
+		e.cd_regional,
+		null qtd_empregados,
+		null qtd_atendimentos
+	</Fields>
+	<From>
+		isa_hc.hc_atendimento A, 
+		(select sum(vl_calculado) vl_calculado, SUM(VL_APRESENTADO) VL_APRESENTADO, ia.nr_atendimento, ia.cd_organizacao, 
+			s.cd_mascara, s.ds_servico
+		FROM isa_hc.hc_item_atendimento IA, isa_hc.hc_servico s
+		WHERE ia.cd_servico = s.cd_servico
+		GROUP BY s.cd_mascara, s.ds_servico, nr_atendimento, cd_organizacao) IA, 
+		isa_hc.hc_v_credenciado_cadastro c, isa_hc.hc_v_beneficiario b, 
+		isa_hc.hc_v_credenciado_endereco ce,
+		isa_hc.hc_credenciado_regional e,
+		(SELECT bp.cd_beneficiario, bp.cd_plano_vinculado, bp.tp_plano, p.ds_plano, bp.dt_inicio_vigencia, NVL(bp.dt_termino_vigencia, SYSDATE+1) dt_termino_vigencia
+		FROM isa_hc.hc_beneficiario_plano bp, isa_hc.hc_plano p
+		WHERE p.cd_plano = bp.cd_plano_vinculado) bpTitular
+	</From>
+	<OrderBy>ia.cd_mascara, c.nm_razao_social</OrderBy>
+	<GroupBy></GroupBy>
+	<FixedFilter>
+		<![CDATA[
+			A.CD_ORGANIZACAO = IA.CD_ORGANIZACAO 
+			AND A.NR_ATENDIMENTO = IA.NR_ATENDIMENTO
+			and a.cd_beneficiario = b.cd_beneficiario
+			and a.cd_credenciado = c.cd_credenciado 
+			and c.cd_credenciado = ce.cd_credenciado (+)
+			and c.cd_credenciado = e.cd_credenciado 
+		
+			AND bpTitular.cd_beneficiario(+) = a.cd_beneficiario
+			AND bpTitular.dt_inicio_vigencia(+) <= a.dt_atendimento
+			AND bpTitular.dt_termino_vigencia(+) >= a.dt_atendimento
+	]]>
+	</FixedFilter>
+	<Filters>
+		<ReportFilterQuery>
+			<Name>mascara</Name>
+			<Expression>ia.cd_mascara IN (:mascara) </Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>regional</Name>
+			<Expression>e.cd_regional IN (:regional) </Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>periodo</Name>
+			<Expression>a.dt_ano_mes_ref BETWEEN :periodo1 AND :periodo2 </Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

@@ -1,0 +1,666 @@
+﻿2019-08-02 20:30:31,233 [10] ERROR ASP.forms_exclusao_aspx [SANDRA ROCHA DE ALMEIDA                                               ] - Erro ao salvar formulário!
+System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em eVidaGeneralLib.DAO.ExclusaoDAO.Salvar(ExclusaoVO vo, List`1 lst, EvidaDatabase evdb) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\ExclusaoDAO.cs:linha 107
+   em eVidaGeneralLib.BO.FormExclusaoBO.Salvar(ExclusaoVO vo, List`1 lst, String email) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\FormExclusaoBO.cs:linha 57
+   em eVidaBeneficiarios.Forms.Exclusao.Salvar() na 
+
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Forms\Exclusao.aspx.cs:linha 439
+   em eVidaBeneficiarios.Forms.Exclusao.btnSalvar_Click(Object sender, EventArgs e) na 
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Forms\Exclusao.aspx.cs:linha 520
+2019-08-02 20:51:58,756 [11] ERROR ASP.forms_exclusao_aspx [SANDRA ROCHA DE ALMEIDA                                               ] - Erro ao salvar formulário!
+System.NullReferenceException: Referência de objeto não definida para uma instância de um objeto.
+   em eVidaGeneralLib.DAO.ExclusaoDAO.Salvar(ExclusaoVO vo, List`1 lst, EvidaDatabase evdb) na 
+
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\ExclusaoDAO.cs:linha 107
+   em eVidaGeneralLib.BO.FormExclusaoBO.Salvar(ExclusaoVO vo, List`1 lst, String email) na 
+
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\FormExclusaoBO.cs:linha 57
+   em eVidaBeneficiarios.Forms.Exclusao.Salvar() na 
+
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Forms\Exclusao.aspx.cs:linha 440
+   em eVidaBeneficiarios.Forms.Exclusao.btnSalvar_Click(Object sender, EventArgs e) na 
+
+C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Forms\Exclusao.aspx.cs:linha 521
+2019-08-02 22:29:30,115 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 11:58:55,120 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 11:58:55,203 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 11:59:08,525 [5] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 11:59:08,671 [8] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 12:05:25,614 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 17:36:08,836 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 17:50:08,196 [5] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 17:50:21,460 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 17:50:21,537 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 17:50:39,068 [5] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 19:23:10,804 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 19:23:23,542 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:23:23,571 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:23:37,932 [9] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 19:24:16,263 [10] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 19:30:59,664 [6] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 19:31:00,374 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:31:00,402 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:31:04,087 [6] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 19:31:44,923 [6] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:31:44,956 [6] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 19:31:49,288 [7] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-03 19:41:23,101 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 19:43:58,544 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 22:50:58,473 [37] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-03 22:51:32,305 [44] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 22:51:39,137 [44] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-03 22:51:43,794 [37] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-04 00:49:47,178 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 00:49:47,296 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 00:50:00,289 [7] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-04 00:50:28,009 [7] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-04 00:54:38,206 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 00:54:39,340 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 00:54:43,161 [6] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-04 01:02:25,439 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 02:07:17,858 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 12:54:38,840 [8] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 12:54:56,101 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 12:54:56,243 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-04 12:55:17,201 [8] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-04 14:44:57,784 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 15:02:09,143 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 15:21:22,555 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 15:28:06,858 [5] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 16:07:02,518 [9] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 20:54:09,238 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-04 21:53:44,047 [5] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-05 07:12:37,872 [12] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-05 07:12:38,019 [12] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-05 07:12:51,805 [9] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84
+2019-08-05 07:46:07,772 [10] ERROR eVida.Web.Controls.PageHelper [-] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaBeneficiarios.Classes.PageBase.GetUsuario(String codigo_beneficiario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Classes\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass3_0`1.<CheckLogin>b__0(String username) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\webLib\Controls\PageHelper.cs:linha 56
+2019-08-05 07:46:15,232 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-05 07:46:15,263 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [-] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\Util\ParametroUtil.cs:linha 144
+2019-08-05 07:46:27,663 [14] ERROR ASP.login_aspx [-] - Erro ao autenticar usuário! 
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 13
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarBeneficiario(String login, String senha) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 26
+   em eVidaBeneficiarios.Login.btnLogin_Click(Object sender, EventArgs e) na C:\Adriana.Borges.Projetos\E-Vida.Intranet\beneficiarios\Login.aspx.cs:linha 84

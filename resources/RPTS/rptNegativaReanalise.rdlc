@@ -1,0 +1,3531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="eVidaCadastroClasses">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>3ee366d5-b8e7-4481-b281-9a05d4dbb430</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsItens">
+      <Query>
+        <DataSourceName>eVidaCadastroClasses</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Mascara">
+          <DataField>Mascara</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Descricao">
+          <DataField>Descricao</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Qtd">
+          <DataField>Qtd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Obs">
+          <DataField>Obs</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="dsRegiaoAbrangencia">
+      <Query>
+        <DataSourceName>eVidaCadastroClasses</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Nome1">
+          <DataField>Nome1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Selecionado1">
+          <DataField>Selecionado1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Nome2">
+          <DataField>Nome2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Selecionado2">
+          <DataField>Selecionado2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="tabelaCabecalho">
+            <ReportItems>
+              <Textbox Name="txtTitulo">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>COMPROVANTE DE REANÁLISE DE NEGATIVA CONTRATUAL/ ASSISTENCIAL</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Left>0.02117cm</Left>
+                <Height>0.6cm</Height>
+                <Width>18.37883cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtIntroducao">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Prezado(a) beneficiário(a)</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>A CAIXA DE ASSISTÊNCIA DO SETOR ELÉTRICO – E-VIDA, pessoa jurídica de direito privado, associação sem fins lucrativos, inscrita no CNPJ/MF sob o nº 11.828.089/0001-03 com registro de operadora de planos privados de assistência à saúde sob o nº </Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>41.837-4</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>, com sede no 704/705 Norte Bloco C Loja 48, CEP:70.730-630 comunica o indeferimento de concessão de senha de autorização, em virtude da(s) seguinte(s) justificativa(s):</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <LeftIndent>0cm</LeftIndent>
+                    <RightIndent>0cm</RightIndent>
+                    <Style>
+                      <TextAlign>Left</TextAlign>
+                      <LineHeight>12pt</LineHeight>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.2cm</Top>
+                <Height>1.7cm</Height>
+                <Width>18.5cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Height>3cm</Height>
+            <Width>18.5cm</Width>
+            <Style>
+              <Border />
+            </Style>
+          </Rectangle>
+          <Textbox Name="LabelInfoLegal">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>1 - INFORMAÇÕES DE ACORDO COM DISPOSITIVO LEGAL</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>3cm</Top>
+            <Height>0.4cm</Height>
+            <Width>18.4cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Textbox>
+          <Rectangle Name="recInfoLegal">
+            <ReportItems>
+              <Textbox Name="chkCoberturaContratual">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=IIf("S".Equals(Parameters!IndCoberturaContratual.Value),"X","")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Left>0.5cm</Left>
+                <Height>0.5cm</Height>
+                <Width>0.5cm</Width>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtCoberturaContratual">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>SEM COBERTURA CONTRATUAL</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Left>1cm</Left>
+                <Height>0.5cm</Height>
+                <Width>4.5cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="chkIndicacaoTecnica">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=IIf("S".Equals(Parameters!IndIndicacaoTecnica.Value),"X","")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.6cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.5cm</Height>
+                <Width>0.5cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <VerticalAlign>Middle</VerticalAlign>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtIndicacaoTecnica">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>SEM INDICAÇÃO TÉCNICA (MÉDICA E/OU ODONTOLÓGICA)</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.6cm</Top>
+                <Left>1cm</Left>
+                <Height>0.5cm</Height>
+                <Width>8.5cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>3.5cm</Top>
+            <Height>1.1cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="recDadosBeneficiario">
+            <ReportItems>
+              <Textbox Name="lblNome">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Nome do Beneficiário:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.5cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>12.5cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="Nome">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!NomeBeneficiario.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.9cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>12.5cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="LabelDadosBeneficiario">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>2 - DADOS DO BENEFICIÁRIO</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+              <Textbox Name="lblDataNasc">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Data de Nascimento:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.5cm</Top>
+                <Left>13cm</Left>
+                <Height>0.4cm</Height>
+                <Width>4.5cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="DataNasc">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!DataNascimento.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.9cm</Top>
+                <Left>13cm</Left>
+                <Height>0.4cm</Height>
+                <Width>4.5cm</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="lblCartao">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Nº da carteira do beneficiário:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.3cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>7.5cm</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="lblCpf">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>CPF:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.3cm</Top>
+                <Left>8cm</Left>
+                <Height>0.4cm</Height>
+                <Width>5cm</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="lblDataAdesao">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Data de assinatura do contrato:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.3cm</Top>
+                <Left>13cm</Left>
+                <Height>0.4cm</Height>
+                <Width>4.5cm</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="CartaoIdentif">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!Cartao.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.7cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>7.5cm</Width>
+                <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="Cpf">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!Cpf.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.7cm</Top>
+                <Left>8cm</Left>
+                <Height>0.4cm</Height>
+                <Width>5cm</Width>
+                <ZIndex>9</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="DataAdesao">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!DataAdesao.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.7cm</Top>
+                <Left>13cm</Left>
+                <Height>0.4cm</Height>
+                <Width>4.5cm</Width>
+                <ZIndex>10</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>5cm</Top>
+            <Height>2.23933cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Width>0.5pt</Width>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="recJustContratual">
+            <ReportItems>
+              <Textbox Name="labelJustContr">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>5 - NÚMERO DO PROTOCOLO DA NEGATIVA DE COBERTURA</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+              <Textbox Name="ProtocoloAnsOrigem">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!ProtocoloAnsOrigem.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>ProtocoloAnsOrigem</rd:DefaultName>
+                <Top>0.5cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.6cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <Top>19.87775cm</Top>
+            <Height>1.1cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style />
+          </Rectangle>
+          <Rectangle Name="recJustAssistencial">
+            <ReportItems>
+              <Textbox Name="labelJustAssist">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>6 - JUSTIFICATIVA DA NEGATIVA DE COBERTURA</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <Style />
+              </Textbox>
+              <Textbox Name="JustificativaNegativa">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!JustificativaNegativa.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>JustificativaNegativa</rd:DefaultName>
+                <Top>0.5cm</Top>
+                <Left>0.5cm</Left>
+                <Height>1.84354cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <Top>21.2cm</Top>
+            <Height>2.34354cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>5</ZIndex>
+            <Style />
+          </Rectangle>
+          <Rectangle Name="recFim">
+            <ReportItems>
+              <Textbox Name="txtAssinatura">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>_______________________________________</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!UsuarioAprov.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!CargoAprov.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
+                  </Paragraph>
+                </Paragraphs>
+                <Top>3.3825cm</Top>
+                <Height>1.2cm</Height>
+                <Width>18.5cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="txtData">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Brasília, </Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Parameters!DataFormulario.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.4cm</Top>
+                <Left>0.4cm</Left>
+                <Height>0.4cm</Height>
+                <Width>17.5cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+              <Rectangle Name="recElaboracao">
+                <ReportItems>
+                  <Textbox Name="lblElaboradoPor">
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Elaborado por:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Height>0.4cm</Height>
+                    <Width>2.5cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <BottomBorder>
+                        <Style>Solid</Style>
+                      </BottomBorder>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="lblCargo">
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Cargo/Função:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>2.5cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style />
+                  </Textbox>
+                  <Textbox Name="txtElaboradoPor">
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!Usuario.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Left>2.5cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>14.6cm</Width>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <BottomBorder>
+                        <Style>Solid</Style>
+                      </BottomBorder>
+                      <LeftBorder>
+                        <Style>Solid</Style>
+                      </LeftBorder>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="txtCargo">
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!Cargo.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Left>2.5cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>14.6cm</Width>
+                    <ZIndex>3</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <LeftBorder>
+                        <Style>Solid</Style>
+                      </LeftBorder>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>1cm</Top>
+                <Left>0.4cm</Left>
+                <Height>0.8cm</Height>
+                <Width>17.1cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Image Name="ImgAssinatura">
+                <Source>External</Source>
+                <Value>="file://" +Parameters!ImgAssinaturaPath.Value</Value>
+                <Sizing>FitProportional</Sizing>
+                <Top>2.0825cm</Top>
+                <Left>6.2cm</Left>
+                <Height>1.5cm</Height>
+                <Width>6cm</Width>
+                <ZIndex>3</ZIndex>
+                <Visibility>
+                  <Hidden>=Parameters!ImgAssinaturaPath.Value.Equals("-")</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Image>
+              <Textbox Name="txtData2">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Data da informação ao beneficiário:</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Left>0.4cm</Left>
+                <Height>0.4cm</Height>
+                <Width>17.5cm</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <Top>27.7cm</Top>
+            <Height>4.5825cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="recDadosProduto">
+            <ReportItems>
+              <Textbox Name="LabelDadosProduto">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>3 - DADOS DO PRODUTO</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+              <Textbox Name="lblNroProduto">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Nº de identificação/Nome do plano do beneficiário na ANS: </Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.4cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>7.5cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <LeftBorder>
+                    <Style>Solid</Style>
+                  </LeftBorder>
+                </Style>
+              </Textbox>
+              <Textbox Name="NroRegProduto">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!NroProdutoAns.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value> - </Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                      <TextRun>
+                        <Value>=Parameters!NomePlano.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.4cm</Top>
+                <Left>8cm</Left>
+                <Height>0.4cm</Height>
+                <Width>9.5cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                  <TopBorder>
+                    <Style>Solid</Style>
+                  </TopBorder>
+                  <RightBorder>
+                    <Style>Solid</Style>
+                  </RightBorder>
+                </Style>
+              </Textbox>
+              <Rectangle Name="recDadosProduto2">
+                <ReportItems>
+                  <Rectangle Name="recAreaGeografica">
+                    <ReportItems>
+                      <Tablix Name="lstRegiao">
+                        <TablixBody>
+                          <TablixColumns>
+                            <TablixColumn>
+                              <Width>4.5cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>4.5cm</Width>
+                            </TablixColumn>
+                          </TablixColumns>
+                          <TablixRows>
+                            <TablixRow>
+                              <Height>0.8cm</Height>
+                              <TablixCells>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Rectangle Name="recReg1">
+                                      <ReportItems>
+                                        <Textbox Name="chkReg1">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>=Fields!Selecionado1.Value</Value>
+                                                  <Style />
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style>
+                                                <TextAlign>Center</TextAlign>
+                                              </Style>
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <Top>0.1cm</Top>
+                                          <Left>0.2cm</Left>
+                                          <Height>0.5cm</Height>
+                                          <Width>0.5cm</Width>
+                                          <Style>
+                                            <Border>
+                                              <Style>Solid</Style>
+                                              <Width>0.5pt</Width>
+                                            </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
+                                            <PaddingLeft>0cm</PaddingLeft>
+                                            <PaddingRight>0cm</PaddingRight>
+                                            <PaddingTop>0cm</PaddingTop>
+                                            <PaddingBottom>0cm</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                        <Textbox Name="txtReg1">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>=Fields!Nome1.Value</Value>
+                                                  <Style>
+                                                    <FontSize>8pt</FontSize>
+                                                  </Style>
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style />
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <Top>0.1cm</Top>
+                                          <Left>0.8cm</Left>
+                                          <Height>0.5cm</Height>
+                                          <Width>3.3cm</Width>
+                                          <ZIndex>1</ZIndex>
+                                          <Style>
+                                            <Border>
+                                              <Style>None</Style>
+                                            </Border>
+                                            <PaddingLeft>0cm</PaddingLeft>
+                                            <PaddingRight>0cm</PaddingRight>
+                                            <PaddingTop>0cm</PaddingTop>
+                                            <PaddingBottom>0cm</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                      </ReportItems>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Rectangle>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Rectangle Name="recReg2">
+                                      <ReportItems>
+                                        <Textbox Name="chkReg2">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>=Fields!Selecionado2.Value</Value>
+                                                  <Style />
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style>
+                                                <TextAlign>Center</TextAlign>
+                                              </Style>
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <Top>0.1cm</Top>
+                                          <Left>0.3cm</Left>
+                                          <Height>0.5cm</Height>
+                                          <Width>0.5cm</Width>
+                                          <Style>
+                                            <Border>
+                                              <Style>Solid</Style>
+                                              <Width>0.5pt</Width>
+                                            </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
+                                            <PaddingLeft>0cm</PaddingLeft>
+                                            <PaddingRight>0cm</PaddingRight>
+                                            <PaddingTop>0cm</PaddingTop>
+                                            <PaddingBottom>0cm</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                        <Textbox Name="txtReg2">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>=Fields!Nome2.Value</Value>
+                                                  <Style>
+                                                    <FontSize>8pt</FontSize>
+                                                  </Style>
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style />
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <Top>0.1cm</Top>
+                                          <Left>0.9cm</Left>
+                                          <Height>0.5cm</Height>
+                                          <Width>3.3cm</Width>
+                                          <ZIndex>1</ZIndex>
+                                          <Style>
+                                            <Border>
+                                              <Style>None</Style>
+                                            </Border>
+                                            <PaddingLeft>0cm</PaddingLeft>
+                                            <PaddingRight>0cm</PaddingRight>
+                                            <PaddingTop>0cm</PaddingTop>
+                                            <PaddingBottom>0cm</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                      </ReportItems>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                      </Style>
+                                    </Rectangle>
+                                  </CellContents>
+                                </TablixCell>
+                              </TablixCells>
+                            </TablixRow>
+                          </TablixRows>
+                        </TablixBody>
+                        <TablixColumnHierarchy>
+                          <TablixMembers>
+                            <TablixMember />
+                            <TablixMember />
+                          </TablixMembers>
+                        </TablixColumnHierarchy>
+                        <TablixRowHierarchy>
+                          <TablixMembers>
+                            <TablixMember>
+                              <Group Name="Details1" />
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixRowHierarchy>
+                        <DataSetName>dsRegiaoAbrangencia</DataSetName>
+                        <Top>0.44203cm</Top>
+                        <Height>0.8cm</Height>
+                        <Width>9cm</Width>
+                        <Style>
+                          <Border />
+                        </Style>
+                      </Tablix>
+                      <Textbox Name="lblRegiaoGeografica">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Área Geográfica de Abrangência </Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.04203cm</Top>
+                        <Height>0.4cm</Height>
+                        <Width>9cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Height>2cm</Height>
+                    <Width>9cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <RightBorder>
+                        <Style>Solid</Style>
+                      </RightBorder>
+                    </Style>
+                  </Rectangle>
+                  <Rectangle Name="recPadraoAcomodacao">
+                    <ReportItems>
+                      <Textbox Name="chkEnfermaria">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=IIf(Parameters!PadraoAcomodacao.Value.Equals("ENF"), "X", "")</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.54203cm</Top>
+                        <Left>0.5cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>0.5cm</Width>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>0cm</PaddingLeft>
+                          <PaddingRight>0cm</PaddingRight>
+                          <PaddingTop>0cm</PaddingTop>
+                          <PaddingBottom>0cm</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="chkApartamento">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=IIf(Parameters!PadraoAcomodacao.Value.Equals("APT"), "X", "")</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>1.14203cm</Top>
+                        <Left>0.5cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>0.5cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>0cm</PaddingLeft>
+                          <PaddingRight>0cm</PaddingRight>
+                          <PaddingTop>0cm</PaddingTop>
+                          <PaddingBottom>0cm</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="lblEnfermaria">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Enfermaria</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.54203cm</Top>
+                        <Left>1.1cm</Left>
+                        <Height>0.4cm</Height>
+                        <Width>3cm</Width>
+                        <ZIndex>2</ZIndex>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="lblApartamento">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Apartamento</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>1.14203cm</Top>
+                        <Left>1.1cm</Left>
+                        <Height>0.4cm</Height>
+                        <Width>3cm</Width>
+                        <ZIndex>3</ZIndex>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="lblPadraoAcomo">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Padrão de Acomodação</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.04203cm</Top>
+                        <Height>0.4cm</Height>
+                        <Width>8cm</Width>
+                        <ZIndex>4</ZIndex>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Left>9cm</Left>
+                    <Height>2cm</Height>
+                    <Width>8cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>0.8cm</Top>
+                <Left>0.5cm</Left>
+                <Height>2cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>7.3cm</Top>
+            <Height>3cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="recDadosSolicitacao">
+            <ReportItems>
+              <Textbox Name="labelDadosSolicitacao">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>4 - DADOS DA SOLICITAÇÃO</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Textbox>
+              <Tablix Name="tabServicos">
+                <TablixBody>
+                  <TablixColumns>
+                    <TablixColumn>
+                      <Width>17cm</Width>
+                    </TablixColumn>
+                  </TablixColumns>
+                  <TablixRows>
+                    <TablixRow>
+                      <Height>2.2cm</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Rectangle Name="recItemDadosSol">
+                              <ReportItems>
+                                <Rectangle Name="recItemDadosSolLinha1">
+                                  <ReportItems>
+                                    <Textbox Name="lblCodigoSol">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Código:</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Height>0.4cm</Height>
+                                      <Width>2cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <PaddingLeft>0cm</PaddingLeft>
+                                        <PaddingRight>0cm</PaddingRight>
+                                        <PaddingTop>0cm</PaddingTop>
+                                        <PaddingBottom>0cm</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="lblDsSol">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Descrição do Procedimento ou Material:</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Left>2cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>13.4cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <LeftBorder>
+                                          <Style>Solid</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>Solid</Style>
+                                        </RightBorder>
+                                        <PaddingLeft>0cm</PaddingLeft>
+                                        <PaddingRight>0cm</PaddingRight>
+                                        <PaddingTop>0cm</PaddingTop>
+                                        <PaddingBottom>0cm</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="lblQtdSol">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Quantidade:</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Left>15.4cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>1.6cm</Width>
+                                      <ZIndex>2</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <PaddingLeft>0cm</PaddingLeft>
+                                        <PaddingRight>0cm</PaddingRight>
+                                        <PaddingTop>0cm</PaddingTop>
+                                        <PaddingBottom>0cm</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Mascara">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Mascara.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Mascara</rd:DefaultName>
+                                      <Top>0.4cm</Top>
+                                      <Height>0.4cm</Height>
+                                      <Width>2cm</Width>
+                                      <ZIndex>3</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Descricao">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Descricao.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.4cm</Top>
+                                      <Left>2cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>13.4cm</Width>
+                                      <ZIndex>4</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <LeftBorder>
+                                          <Style>Solid</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>Solid</Style>
+                                        </RightBorder>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Quantidade">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Qtd.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Top>0.4cm</Top>
+                                      <Left>15.4cm</Left>
+                                      <Height>0.4cm</Height>
+                                      <Width>1.6cm</Width>
+                                      <ZIndex>5</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <Height>0.8cm</Height>
+                                  <Width>17cm</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>Solid</Style>
+                                      <Width>0.5pt</Width>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                                <Rectangle Name="recItemDadosSolLinha2">
+                                  <ReportItems>
+                                    <Textbox Name="lblObs">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>Observação:</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <Height>0.4cm</Height>
+                                      <Width>17cm</Width>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <LeftBorder>
+                                          <Style>Solid</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>Solid</Style>
+                                        </RightBorder>
+                                        <PaddingLeft>0cm</PaddingLeft>
+                                        <PaddingRight>0cm</PaddingRight>
+                                        <PaddingTop>0cm</PaddingTop>
+                                        <PaddingBottom>0cm</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                    <Textbox Name="Obs">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Obs.Value</Value>
+                                              <Style>
+                                                <FontSize>8pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Obs</rd:DefaultName>
+                                      <Top>0.4cm</Top>
+                                      <Height>0.8cm</Height>
+                                      <Width>17cm</Width>
+                                      <ZIndex>1</ZIndex>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                          <Width>0.5pt</Width>
+                                        </Border>
+                                        <BottomBorder>
+                                          <Style>Solid</Style>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>Solid</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>Solid</Style>
+                                        </RightBorder>
+                                      </Style>
+                                    </Textbox>
+                                  </ReportItems>
+                                  <Top>0.8cm</Top>
+                                  <Height>1.2cm</Height>
+                                  <Width>17cm</Width>
+                                  <ZIndex>1</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Rectangle>
+                              </ReportItems>
+                              <KeepTogether>true</KeepTogether>
+                              <Style>
+                                <Border>
+                                  <Style>None</Style>
+                                </Border>
+                              </Style>
+                            </Rectangle>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                  </TablixRows>
+                </TablixBody>
+                <TablixColumnHierarchy>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixColumnHierarchy>
+                <TablixRowHierarchy>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="Details" />
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixRowHierarchy>
+                <FixedRowHeaders>true</FixedRowHeaders>
+                <DataSetName>dsItens</DataSetName>
+                <Top>4.94cm</Top>
+                <Left>0.5cm</Left>
+                <Height>2.2cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Tablix>
+              <Textbox Name="lblSolicitacaoMed2">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>Procedimentos ou itens assistenciais solicitados</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>4.42806cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.4cm</Height>
+                <Width>9cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>0cm</PaddingLeft>
+                  <PaddingRight>0cm</PaddingRight>
+                  <PaddingTop>0cm</PaddingTop>
+                  <PaddingBottom>0cm</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Rectangle Name="recMotivoNegativa">
+                <ReportItems>
+                  <Textbox Name="lblSolicitacaoMed3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Motivo de Negativa:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Height>0.4cm</Height>
+                    <Width>5cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="MotivoNegativa">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!MotivoNegativa.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>17cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0.1cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>8.32008cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.8cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="recSolicitacaoMed">
+                <ReportItems>
+                  <Textbox Name="lblSolicitacaoMed">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Solicitação médica e/ou odontológica:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Height>0.4cm</Height>
+                    <Width>5cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="DescricaoSolicitacao">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!DescricaoSolicitacao.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <TextDecoration>None</TextDecoration>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>DescricaoSolicitacao</rd:DefaultName>
+                    <Top>0.4cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>17cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>7.31995cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.9cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="recDadosSol1">
+                <ReportItems>
+                  <Rectangle Name="recTipo">
+                    <ReportItems>
+                      <Textbox Name="txtRedeCred">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>REDE CREDENCIADA</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.1cm</Top>
+                        <Left>0.7cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>3.3cm</Width>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="chkRedeCred">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=IIf("CRED".Equals(Parameters!TipoRede.Value),"X"," ")</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.1cm</Top>
+                        <Left>0.1cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>0.5cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>0cm</PaddingLeft>
+                          <PaddingRight>0cm</PaddingRight>
+                          <PaddingTop>0cm</PaddingTop>
+                          <PaddingBottom>0cm</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="chkRedeLivre">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=IIf("LIVR".Equals(Parameters!TipoRede.Value),"X"," ")</Value>
+                                <Style />
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.6cm</Top>
+                        <Left>0.1cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>0.5cm</Width>
+                        <ZIndex>2</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>0cm</PaddingLeft>
+                          <PaddingRight>0cm</PaddingRight>
+                          <PaddingTop>0cm</PaddingTop>
+                          <PaddingBottom>0cm</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="txtRedeLivre">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>LIVRE ESCOLHA</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.6cm</Top>
+                        <Left>0.7cm</Left>
+                        <Height>0.5cm</Height>
+                        <Width>3.3cm</Width>
+                        <ZIndex>3</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Height>1.2cm</Height>
+                    <Width>4cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                  <Rectangle Name="recCpfCnpjPrestador">
+                    <ReportItems>
+                      <Textbox Name="lblCpfCnpjPrestador">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Código do contratado do solicitante:</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Height>0.4cm</Height>
+                        <Width>4.7cm</Width>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="txtCpfCnpjPrestador">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Parameters!CpfCnpjPrestador.Value</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.4cm</Top>
+                        <Height>0.7cm</Height>
+                        <Width>4.7cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Left>4cm</Left>
+                    <Height>1.2cm</Height>
+                    <Width>4.7cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                  <Rectangle Name="recNomePrestador">
+                    <ReportItems>
+                      <Textbox Name="txtNomePrestador">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Parameters!NomePrestador.Value</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Top>0.4cm</Top>
+                        <Height>0.7cm</Height>
+                        <Width>8cm</Width>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="lblNomePrestador">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Nome do contratado solicitante:</Value>
+                                <Style>
+                                  <FontSize>8pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <Height>0.4cm</Height>
+                        <Width>8cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Width>0.5pt</Width>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Left>8.7cm</Left>
+                    <Height>1.2cm</Height>
+                    <Width>8.3cm</Width>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>0.6cm</Top>
+                <Left>0.5cm</Left>
+                <Height>1.2cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="recDadosSol2">
+                <ReportItems>
+                  <Textbox Name="lblCpfCnpjPrestador2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Data da solicitação:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Height>0.4cm</Height>
+                    <Width>4.3cm</Width>
+                    <Style>
+                      <Border>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="DataSolicitacao">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!DataSolicitacao.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>DataSolicitacao</rd:DefaultName>
+                    <Top>0.4cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>4.3cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>1.8cm</Top>
+                <Left>0.5cm</Left>
+                <Height>0.8812cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="recDadosSolProf">
+                <ReportItems>
+                  <Textbox Name="txtTitProf">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>DADOS DO PROFISSIONAL SOLICITANTE</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Height>0.4cm</Height>
+                    <Width>17cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="lblNroConselho">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Nº do Conselho:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>4.3cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="lblNroConselho2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Tipo Conselho/UF:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Left>4.5cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>3cm</Width>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <Border>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="lblNroConselho3">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Nome do Profissional:</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.4cm</Top>
+                    <Left>7.7cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>9.3cm</Width>
+                    <ZIndex>3</ZIndex>
+                    <Style>
+                      <Border>
+                        <Width>0.5pt</Width>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="NroConselho">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!NroConselho.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.8cm</Top>
+                    <Height>0.4cm</Height>
+                    <Width>4.3cm</Width>
+                    <ZIndex>4</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Conselho">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!Conselho.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.8cm</Top>
+                    <Left>4.5cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>3cm</Width>
+                    <ZIndex>5</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="NomeProfissional">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Parameters!NomeProfissional.Value</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.8cm</Top>
+                    <Left>7.7cm</Left>
+                    <Height>0.4cm</Height>
+                    <Width>9.26483cm</Width>
+                    <ZIndex>6</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>3cm</Top>
+                <Left>0.5cm</Left>
+                <Height>1.2cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                    <Width>0.5pt</Width>
+                  </Border>
+                </Style>
+              </Rectangle>
+            </ReportItems>
+            <Top>10.4cm</Top>
+            <Height>9.21479cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="recParecer">
+            <ReportItems>
+              <Textbox Name="lblParecer">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>7 - POSICIONAMENTO DA REANÁLISE</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.4cm</Height>
+                <Width>18.4cm</Width>
+                <Style />
+              </Textbox>
+              <Textbox Name="Parecer">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!ParecerReanaliseObs.Value</Value>
+                        <Style>
+                          <FontSize>8pt</FontSize>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.7cm</Top>
+                <Left>0.5cm</Left>
+                <Height>1.84354cm</Height>
+                <Width>17cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>Solid</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Rectangle Name="recParecerInfo">
+                <ReportItems>
+                  <Textbox Name="chkParecerAprov">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Microsoft.VisualBasic.Interaction.IIf("A".Equals(Parameters!ParecerReanalise.Value), "X", "")</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Left>0.5cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="txtParecerAprov">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>AUTORIZADO</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Left>1cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>4.5cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="chkIndicacaoTecnica2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Microsoft.VisualBasic.Interaction.IIf("N".Equals(Parameters!ParecerReanalise.Value), "X", "")</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.6cm</Top>
+                    <Left>0.5cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>0.5cm</Width>
+                    <ZIndex>2</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.5pt</Width>
+                      </Border>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="txtIndicacaoTecnica2">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>NEGADO</Value>
+                            <Style>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <Top>0.6cm</Top>
+                    <Left>1cm</Left>
+                    <Height>0.5cm</Height>
+                    <Width>4.5cm</Width>
+                    <ZIndex>3</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>0cm</PaddingLeft>
+                      <PaddingRight>0cm</PaddingRight>
+                      <PaddingTop>0cm</PaddingTop>
+                      <PaddingBottom>0cm</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </ReportItems>
+                <KeepTogether>true</KeepTogether>
+                <Top>0.5cm</Top>
+                <Height>1.1cm</Height>
+                <Width>18.5cm</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Rectangle>
+            </ReportItems>
+            <Top>23.9cm</Top>
+            <Height>3.6cm</Height>
+            <Width>18.5cm</Width>
+            <ZIndex>9</ZIndex>
+            <Style />
+          </Rectangle>
+        </ReportItems>
+        <Height>330mm</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>185mm</Width>
+      <Page>
+        <PageHeader>
+          <Height>2.2cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="PageNumber">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Protocolo </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Parameters!NumSolicitacao.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Left>12.7cm</Left>
+              <Height>0.4cm</Height>
+              <Width>5.8cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Image Name="logoEVida">
+              <Source>Embedded</Source>
+              <Value>logosized</Value>
+              <Sizing>FitProportional</Sizing>
+              <Left>7.81983cm</Left>
+              <Height>2.18017cm</Height>
+              <Width>2.18017cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+            <Textbox Name="txtPagina">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Página </Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!PageNumber</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value> de </Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Globals!TotalPages</Value>
+                      <Style>
+                        <FontSize>7pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Height>0.6cm</Height>
+              <Width>5cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>0cm</PaddingLeft>
+                <PaddingRight>0cm</PaddingRight>
+                <PaddingTop>0cm</PaddingTop>
+                <PaddingBottom>0cm</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="PageNumber2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Protocolo ANS </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value>=Parameters!ProtocoloAns.Value</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                    <TextRun>
+                      <Value xml:space="preserve"> </Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>PageNumber</rd:DefaultName>
+              <Top>0.43528cm</Top>
+              <Left>12.7cm</Left>
+              <Height>0.4cm</Height>
+              <Width>5.8cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>2.05316cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox18">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Mais Energia na gestão de sua saúde</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox18</rd:DefaultName>
+              <Left>6.5cm</Left>
+              <Height>0.5cm</Height>
+              <Width>5.7cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox20">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Caixa de Assistência do Setor Elétrico
+E-VIDA</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox20</rd:DefaultName>
+              <Top>0.5cm</Top>
+              <Height>0.8cm</Height>
+              <Width>5.1cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Textbox>
+            <Textbox Name="rdpEmail">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>E-mail: autoriza@e-vida.org.br</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>rdpEmail</rd:DefaultName>
+              <Top>1.41082cm</Top>
+              <Left>0.02117cm</Left>
+              <Height>0.6cm</Height>
+              <Width>5.1cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox22">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>704/705 Norte Bloco C Loja 48, 
+CEP: 70.730-630</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox22</rd:DefaultName>
+              <Top>1.05033cm</Top>
+              <Left>5.3cm</Left>
+              <Height>0.84967cm</Height>
+              <Width>7.78372cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox23">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Tel.: 0800-607-8300</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <Color>Orange</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox23</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>13.119cm</Left>
+              <Height>1.72361cm</Height>
+              <Width>5.281cm</Width>
+              <ZIndex>4</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <VerticalAlign>Middle</VerticalAlign>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Image Name="logoAns">
+              <Source>Embedded</Source>
+              <Value>anssized</Value>
+              <Sizing>FitProportional</Sizing>
+              <Top>0.5cm</Top>
+              <Left>8.23517cm</Left>
+              <Height>0.42333cm</Height>
+              <Width>2.26483cm</Width>
+              <ZIndex>5</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style>
+          <Border>
+            <Style>None</Style>
+            <Width>0.75pt</Width>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="NumSolicitacao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomeBeneficiario">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cartao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataNascimento">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cpf">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataAdesao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NroProdutoAns">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PadraoAcomodacao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataCriacao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IndCoberturaContratual">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IndIndicacaoTecnica">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TipoRede">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DescricaoSolicitacao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataFormulario">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="PrevContratual">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Usuario">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Cargo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TotPagina">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Ano">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomePlano">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomePrestador">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ImgAssinaturaPath">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UsuarioAprov">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CargoAprov">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProtocoloAns">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CpfCnpjPrestador">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="DataSolicitacao">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NroConselho">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Conselho">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NomeProfissional">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="MotivoNegativa">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ProtocoloAnsOrigem">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="JustificativaNegativa">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ParecerReanalise">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ParecerReanaliseObs">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>Public Function Nvl(ByVal s As String, ByVal s2 As String) As String
+   If IsNothing(s) Then
+       Return s2
+       Else : Return s
+   End If
+   Return s
+End Function
+
+Public Function TotalPages()
+ Dim str as String
+ str = me.Report.Globals!TotalPages.ToString()
+ Return str
+End Function</Code>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logosized">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logoeletrobrassized">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="anssized">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>a7d766a6-6366-4db4-8f9a-9d3fd273c701</rd:ReportID>
+</Report>

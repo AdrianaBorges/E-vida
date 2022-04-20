@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Internal.Master.cs" Inherits="eVidaBeneficiarios.Internal.Internal" %>
+<%@ Register TagPrefix="evida" TagName="Header" Src="~/controls/Header.ascx" %>
+<%@ Register TagPrefix="evida" TagName="Menu" Src="~/controls/Menu.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>eVida Beneficiários</title>
+	<link href="~/css/eVida/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css" />
+	<link href="~/css/eVida.css" rel="stylesheet" type="text/css" />
+	<script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="../Scripts/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+	<script src="../Scripts/eVida.js" type="text/javascript"></script>
+	<script src="../relatorio.evida?REPORT=JAVASCRIPT" type="text/javascript"></script>
+	<script src="../Scripts/internal.js" type="text/javascript"></script>
+	<script src="../Scripts/locator.js" type="text/javascript"></script>
+	<script src="../Scripts/util.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+		<evida:Header id="header" runat="server" />
+        <table width="100%">
+            <tr valign="top">
+                <td align="left" style="width:100px"><evida:Menu ID="menu" runat="server" /></td>
+                <td>
+					<asp:ScriptManager ID="ScriptManager1" runat="server" OnAsyncPostBackError="scriptManager_OnAsyncPostBackError" EnablePartialRendering="true" AllowCustomErrorsRedirect="true" AsyncPostBackTimeout="130"  />
+					<asp:UpdateProgress ID="updProgress" AssociatedUpdatePanelID="content" runat="server"  >
+						<ProgressTemplate>           
+							<div style="z-index:400; background-color:Gray; filter:alpha(opacity=80); opacity:0.80; width: 100%; top: 0px; left: 0px; position: fixed; height: 800px;">
+ 
+							</div>
+							<div align="center" style="width:100%; z-index:401; margin:auto; filter:alpha(opacity=100); opacity:1; vertical-align: middle; top: auto; position: absolute; right: auto;">
+								<table width="100%">
+									<tr>
+										<td align="center"><img src="../img/progress.gif" alt="Loading"  /></td>
+									</tr>
+								</table>
+							</div>      
+						</ProgressTemplate>
+					</asp:UpdateProgress>
+					<asp:UpdatePanel ID="content" runat="server" ClientIDMode="Static" UpdateMode="Conditional">
+						<ContentTemplate>
+							<div align="center">
+							<asp:ContentPlaceHolder ID="placeHolder" runat="server">
+        
+							</asp:ContentPlaceHolder>
+							</div>
+						</ContentTemplate>
+					</asp:UpdatePanel>
+				</td>
+            </tr>
+
+        </table>
+		<div id="dialog" title="Erro!">
+			<div id="msgErro" style="width: 100%; text-align: center"></div>
+		</div>
+		<div id="popLocator" title="">
+			<div id="dFrmLocator">			
+			</div>
+		</div>
+    </div>
+     
+    </form>
+</body>
+</html>

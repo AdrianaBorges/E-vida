@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+       d.dt_ano_mes_ref,
+	     b.cd_empresa,
+       b.cd_funcionario,
+       b.nm_beneficiario,
+       p.cd_plano,
+       p.ds_plano,
+       ca.cd_categoria,
+       ca.ds_categoria,
+       d.cd_grupo_lancto,
+       d.vl_corrigido - SUM(CASE
+                              WHEN pdb.dt_recebimento &lt; sq.dt_corte THEN
+                               pdb.vl_recebido
+                              ELSE
+                               0
+                            END) total31052016,
+       SUM(CASE
+             WHEN pdb.dt_recebimento &gt;= sq.dt_corte AND pdb.dt_recebimento &lt; trunc(filtro.dt_filtro, 'mm') THEN
+              pdb.vl_recebido
+             ELSE
+              0
+           END) recebimento_acumulado,
+       SUM(CASE
+             WHEN pdb.dt_recebimento &gt;= add_months(trunc(filtro.dt_filtro, 'mm'), -1) AND pdb.dt_recebimento &lt; trunc(filtro.dt_filtro, 'mm') THEN
+              pdb.vl_recebido
+             ELSE
+              0
+           END) recebimento_mes_anterior,
+       SUM(CASE
+             WHEN pdb.dt_recebimento &gt;= trunc(filtro.dt_filtro, 'mm') AND pdb.dt_recebimento &lt; add_months(trunc(filtro.dt_filtro, 'mm'), 1)  THEN
+              pdb.vl_recebido
+              ELSE
+              0
+              END) recebimento_mes,
+      d.vl_corrigido - SUM(CASE
+                      WHEN pdb.dt_recebimento &lt; add_months(trunc(filtro.dt_filtro, 'mm'), 1) THEN
+                        pdb.vl_recebido
+                      ELSE
+                        0
+                    END) saldo_devedor,
+       d.vl_a_receber saldo_devedor2
+  </Fields>
+  <From>
+		isa_hc.hc_debito_beneficiario d,
+		isa_hc.hc_v_beneficiario b,
+		(select * from isa_hc.hc_beneficiario_plano bp where dt_inicio_vigencia = (select max(dt_inicio_vigencia) from isa_hc.hc_beneficiario_plano bp2 where bp2.cd_beneficiario = bp.cd_beneficiario AND dt_inicio_vigencia &lt;= to_date('01/06/2016', 'dd/mm/rrrr'))) bp,
+    isa_hc.hc_plano p,
+		(select * from isa_hc.hc_beneficiario_categoria c where dt_inicio_vigencia = (select max(dt_inicio_vigencia) from isa_hc.hc_beneficiario_categoria c2 where c2.cd_beneficiario = c.cd_beneficiario AND dt_inicio_vigencia &lt;= to_date('01/06/2016', 'dd/mm/rrrr'))) c,
+		isa_hc.hc_categoria ca,
+		isa_hc.hc_parcela_debito_benef pdb,
+		(SELECT to_date('01/07/2016', 'dd/mm/rrrr') dt_corte FROM dual) sq,
+		(SELECT :filtro dt_filtro FROM DUAL) filtro
+  </From>
+  <OrderBy>d.dt_ano_mes_ref</OrderBy>
+  <GroupBy>
+    d.dt_ano_mes_ref,
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.nm_beneficiario,
+    p.cd_plano,
+    p.ds_plano,
+    ca.cd_categoria,
+    ca.ds_categoria,
+    d.cd_grupo_lancto,
+    d.vl_corrigido,
+    d.vl_a_receber</GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		d.cd_beneficiario = b.cd_beneficiario
+   AND d.cd_beneficiario = bp.cd_beneficiario(+)
+   AND d.cd_beneficiario = c.cd_beneficiario
+   AND c.cd_categoria = ca.cd_categoria(+)
+   AND d.cd_beneficiario = pdb.cd_beneficiario(+)
+   AND d.dt_ano_mes_ref = pdb.dt_ano_mes_ref(+)
+   AND d.cd_grupo_lancto = pdb.cd_grupo_lancto(+)
+   AND EXISTS (SELECT *
+          FROM isa_hc.tmp_ch26132 t
+         WHERE t.cd_beneficiario = d.cd_beneficiario
+           AND t.dt_ano_mes_ref = d.dt_ano_mes_ref
+           AND t.cd_grupo_lancto = d.cd_grupo_lancto)
+   AND p.cd_plano (+)= bp.cd_plano_vinculado
+	]]></FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+	  <Name>filtro</Name>
+	  <Expression>filtro.dt_filtro = :filtro</Expression>
+	</ReportFilterQuery>
+    <ReportFilterQuery>
+	  <Name>plano</Name>
+	  <Expression>p.cd_plano = :plano</Expression>
+	</ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

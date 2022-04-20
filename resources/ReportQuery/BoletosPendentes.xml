@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+		a.dt_ano_mes_ref,
+    b.cd_empresa,
+		b.cd_funcionario,
+		b.nm_titular,
+		b.nm_beneficiario,
+		a.dt_ano_mes_ref_cob,
+		a.dt_vencimento,
+		SUM(a.vl_parcela) vl_parcela,
+		TO_CHAR(a.nr_nosso_numero) nr_nosso_numero,
+		f_retorna_responsavel (b.cd_beneficiario, 'FAM', 'MAT') cd_mat_resp_familia,
+		f_retorna_responsavel (b.cd_beneficiario, 'FIN', 'MAT') cd_mat_resp_financeiro
+	</Fields>
+	<From>
+		isa_hc.hc_parcela_debito_benef a, isa_hc.hc_v_beneficiario b
+	</From>
+	<OrderBy>a.dt_ano_mes_ref, b.cd_funcionario, b.nm_beneficiario</OrderBy>
+	<GroupBy>
+    a.nr_nosso_numero,
+    a.dt_ano_mes_ref,
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.nm_titular,
+    b.nm_beneficiario,
+    a.dt_ano_mes_ref_cob,
+    a.dt_vencimento,
+    b.cd_beneficiario
+  </GroupBy>
+	<FixedFilter>
+		<![CDATA[
+		a.cd_beneficiario = b.cd_beneficiario 
+		AND a.tp_cobranca = 'BO' AND a.st_cobranca = 'P'
+	]]>
+	</FixedFilter>
+	<Filters />
+</ReportQuery>

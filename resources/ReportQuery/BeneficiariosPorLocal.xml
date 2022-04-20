@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+    a.BA1_MATANT,
+    t.BA1_NOMUSR as nm_titular,
+    a.BA1_TIPUSU,
+    a.BA1_NOMUSR as nm_beneficiario,
+    CASE
+    WHEN a.BA1_SEXO in ('1') THEN 'M'
+    WHEN a.BA1_SEXO in ('2') THEN 'F'
+    END BA1_SEXO,
+    to_date(a.BA1_DATNAS,'yyyyMMdd') as BA1_DATNAS,
+    trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) AS idade,
+    a.BA1_MUNICI,
+    a.BA1_ESTADO,
+    NVL(c.BIB_DESCRI, 'FALTA CADASTRAR') as BIB_DESCRI,
+    plano.BI3_DESCRI,
+    p.BRP_DESCRI as ds_parentesco,
+    CASE
+    WHEN d.BTS_DEFFIS in ('1','S') THEN 'S'
+    WHEN d.BTS_DEFFIS in ('0','N',' ') THEN 'N'
+    END fl_deficiente_fisico,
+    CASE
+    WHEN d.BTS_UNIVER in ('1','S') THEN 'S'
+    WHEN d.BTS_UNIVER in ('0','N',' ') THEN 'N'
+    END fl_estudante,
+    CASE
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 0 AND 18 THEN '1 - 0 a 18'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 19 AND 23 THEN '2 - 19 a 23'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 24 AND 28 THEN '3 - 24 a 28'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 29 AND 33 THEN '4 - 29 a 33'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 34 AND 38 THEN '5 - 34 a 38'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 39 AND 43 THEN '6 - 39 a 43'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 44 AND 48 THEN '7 - 44 a 48'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 49 AND 53 THEN '8 - 49 a 53'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) BETWEEN 54 AND 58 THEN '9 - 54 a 58'
+    WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) >= 59 THEN 'Maior ou igual a 59'
+    END faixa_etaria,
+    1 qtd_total,
+    to_date(trim(f.BA3_DATBAS),'YYYYMMDD') as dt_inicio_vigencia,
+    CASE
+    WHEN NVL(length(trim(f.BA3_DATBLO)), 0) = 0 THEN null
+    WHEN NVL(length(trim(f.BA3_DATBLO)), 0) > 0 THEN to_date(trim(f.BA3_DATBLO),'YYYYMMDD')
+    END dt_termino_vigencia
+  </Fields>
+	<From>
+    VW_PR_FAMILIA_ATUAL f, 
+    VW_PR_USUARIO_ATUAL a,
+    VW_PR_USUARIO_ATUAL t,
+    VW_PR_REGIAO c,
+    VW_PR_GRAU_PARENTESCO p,
+    VW_PR_VIDA_ATUAL d,
+    VW_PR_PRODUTO_SAUDE plano
+  </From>
+	<OrderBy>a.BA1_MATANT, t.BA1_NOMUSR</OrderBy>
+	<GroupBy></GroupBy>
+	<FixedFilter>
+		<![CDATA[
+      trim(f.BA3_CODINT) = trim(a.BA1_CODINT) AND trim(f.BA3_CODEMP) = trim(a.BA1_CODEMP) AND trim(f.BA3_MATRIC) = trim(a.BA1_MATRIC)
+		  AND trim(f.BA3_CODINT) = trim(t.BA1_CODINT) AND trim(f.BA3_CODEMP) = trim(t.BA1_CODEMP) AND trim(f.BA3_MATRIC) = trim(t.BA1_MATRIC) AND trim(t.BA1_TIPUSU) = 'T'
+      AND trim(f.BA3_YREGIO) = c.BIB_CODREG (+)
+			AND trim(a.BA1_MATEMP) NOT LIKE ('99999%')
+			AND a.BA1_DATBLO = '        ' --PLANO VIGENTE
+			AND trim(a.BA1_GRAUPA) = p.BRP_CODIGO (+)
+			AND trim(a.BA1_MATVID) = trim(d.BTS_MATVID)
+      AND trim(f.BA3_CODPLA) = trim(plano.BI3_CODIGO)
+	]]>
+	</FixedFilter>
+	<Filters>
+		<!--ReportFilterQuery>
+			<Name>regional</Name>
+			<Expression>trim(f.BA3_YREGIO) IN (:regional)</Expression>
+		</ReportFilterQuery-->
+		<ReportFilterQuery>
+			<Name>uf</Name>
+			<Expression>trim(a.BA1_ESTADO) IN (:uf)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>parentesco</Name>
+			<Expression>replace(trim(a.BA1_GRAUPA), '00', '01') IN (:parentesco)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>plano</Name>
+			<Expression>trim(plano.BI3_CODIGO) IN (:plano)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>deficiente</Name>
+			<Expression>((trim(d.BTS_DEFFIS) IN ('1', 'S') and (:deficiente) = 'S') or (trim(d.BTS_DEFFIS) IN ('0', 'N', '') and (:deficiente) = 'N'))</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>estudante</Name>
+			<Expression>((trim(d.BTS_UNIVER) IN ('1', 'S') and (:estudante) = 'S') or (trim(d.BTS_UNIVER) IN ('0', 'N', '') and (:estudante) = 'N'))</Expression>
+		</ReportFilterQuery>
+		
+	</Filters>
+</ReportQuery>

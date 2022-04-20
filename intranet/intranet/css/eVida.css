@@ -1,0 +1,252 @@
+﻿@charset "UTF-8";
+/* CSS Document */
+
+@import url('header.css');
+@import url('content.css');
+@import url('footer.css');
+@import url('fonts.css');
+
+.logo1
+{
+    border: 0;
+}
+
+.logo2
+{
+    text-align:right;
+}
+
+html, body {
+	/*background:url(../img/bg-body.png) repeat;*/
+	font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+	/*font-size: 14px;*/
+	color: #555;
+	margin:0;
+    height: 95%;
+}
+
+form
+{
+    height: 100%;
+}
+
+#msgErro 
+{
+    font-size: 14px;
+    color: Red;
+}
+
+
+* {margin:0; padding:0;}
+
+h2 
+{
+    text-transform: uppercase;
+}
+
+#container {
+	width: 1184px;
+	/*background: url(../img/bg-container.png) repeat-y;
+	margin: 0 auto;*/
+	padding:0 0 10px 0;
+    height: 100%;
+}
+	
+img {
+	border:0;}
+	
+.clear {
+	clear:both;}
+	
+a {
+	font-weight:bold;
+	color:#95bc2a;
+	text-decoration:none;}
+	
+a:hover {
+	color:#666;
+}
+
+#tbTitle td 
+{
+    text-align: center;
+}
+
+#content div table 
+{
+    text-align: left;
+    font-size: 11px;
+}
+
+.tbBorda
+{
+    border-style: solid;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tbBorda td
+{
+    padding: 2px;
+}
+#tbTitular, #tbRespFinanceiro, #tbProponente
+{
+    border-style: solid;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tbTitular td, #tbRespFinanceiro td, #tbProponente td
+{
+    padding: 2px;    
+}
+
+#tbBancario
+{
+    border-style: solid;
+    border-collapse: collapse;
+    width: 100%
+}
+
+#tbBancario td
+{
+    padding: 2px;    
+}
+#tbRenda
+{
+    border-style: solid;
+    border-collapse: collapse;
+    width: 100%
+}
+#tbRenda td
+{
+    padding: 2px;    
+}
+
+#placeHolder_dlDependentes 
+{
+    width: 100%;
+} 
+
+.tbDependente 
+{
+    border-style: solid;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tbDependenteAlt
+{
+    border-style: none;
+    text-align: left;
+    background-color: #EEE;
+    width: 100%
+}
+
+
+.tbDependente td
+{
+    padding: 2px;
+}
+
+#content input[type=text].inputInline {
+	display:inline;
+}
+
+#observacao, .observacao
+{
+    background-color: #8F997E;
+    border-width: thin;
+    border-style: solid;
+    padding: 10px;
+}
+
+#autorizacao 
+{
+    background-color: #8F997E;
+    border-width: thin;
+    border-style: solid;
+    padding: 10px;
+}
+
+#observacao p.n2 
+{
+    margin-left:5em;
+}
+
+.sexo 
+{
+    color: #555;
+}
+
+.rodape
+{
+    color:#ff7600;
+}
+
+.menuimp
+{
+    background-color: #F0F0F0;
+}
+
+.tabelaForm 
+{
+    border-style: solid;
+    border-collapse: collapse;
+}
+.tabelaForm td
+{
+    padding: 2px;
+}
+.tabelaFormBorder {
+    border-collapse: collapse;
+	border:thin solid;
+}
+.tabelaFormBorder td {
+	margin:5px;
+	border:1px solid;
+	padding:5px;}
+
+#content .gridView
+{
+    width:1000px;
+    overflow: auto;
+	width:670px;
+	border-top:#95BC2A thin solid;
+	border-bottom:#95BC2A thin solid
+}
+	
+#content .gridView th {
+	background:#ebebe2;
+	margin:5px;
+	border:1px solid white;
+	padding:10px}
+
+#content .gridView td {
+	background:#fdfdfa;
+	margin:5px;
+	border:1px solid white;
+	padding:10px;
+}
+
+#content .gridView tr:nth-child(odd) td		{ background-color:#eaeaea; }
+#content .gridView tr:nth-child(even) td		{ background-color:#ffffff; }
+
+.tdLblForm
+{
+	text-align: right;
+	font-weight:bold;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.paginacao, .paginacao td, .paginacao td table, .paginacao td table td {
+    background-color: lightgray !important;
+}

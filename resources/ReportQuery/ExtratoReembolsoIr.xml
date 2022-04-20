@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+    b.cd_empresa,
+		b.cd_funcionario,
+		b.nm_titular,
+		b.nm_beneficiario,
+		DECODE(b.cd_dependente, NULL, '', B.nm_beneficiario) nm_dependente,
+		isa_hc.F_MASCARA_CNPJ(lpad(nvl(b.nr_cpf,'0'), 11, '0'), 'F') nr_cpf,
+		b.dt_nascimento,
+		UPPER (c.nm_razao_social) nm_razao_social,
+		isa_hc.f_mascara_cnpj (c.nr_cnpj_cpf, c.tp_pessoa) nr_cnpj_cpf,
+		to_char(d.dt_atendimento_item, 'mm/rrrr') dt_atendimento_item,
+		to_char(a.dt_ano_mes_ref, 'MM/RRRR') mes_ano,
+		DECODE (a.tp_sistema_atend,	'CRED', SUM (d.vl_item), SUM (d.vl_apresentado)) vl_apresentado,
+		DECODE (a.tp_sistema_atend,	'CRED', SUM (d.vl_particip_empresa), SUM (d.vl_reembolso)) vl_reembolso,
+		DECODE (a.tp_sistema_atend,	'CRED', SUM (d.vl_participacao), (SUM (d.vl_apresentado - d.vl_reembolso))) vl_diff,
+    f.cd_categoria
+	</Fields>
+	<From>
+		isa_hc.hc_atendimento a,
+		isa_hc.hc_v_beneficiario b,
+		isa_hc.hc_v_credenciado c,
+		isa_hc.hc_item_atendimento d,
+		isa_hc.hc_beneficiario_plano e,
+		isa_hc.hc_beneficiario_categoria f
+	</From>
+	<OrderBy>
+    b.cd_empresa,
+    b.cd_funcionario,
+    DECODE(b.cd_dependente, NULL, '_', B.nm_beneficiario),
+    b.nm_beneficiario,
+    c.nm_razao_social,
+    to_char(d.dt_atendimento_item, 'mm/rrrr')
+  </OrderBy>
+	<GroupBy>
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.nm_titular,
+    b.nm_beneficiario,
+    b.nr_cpf,
+    c.nm_razao_social,
+    c.nr_cnpj_cpf,
+    c.tp_pessoa,
+    to_char(d.dt_atendimento_item, 'mm/rrrr'),
+    a.dt_ano_mes_ref,
+    a.tp_sistema_atend,
+    b.dt_nascimento,
+    b.cd_dependente,
+    f.cd_categoria
+  </GroupBy>
+	<FixedFilter>
+		<![CDATA[
+		a.cd_organizacao = d.cd_organizacao
+		AND a.nr_atendimento = d.nr_atendimento
+		AND a.cd_credenciado = c.cd_credenciado
+		and b.cd_beneficiario = e.cd_beneficiario
+		and e.cd_beneficiario = f.cd_beneficiario
+		AND a.cd_beneficiario_titular = b.cd_beneficiario_titular
+		AND a.cd_beneficiario = b.cd_beneficiario
+		AND d.tp_tributacao = 'TRIB'
+		AND a.st_atendimento NOT IN ('A', 'C')
+		AND d.cd_motivo_glosa IS NULL
+		AND a.tp_sistema_atend = 'REEMB'
+    AND (b.nr_cpf is not null or isa_hc.f_retorna_idade_benef(b.cd_beneficiario, to_date('20161231', 'rrrrMMdd')) < 18)
+		
+		and a.cd_organizacao in ('60', '61', '62', '65')
+		and b.cd_empresa in ('60', '61', '62', '65')
+		
+		--CATEGORIA TITULAR
+		--   AND a.cd_beneficiario_titular = c.cd_beneficiario		
+		AND f.dt_inicio_vigencia <= a.dt_ano_mes_ref
+		AND (f.dt_termino_vigencia IS NULL OR f.dt_termino_vigencia >= a.dt_ano_mes_ref)
+
+		-- PLANO BENEF
+		--   AND a.cd_beneficiario = p.cd_beneficiario
+		AND e.dt_inicio_vigencia <= a.dt_ano_mes_ref
+		AND (e.dt_termino_vigencia IS NULL OR e.dt_termino_vigencia >= a.dt_ano_mes_ref)
+		
+		--AND (e.cd_plano_vinculado in (21,22) OR f.cd_categoria IN (3,16, 24,27, 28, 31, 32))
+	   ]]>
+	</FixedFilter>
+	<Filters>
+    <ReportFilterQuery>
+      <Name>empresa</Name>
+      <Expression>b.cd_empresa = :empresa</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>matricula</Name>
+      <Expression>b.cd_funcionario = :matricula</Expression>
+    </ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>data</Name>
+			<Expression>a.dt_ano_mes_ref BETWEEN :data1 AND :data2 </Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

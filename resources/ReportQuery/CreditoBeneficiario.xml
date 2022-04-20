@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+	b.cd_alternativo,
+	b.nm_beneficiario,
+	p.cd_plano,
+	p.ds_plano,
+	cat.cd_categoria,
+	cat.ds_categoria,
+	a.dt_solic_pagamento,
+	a.dt_pagamento,
+	a.vl_pagar
+  </Fields>
+  <From>
+	  (SELECT min(dt_ano_mes_ref) dt_ano_mes_ref, cd_beneficiario, dt_solic_pagamento, dt_pagamento, sum (vl_pagar) vl_pagar from isa_hc.hc_credito_beneficiario group by cd_beneficiario, dt_solic_pagamento, dt_pagamento) a, 
+	  isa_hc.hc_v_beneficiario b, 
+	  isa_hc.hc_beneficiario_plano y,
+	  isa_hc.hc_beneficiario_categoria z, 
+	  isa_hc.hc_plano p, 
+	  isa_hc.hc_categoria cat
+  </From>
+  <OrderBy>a.dt_solic_pagamento, b.cd_alternativo</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		a.cd_beneficiario = b.cd_beneficiario
+		AND b.nm_beneficiario NOT LIKE ('MATRICUL%')
+		
+		and a.cd_beneficiario = y.cd_beneficiario 			
+		and a.cd_beneficiario = z.cd_beneficiario(+)
+    
+		and y.cd_plano_vinculado = p.cd_plano
+		and z.cd_categoria = cat.cd_categoria(+)
+		
+		AND y.dt_inicio_vigencia <= a.dt_ano_mes_ref
+		AND (y.dt_termino_vigencia IS NULL OR y.dt_termino_vigencia >= a.dt_ano_mes_ref) 			
+		
+		AND z.dt_inicio_vigencia(+) <= a.dt_ano_mes_ref
+		AND (nvl(z.dt_termino_vigencia(+), a.dt_ano_mes_ref) >= a.dt_ano_mes_ref) 	
+	]]></FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>dataDoc</Name>
+      <Expression>a.dt_solic_pagamento BETWEEN :dataDoc1 AND :dataDoc2</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>cartaoTitular</Name>
+      <Expression>b.cd_alternativo = :cartaoTitular</Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

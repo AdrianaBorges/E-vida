@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    to_char(a.dt_ano_mes_ref,'MM/rrrr') dt_ano_mes_ref,
+    a.cd_grupo_lancto,
+    TO_CHAR(c.cd_categoria) cd_categoria,
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.tp_beneficiario,
+    b.nm_beneficiario,
+    b.cd_alternativo,
+    sum(a.vl_lancto) vl_lancto,
+    sum(a.vl_beneficiario) vl_beneficiario,
+    sum(a.vl_empresa) vl_empresa,
+
+    (select V.vl_referencia from ISA_HC.HC_FUNCIONARIO_HIST_VALOR v
+    WHERE V.cd_funcionario = B.cd_funcionario and v.cd_empresa = b.cd_empresa and v.tp_valor = 'REM'
+    AND	v.dt_ref_valor = (SELECT MAX(dt_ref_valor) FROM ISA_HC.HC_FUNCIONARIO_HIST_VALOR u
+    WHERE u.cd_funcionario = v.cd_funcionario AND u.dt_ref_valor &lt;= a.dt_ano_mes_ref
+	  and u.cd_empresa = v.cd_empresa and u.dt_admissao = v.dt_admissao
+	  and u.tp_valor = v.tp_valor)) VL_SALARIO,
+
+	  isa_hc.f_retorna_idade_benef (b.cd_beneficiario, sysdate) AS idade,	  
+		f_retorna_responsavel (b.cd_beneficiario, 'FAM', 'MAT') cd_mat_resp_familia,
+		f_retorna_responsavel (b.cd_beneficiario, 'FIN', 'MAT') cd_mat_resp_financeiro
+  </Fields>
+  <From>isa_hc.hc_lancto_benef a, isa_hc.hc_v_beneficiario b, isa_hc.hc_beneficiario_categoria c</From>
+  <OrderBy>b.cd_funcionario, b.tp_beneficiario DESC</OrderBy>
+  <GroupBy>a.dt_ano_mes_ref, a.cd_grupo_lancto, b.cd_funcionario, b.tp_beneficiario, b.cd_beneficiario, b.nm_beneficiario, b.cd_alternativo, c.cd_categoria, B.cd_empresa</GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+	a.cd_beneficiario = b.cd_beneficiario and b.cd_beneficiario = c.cd_beneficiario
+	and (c.dt_inicio_vigencia <= :dataRef and (c.dt_termino_vigencia >= :dataRef or c.dt_termino_vigencia IS NULL))
+	]]></FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>dataRef</Name>
+      <Expression>a.dt_ano_mes_ref = :dataRef</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>grupo</Name>
+      <Expression>a.cd_grupo_lancto IN (:grupo)</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>categoria</Name>
+      <Expression>c.cd_categoria IN (:categoria) </Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

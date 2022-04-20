@@ -1,0 +1,161 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="eVidaIntranet.Site" %>
+<%@ Register TagPrefix="evida" TagName="Header" Src="controls/Header.ascx" %>
+<%@ Register TagPrefix="evida" TagName="Menu" Src="controls/Menu.ascx" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>eVida</title>
+	<link href="~/css/eVida/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css" />
+	<link href="~/css/eVida.css" rel="stylesheet" type="text/css" />
+	<script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="Scripts/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+
+	
+	<script type="text/javascript">
+	    var msg = "";
+	    var isErro = false;
+	    var ctrFocus = "";
+
+	    function pageLoad() {
+	        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequestHandler);
+	    }
+
+	    function endRequestHandler(sender, arg) {
+	        if (arg.get_error() !== null) {
+	            //alert user of problem and continue
+	            msg = "";
+	            ctrFocus = "";
+	            showError(arg.get_error().message);
+	            arg.set_errorHandled(true);
+	            setTimeout(function () { openDialog(); }, 1000);
+	        } else {
+	            openDialog();
+	        }
+	    }
+
+	    $(document).ready(function () {
+	        $('#dialog').dialog({
+	            autoOpen: false,
+	            width: 550,
+	            height: 350,
+	            draggable: false,
+	            modal: true,
+	            resizable: false,
+	            buttons: {
+	                "Ok": function () {
+	                    $(this).dialog("close");
+	                    if (ctrFocus != "")
+	                        $('#' + ctrFocus).focus();
+	                    //WebForm_AutoFocus(ctrFocus);
+	                }
+	            }
+	        });
+	        setTimeout(function () { openDialog(); }, 1000);
+	    });
+
+	    function openDialog() {
+	        if (msg != "") {
+	            $('#msgErro').html(msg);
+	            if (isErro)
+	                $('#dialog').dialog("option", "title", "Erro");
+	            else
+	                $('#dialog').dialog("option", "title", "Mensagem");
+	            $('#dialog').dialog('open');
+	        }
+	    }
+
+	    function showError(msg) {
+	        showMessage(msg, true);
+	    }
+
+	    function showMessage(mmsg, isError) {
+	        msg += mmsg;
+	        isErro = (isError || isErro);
+	    }
+
+	    function clearStartupMessage() {
+	        $(document).ready(function () {
+	            msg = "";
+	            ctrFocus = "";
+	        });
+	    }
+
+	    function showStartupMessage(msg, isErro) {
+	        $(document).ready(function () {
+	            showMessage(msg, isErro);
+	        });
+	    }
+
+	    function showStartupError(msg) {
+	        showStartupMessage(msg, true);
+	    }
+
+	    jQuery.fn.ForceNumericOnly =
+			function () {
+			    return this.each(function () {
+			        $(this).keydown(function (e) {
+			            var key = e.charCode || e.keyCode || 0;
+			            // allow backspace, tab, delete, arrows, numbers and keypad numbers ONLY
+			            return (
+							key == 8 ||
+							key == 9 ||
+							key == 46 ||
+							(key >= 37 && key <= 40) ||
+							(key >= 48 && key <= 57) ||
+							(key >= 96 && key <= 105));
+			        });
+			    });
+			};
+	</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+		<div id="headerLogin">
+			<div class="logo">
+				<asp:Image ID="imgLogo" runat="server" ToolTip="Página inicial" AlternateText="Logo" ImageUrl="~/img/logo.png" Height="195" Width="211"  />				
+			</div><br />
+            <div style="height:150px"></div>
+            <div class="titulo">INTRANET E-VIDA</div>
+			<div class="clear"></div>
+		</div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" OnAsyncPostBackError="scriptManager_OnAsyncPostBackError" EnablePartialRendering="true" AllowCustomErrorsRedirect="true"  />
+		<asp:UpdateProgress ID="updProgress" AssociatedUpdatePanelID="content" runat="server"  >
+			<ProgressTemplate>           
+				<div style="z-index:400; background-color:Gray; filter:alpha(opacity=80); opacity:0.80; width: 100%; top: 0px; left: 0px; position: fixed; height: 800px;">
+ 
+				</div>
+				<div align="center" style="width:100%; z-index:401; margin:auto; filter:alpha(opacity=100); opacity:1; vertical-align: middle; top: auto; position: absolute; right: auto;">
+					<table width="100%">
+						<tr>
+							<td align="center"><img src="img/progress.gif" alt="Loading"  /></td>
+						</tr>
+					</table>
+				</div>      
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+		<asp:UpdatePanel ID="content" runat="server" ClientIDMode="Static">
+			<ContentTemplate>
+				<div align="center">
+				<asp:ContentPlaceHolder ID="placeHolder" runat="server">
+        
+				</asp:ContentPlaceHolder>
+				</div>
+			</ContentTemplate>
+		</asp:UpdatePanel>
+		<div id="dialog" title="Erro!">
+			<div id="msgErro" style="width: 100%; text-align: center"></div>
+		</div>
+		<div id="footer">
+			<div class="right">
+				<p><a target="_blank" href="http://www.ans.gov.br/"><img title="Agência Nacional de Saúde Suplmentar" alt="Logo Agência Nacional de Saúde Suplmentar" src="img/logo-ans.png" height="69" width="205" /></a><a target="_blank" href="http://www.eletronorte.gov.br"><img title="Eletrobras Eletronorte" alt="Logo Eletrobras Eletronorte" src="img/logo-eletrobras.png" height="69" width="177" /></a></p>
+			</div>
+		</div>
+    </div>
+    </form>
+</body>
+</html>

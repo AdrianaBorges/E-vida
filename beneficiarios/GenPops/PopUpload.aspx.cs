@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using eVida.Web.Upload;
+using eVidaBeneficiarios.Classes;
+using eVidaGeneralLib.Util;
+
+namespace eVidaBeneficiarios.GenPops {
+	public partial class PopUpload : PopUpPageBase {
+		protected override void PageLoad(object sender, EventArgs e) {
+			if (!IsPostBack) {
+				string tipo = Request["TIPO"];
+				if (string.IsNullOrEmpty(tipo)) {
+					this.ShowError("Tipo de upload não definido!");
+					hidRnd.Visible = false;
+					return;
+				}	
+				UploadConfig = UploadConfigManager.GetConfig(tipo);
+                hidRnd.Value = UploadConfigManager.GetPrefix(UploadConfig, Sistema.BENEFICIARIO, this.UsuarioLogado.UsuarioTitular.Codint.Trim() + this.UsuarioLogado.UsuarioTitular.Codemp.Trim() + this.UsuarioLogado.UsuarioTitular.Matric.Trim() + this.UsuarioLogado.UsuarioTitular.Tipreg.Trim());
+				if (GetUploadFilter().Equals("*")) {
+					this.RegisterScript("FILETYPE", "var fileTypes = /(\\.|.*)$/i");
+				} else {
+					this.RegisterScript("FILETYPE", "var fileTypes = /(\\.|\\/)(" + GetUploadFilter().Replace(",", "|") + ")$/i");
+				}
+				lnkClassic.NavigateUrl = "./PopUploadClassico.aspx" + Request.Url.Query;
+			}
+		}
+
+		public UploadConfig UploadConfig { get; set; }
+
+		protected string GetUploadFilter() {
+			if (UploadConfig != null)
+				return UploadConfig.FileTypes.Aggregate((x, y) => x + "," + y);
+			return null;
+		}
+		protected int GetUploadSize() {
+			if (UploadConfig != null)
+				return UploadConfig.MaxSize;
+			return 0;
+		}
+
+	}
+}

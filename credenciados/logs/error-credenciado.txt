@@ -1,0 +1,783 @@
+﻿2018-01-17 11:35:29,792 [8] ERROR eVida.Web.Controls.PageHelper [(null)] - Erro ao atualizar autenticacao
+System.IndexOutOfRangeException: O índice estava fora dos limites da matriz.
+   em eVidaCredenciados.Classes.PageBase.GetUsuario(String codigo_credenciado) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\PageBase.cs:linha 50
+   em eVida.Web.Controls.PageHelper.<>c__DisplayClass1`1.<CheckLogin>b__0(String username) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\webLib\Controls\PageHelper.cs:linha 27
+   em eVida.Web.Controls.PageHelper.RefreshAuthentication(HttpRequest request, HttpResponse response, HttpSessionState session, Func`2 funcGetUsuario) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\webLib\Controls\PageHelper.cs:linha 56
+2018-01-18 21:46:29,640 [10] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00942: a tabela ou view n?o existe
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.LocatorDAO.ListarPlanos(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\LocatorDAO.cs:linha 157
+   em eVidaGeneralLib.BO.LocatorDataBO.ListarPlanos(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\LocatorDataBO.cs:linha 65
+   em eVidaGeneralLib.BO.LocatorDataBO.ListarPlanos() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\LocatorDataBO.cs:linha 55
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 16
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-01-23 14:38:40,660 [9] ERROR ASP.forms_buscaautorizacao_aspx [(null)] - Erro ao carregar tela. 
+System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00907: parentese direito n?o encontrado
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(EvidaDatabase db, String sql, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 148
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.Pesquisar(FilterAutorizacaoVO filtro, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 272
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.BuscarAutorizacaoByCredenciado(String codCredenciado, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 81
+   em eVidaGeneralLib.BO.AutorizacaoBO.BuscarAutorizacaoByCredenciado(String codCredenciado) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\AutorizacaoBO.cs:linha 60
+   em eVidaCredenciados.Forms.BuscaAutorizacao.BindAll() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 27
+   em eVidaCredenciados.Forms.BuscaAutorizacao.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 18
+2018-01-23 14:43:25,128 [8] ERROR ASP.forms_buscaautorizacao_aspx [(null)] - Erro ao carregar tela. 
+System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00907: parentese direito n?o encontrado
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(EvidaDatabase db, String sql, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 148
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.Pesquisar(FilterAutorizacaoVO filtro, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 272
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.BuscarAutorizacaoByCredenciado(String codCredenciado, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 81
+   em eVidaGeneralLib.BO.AutorizacaoBO.BuscarAutorizacaoByCredenciado(String codCredenciado) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\AutorizacaoBO.cs:linha 60
+   em eVidaCredenciados.Forms.BuscaAutorizacao.BindAll() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 27
+   em eVidaCredenciados.Forms.BuscaAutorizacao.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 18
+2018-01-23 14:45:39,835 [6] ERROR ASP.forms_buscaautorizacao_aspx [(null)] - Erro ao carregar tela. 
+System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00907: parentese direito n?o encontrado
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(EvidaDatabase db, String sql, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 148
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.Pesquisar(FilterAutorizacaoVO filtro, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 272
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.BuscarAutorizacaoByCredenciado(String codCredenciado, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 81
+   em eVidaGeneralLib.BO.AutorizacaoBO.BuscarAutorizacaoByCredenciado(String codCredenciado) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\AutorizacaoBO.cs:linha 60
+   em eVidaCredenciados.Forms.BuscaAutorizacao.BindAll() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 27
+   em eVidaCredenciados.Forms.BuscaAutorizacao.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 18
+2018-01-23 14:49:54,064 [7] ERROR ASP.forms_buscaautorizacao_aspx [(null)] - Erro ao carregar tela. 
+System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00907: parentese direito n?o encontrado
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(EvidaDatabase db, String sql, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 148
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.Pesquisar(FilterAutorizacaoVO filtro, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 272
+   em eVidaGeneralLib.DAO.AutorizacaoDAO.BuscarAutorizacaoByCredenciado(String codCredenciado, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\AutorizacaoDAO.cs:linha 81
+   em eVidaGeneralLib.BO.AutorizacaoBO.BuscarAutorizacaoByCredenciado(String codCredenciado) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\AutorizacaoBO.cs:linha 60
+   em eVidaCredenciados.Forms.BuscaAutorizacao.BindAll() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 27
+   em eVidaCredenciados.Forms.BuscaAutorizacao.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Forms\BuscaAutorizacao.aspx.cs:linha 18
+2018-02-07 19:40:38,379 [5] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-05-12 09:59:19,999 [10] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00942: a tabela ou view n?o existe
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.LocatorDAO.ListarPlanos(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\LocatorDAO.cs:linha 157
+   em eVidaGeneralLib.BO.LocatorDataBO.ListarPlanos(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\LocatorDataBO.cs:linha 65
+   em eVidaGeneralLib.BO.LocatorDataBO.ListarPlanos() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\LocatorDataBO.cs:linha 55
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 16
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-05-12 19:53:06,552 [8] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao realizar consulta!
+System.FormatException: Cadeia de caracteres não foi reconhecida como DateTime válido.
+   em System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   em System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.Bind(PUsuarioVO vo, PFamiliaProdutoVO benefPlanoVO) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 102
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 91
+2018-05-12 19:55:37,779 [11] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao realizar consulta!
+System.FormatException: Cadeia de caracteres não foi reconhecida como DateTime válido.
+   em System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   em System.DateTime.ParseExact(String s, String format, IFormatProvider provider)
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.Bind(PUsuarioVO vo, PFamiliaProdutoVO benefPlanoVO) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 102
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 91
+2018-06-04 09:57:41,047 [12] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao realizar consulta!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS:Connect timeout occurred
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioBO.GetUsuarioByCartao(String numCartao) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\Protheus\PUsuarioBO.cs:linha 56
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 67
+2018-06-04 10:12:47,926 [9] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao realizar consulta!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-03135: connection lost contact
+ID do Processo: 9608
+ID da Sess?o: 36 Numero de serie: 54609
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.PLocatorDAO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\PLocatorDAO.cs:linha 230
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 121
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaGeneralLib.BO.PLocatorDataBO.GetProdutoSaude(String codigo) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 95
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.Bind(PUsuarioVO vo, PFamiliaProdutoVO benefPlanoVO) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 114
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 92
+2018-06-04 10:25:08,469 [6] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-04 10:25:09,820 [8] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-04 15:33:00,347 [6] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 14:47:13,302 [6] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 14:47:16,263 [7] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-06 14:49:19,524 [5] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao realizar consulta!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-00942: a tabela ou view n?o existe
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.Protheus.PFamiliaProdutoDAO.GetLastFamiliaData(String codint, String codemp, String matric, String tipreg, String dtRef, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Protheus\PFamiliaProdutoDAO.cs:linha 48
+   em eVidaGeneralLib.BO.Protheus.PFamiliaBO.GetFamiliaProduto(String codint, String codemp, String matric, String tipreg) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\Protheus\PFamiliaBO.cs:linha 63
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 82
+2018-06-06 14:58:31,312 [7] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12154: TNS:could not resolve the connect identifier specified
+
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 14:58:31,312 [9] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12154: TNS:could not resolve the connect identifier specified
+
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 14:58:32,458 [11] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12154: TNS:could not resolve the connect identifier specified
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-06 14:59:31,677 [6] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12154: TNS:could not resolve the connect identifier specified
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 14:59:32,512 [10] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12154: TNS:could not resolve the connect identifier specified
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-06 15:30:49,182 [7] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 15:30:52,496 [9] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-06 15:31:54,257 [6] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-06 15:31:54,748 [6] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-13 09:35:08,696 [12] ERROR ASP.elegibilidade_consultaelegibilidade2_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS:Connect timeout occurred
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-06-13 09:35:13,631 [15] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12170: TNS:Connect timeout occurred
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 181
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\Util\ParametroUtil.cs:linha 143
+2018-06-13 09:39:17,275 [12] ERROR ASP.elegibilidade_consultaelegibilidade2_aspx [(null)] - Erro ao realizar consulta!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-03135: connection lost contact
+Process ID: 13908
+Session ID: 1408 Serial number: 48151
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.Protheus.PUsuarioDAO.GetRowByCartao(String numCartao, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Protheus\PUsuarioDAO.cs:linha 71
+   em eVidaGeneralLib.BO.Protheus.PUsuarioBO.GetUsuarioByCartao(String numCartao) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\Protheus\PUsuarioBO.cs:linha 57
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 67
+2018-06-13 09:39:23,066 [12] ERROR ASP.elegibilidade_consultaelegibilidade2_aspx [(null)] - Erro ao realizar consulta!
+System.Exception: Erro ao executar query ---> System.Exception: Erro ao executar query ---> System.Data.OracleClient.OracleException: ORA-03114: not connected to ORACLE
+
+   em System.Data.OracleClient.OracleConnection.CheckError(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, Boolean needRowid, OciRowidDescriptor& rowidDescriptor, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.Execute(OciStatementHandle statementHandle, CommandBehavior behavior, ArrayList& resultParameterOrdinals)
+   em System.Data.OracleClient.OracleCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.OracleClient.OracleCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   em System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   em System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.DoLoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.LoadDataSet(DbCommand command, DataSet dataSet, String[] tableNames)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.LoadDataSet(DbCommand command, DataSet dataSet, String tableName)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteDataSet(DbCommand command)
+   em Microsoft.Practices.EnterpriseLibrary.Data.Oracle.OracleDatabase.ExecuteDataSet(DbCommand command)
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 159
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet(Database db, String sql, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 170
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 113
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](Int32 maxRows, Database db, String sql, Func`2 func, List`1 parameters, DbTransaction transaction) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 131
+   em eVidaGeneralLib.DAO.BaseDAO.ExecuteDataSet[T](EvidaDatabase db, String sql, Func`2 func, List`1 parameters) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\BaseDAO.cs:linha 139
+   em eVidaGeneralLib.DAO.Protheus.PUsuarioDAO.GetRowByCartao(String numCartao, EvidaDatabase db) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\DAO\Protheus\PUsuarioDAO.cs:linha 71
+   em eVidaGeneralLib.BO.Protheus.PUsuarioBO.GetUsuarioByCartao(String numCartao) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\BO\Protheus\PUsuarioBO.cs:linha 57
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 67
+2018-07-26 19:25:00,568 [10] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-07-26 19:25:02,466 [12] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 144
+2018-07-26 19:25:59,503 [9] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-07-26 19:26:00,074 [9] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 144
+2018-07-26 19:26:31,069 [11] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 20
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-07-26 19:26:31,605 [11] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12547: TNS:lost contact
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 144
+2018-08-28 15:59:28,964 [7] ERROR ASP.elegibilidade_consultaelegibilidade_aspx [(null)] - Erro ao carregar página!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude(EvidaDatabase db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 120
+   em eVidaGeneralLib.BO.PLocatorDataBO.ListarProdutoSaude() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\PLocatorDataBO.cs:linha 107
+   em eVidaCredenciados.Elegibilidade.ConsultaElegibilidade.PageLoad(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\Elegibilidade\ConsultaElegibilidade.aspx.cs:linha 22
+   em eVidaCredenciados.Classes.Elegibilidade.PageBase.Page_Load(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\App_Code\Elegibilidade\PageBase.cs:linha 21
+2018-08-28 15:59:31,999 [8] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro REPORT_RDLC_FOLDER
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 183
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 145
+2019-02-21 13:58:56,683 [12] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 144
+2019-02-28 14:04:15,221 [9] ERROR eVidaGeneralLib.Util.ParametroUtil [(null)] - Falha ao obter parametro URL_GALENUS
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.Util.ParametroUtil.LoadConfig() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 182
+   em eVidaGeneralLib.Util.ParametroUtil.GetParameter(ParametroType parametro) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\Util\ParametroUtil.cs:linha 144
+2019-02-28 14:04:48,659 [10] ERROR ASP.login_aspx [(null)] - Erro ao realizar login!
+System.Data.OracleClient.OracleException (0x80131938): ORA-12545: Connect failed because target host or object does not exist
+
+   em System.Data.OracleClient.OracleException.Check(OciErrorHandle errorHandle, Int32 rc)
+   em System.Data.OracleClient.OracleInternalConnection.OpenOnLocalTransaction(String userName, String password, String serverName, Boolean integratedSecurity, Boolean unicode, Boolean omitOracleConnectionName)
+   em System.Data.OracleClient.OracleInternalConnection..ctor(OracleConnectionString connectionOptions)
+   em System.Data.OracleClient.OracleConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   em System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   em System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   em System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   em System.Data.OracleClient.OracleConnection.Open()
+   em eVidaGeneralLib.DAO.Util.EvidaConnectionHolder..ctor(Database db) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaConnectionHolder.cs:linha 16
+   em eVidaGeneralLib.DAO.Util.EvidaDatabase.CreateConnection() na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\DAO\Util\EvidaDatabase.cs:linha 34
+   em eVidaGeneralLib.BO.Protheus.PUsuarioPortalBO.LogarCredenciado(String login, String senha) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\modelLib\BO\Protheus\PUsuarioPortalBO.cs:linha 41
+   em eVidaCredenciados.Login.btnLogin_Click(Object sender, EventArgs e) na d:\Aplicacoes\TOTVS INTRANET\DESENVOLVIMENTO\FONTE\intranettotvsdes\credenciados\Login.aspx.cs:linha 84

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    s.SID, s.LOCKWAIT, s.STATUS, s.USERNAME, s.OSUSER, s.TERMINAL, s.PROGRAM, s.SQL_ADDRESS, s.LOGON_TIME, l.owner||'.'||l.name OBJECT_NAME, s.serial# serialnumber
+  </Fields>
+  <From>
+	  v$session s, dba_dml_locks l, v$instance i, v$process p 
+  </From>
+  <OrderBy>STATUS DESC</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		s.sid = l.session_id
+and s.sid in (select * from dba_blockers)
+and l.blocking_others <> 'Blocking'
+and s.paddr = p.addr
+	]]></FixedFilter>
+  <Filters />
+</ReportQuery>	

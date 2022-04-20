@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E4DACAF-F04B-4C01-BB03-D6DF419DE1C8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eVida.Web</RootNamespace>
+    <AssemblyName>eVidaWebLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SkyReportFramework">
+      <HintPath>..\lib\SkyReportFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Barcode\BarcodeHandler.cs" />
+    <Compile Include="Controls\AllPageBase.cs" />
+    <Compile Include="Controls\MenuItem.cs" />
+    <Compile Include="Controls\MessageControl.cs" />
+    <Compile Include="Controls\PageHelper.cs" />
+    <Compile Include="Controls\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\CustomHandlers\JsReport.cs" />
+    <Compile Include="Report\CustomHandlers\ListReports.cs" />
+    <Compile Include="Report\Externo\ReportConsultaPlanoExt.cs" />
+    <Compile Include="Report\ReportAutorizacaoProvisoria.cs" />
+    <Compile Include="Report\ReportAtestadoComparecimento.cs" />
+    <Compile Include="Report\ReportCataPositivaCra.cs" />
+    <Compile Include="Report\ReportDeclaracaoAnualDebito.cs" />
+    <Compile Include="Report\ReportBilhetagem.cs" />
+    <Compile Include="Report\ReportProtocoloFaturaCapa.cs" />
+    <Compile Include="Report\ReportSolicitacaoCanalGestante.cs" />
+    <Compile Include="Report\ReportUniversitario.cs" />
+    <Compile Include="Report\ReportEnvioReciprocidade.cs" />
+    <Compile Include="Report\ReportNegativa.cs" />
+    <Compile Include="Report\ReportProducaoFaturamento.cs" />
+    <Compile Include="Report\ReportSolReciprocidade.cs" />
+    <Compile Include="Report\ReportViagem.cs" />
+    <Compile Include="Security\IUsuarioLogado.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Report2aViaCarteira.cs" />
+    <Compile Include="Report\ReportBase.cs" />
+    <Compile Include="Report\ReportExclusao.cs" />
+    <Compile Include="Report\ReportHandler.cs" />
+    <Compile Include="Report\ReportIrMensalidade.cs" />
+    <Compile Include="Report\ReportIrReembolso.cs" />
+    <Compile Include="Security\LogContext.cs" />
+    <Compile Include="Security\UsuarioLogadoVO.cs" />
+    <Compile Include="Upload\DownloadHandler.cs" />
+    <Compile Include="Upload\UploadHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\modelLib\modelLib.csproj">
+      <Project>{62c74910-3a39-4a0e-84d8-553c01394b1b}</Project>
+      <Name>modelLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

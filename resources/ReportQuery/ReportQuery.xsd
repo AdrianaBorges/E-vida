@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<schema targetNamespace="http://intranet.e-vida.org.br/ReportQuery.xsd"
+    elementFormDefault="qualified"
+    xmlns:tns="http://intranet.e-vida.org.br/ReportQuery.xsd"
+    xmlns:mstns="http://tempuri.org/XMLSchema.xsd"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+>
+  <element name="ReportQuery" type="tns:ReportQueryType"/>
+  
+  <complexType name="ReportQueryType">
+    <sequence>
+      <element name="Fields" type="string" minOccurs="1"/>
+      <element name="From" type="string" minOccurs="1"/>
+      <element name="OrderBy" type="string" minOccurs="1"/>
+      <element name="GroupBy" type="string" minOccurs="1"/>
+      <element name="FixedFilter" type="string" minOccurs="1"/>
+      <element name="Filters" type="tns:FiltersListType" minOccurs="1"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="FiltersListType">
+    <sequence>
+      <element name="ReportFilterQuery" type="tns:ReportFilterQueryType" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="ReportFilterQueryType">
+    <sequence>
+      <element name="Name" type="string"/>
+      <element name="Expression" type="string"/>
+    </sequence>
+  </complexType>
+</schema>

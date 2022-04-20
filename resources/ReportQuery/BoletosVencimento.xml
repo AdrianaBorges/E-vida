@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.nm_titular,
+    --b.nm_beneficiario,
+    NVL(b.ds_email, ' ') ds_email,
+    isa_hc.f_mascara_cnpj (b.nr_cpf, 'F') nr_cpf,
+    a.nr_seq_boleto,
+    --a.dt_ano_mes_ref_cob,
+    a.cd_convenio,
+    to_char(a.nr_nosso_numero) nr_nosso_numero,
+    a.dt_vencimento,
+    a.vl_boleto,
+    o.cd_grupo_lancto,
+    x.vl_beneficiario,
+    --a.st_boleto,
+    --a.date_create,
+    NVL(p.cd_plano_vinculado,'0') cd_plano_vinculado,
+    NVL(plano.ds_plano, '-') ds_plano,
+    NVL(bc.cd_categoria, '0') cd_categoria,
+    NVL(cat.ds_categoria, '-') ds_categoria
+  </Fields>
+  <From>
+	  isa_hc.hc_boleto a,
+         isa_hc.hc_v_beneficiario b,
+         isa_hc.hc_origem_boleto o,
+         isa_hc.hc_debito_beneficiario x,
+         isa_hc.hc_beneficiario_plano p,
+         isa_hc.hc_beneficiario_categoria bc,
+         isa_hc.hc_plano plano,
+         isa_hc.hc_categoria cat
+  </From>
+  <OrderBy>b.cd_funcionario</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		a.cd_beneficiario = b.cd_beneficiario(+)
+         AND b.cd_beneficiario = o.cd_beneficiario
+         AND o.cd_beneficiario = x.cd_beneficiario
+         AND o.cd_grupo_lancto = x.cd_grupo_lancto
+         AND o.dt_ano_mes_ref = x.dt_ano_mes_ref
+         AND a.nr_seq_boleto = o.nr_seq_boleto
+         AND a.cd_convenio = '2564906'
+ 		 		 
+          and p.cd_beneficiario(+) = a.cd_beneficiario and a.dt_vencimento BETWEEN p.dt_inicio_vigencia(+) and nvl(p.dt_termino_vigencia(+), a.dt_vencimento)
+          and bc.cd_beneficiario(+) = a.cd_beneficiario and a.dt_vencimento BETWEEN bc.dt_inicio_vigencia(+) and nvl(bc.dt_termino_vigencia(+), a.dt_vencimento)
+         
+		      and p.cd_plano_vinculado = plano.cd_plano(+)
+          and bc.cd_categoria = cat.cd_categoria(+)
+		 
+		 and x.st_debito_beneficiario <> 'Q' -- Filtro sugerido pelo Jarbas
+	]]></FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>dataRef</Name>
+      <Expression>a.dt_vencimento = :dataRef</Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

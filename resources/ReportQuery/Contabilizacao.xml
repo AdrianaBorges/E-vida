@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>a.dt_ano_mes_ref, 
+		CAST(x.nr_cnpj_cpf as varchar(16)) nr_cnpj_cpf, 
+		x.nm_razao_social, 
+		c.cd_empresa, 
+		c.cd_funcionario, 
+		c.cd_lotacao,
+		dep.nm_beneficiario,
+		DECODE (c.cd_empresa, 60, d.cd_centro_custo, e.vl_variavel) cd_centro_custo, 		
+		SUM (DECODE (a.tp_sistema_atend, 'CRED', i.vl_item, i.vl_reembolso)) vl_despesa_saude, 		
+		SUM (i.vl_glosa) vl_glosa, 
+		SUM (i.vl_particip_empresa) vl_particip_empresa, 		
+		SUM (i.vl_participacao) vl_participacao, 
+		a.vl_docto, 
+		a.tp_sistema_atend, 
+		a.tp_docto, 
+		a.nr_docto, 		
+		a.nr_protocolo, 
+		a.st_atendimento, 
+		a.dt_recto_docto, 
+		a.dt_vencto_docto, 
+		a.dt_valoracao, 
+		a.dt_pagamento, 		
+		DECODE (a.tp_atendimento,'8', 'PERIODICO','88','ADMISSIONAL','89','DEMISSIONAL','81','CAT') med_trabalho, 		
+		y.cd_plano_vinculado, 
+		z.cd_categoria,
+		p.ds_plano,
+		cat.ds_categoria,
+		DECODE(Y.CD_MOTIVO_DESLIGAMENTO, 103, 'PID', '') PID
+	</Fields>
+  <From>isa_hc.hc_atendimento a, isa_hc.hc_item_atendimento i, isa_hc.hc_v_beneficiario c, 			
+	isa_hc.hc_funcionario d, isa_hc.hc_empresa_setup_int e, isa_hc.hc_v_credenciado x, isa_hc.hc_beneficiario_plano y, 			
+	isa_hc.hc_beneficiario_categoria z, isa_hc.hc_plano p, isa_hc.hc_categoria cat,
+	isa_hc.hc_v_beneficiario dep </From>
+  <OrderBy> c.cd_funcionario </OrderBy>
+  <GroupBy>c.cd_empresa, DECODE (c.cd_empresa, 60, d.cd_centro_custo, e.vl_variavel), a.dt_ano_mes_ref, c.cd_funcionario, c.cd_lotacao, dep.nm_beneficiario, 			
+		a.tp_sistema_atend, a.tp_docto, a.nr_protocolo, a.dt_valoracao, a.dt_pagamento, a.st_atendimento, 			
+		a.tp_atendimento, x.nr_cnpj_cpf, x.nm_razao_social, a.nr_docto, a.dt_vencto_docto, 			
+		a.dt_recto_docto, a.vl_docto, y.cd_plano_vinculado, z.cd_categoria, p.ds_plano, cat.ds_categoria,
+		DECODE(Y.CD_MOTIVO_DESLIGAMENTO, 103, 'PID', '')</GroupBy>
+  <FixedFilter><![CDATA[
+		a.cd_organizacao = i.cd_organizacao 			
+		AND a.nr_atendimento = i.nr_atendimento 			
+		AND a.cd_beneficiario_titular = c.cd_beneficiario 			
+		AND c.cd_funcionario = d.cd_funcionario 			
+		AND c.cd_empresa = d.cd_empresa 			
+		AND c.dt_admissao = d.dt_admissao 			
+		AND a.cd_credenciado = x.cd_credenciado 			
+		and c.cd_beneficiario = y.cd_beneficiario 			
+		and c.cd_beneficiario = z.cd_beneficiario
+		AND a.cd_beneficiario = dep.cd_beneficiario
+		
+		AND y.dt_inicio_vigencia <= i.dt_atendimento_item 			
+		AND (y.dt_termino_vigencia IS NULL OR y.dt_termino_vigencia >= i.dt_atendimento_item) 			
+		
+		AND z.dt_inicio_vigencia <= i.dt_atendimento_item 			
+		AND (z.dt_termino_vigencia IS NULL OR z.dt_termino_vigencia >= i.dt_atendimento_item) 			
+		
+		AND p.cd_plano = y.cd_plano_vinculado
+		AND	cat.cd_categoria = z.cd_categoria
+		
+		AND i.cd_motivo_glosa IS NULL 			
+		AND e.cd_empresa(+) = c.cd_empresa 			
+		AND e.cd_variavel(+) = 'CCUSTO' 			
+		AND a.tp_docto <> 'SAP' ]]></FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>status</Name>
+      <Expression>a.st_atendimento = :status </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>empresa</Name>
+      <Expression>c.cd_empresa IN (:empresa)</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>plano</Name>
+      <Expression>y.cd_plano_vinculado IN (:plano) </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>categoria</Name>
+      <Expression>z.cd_categoria IN (:categoria) </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>sistema</Name>
+      <Expression>a.tp_sistema_atend = :sistema</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>data</Name>
+      <Expression>a.dt_pagamento BETWEEN :data1 AND :data2 </Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+    a.BA1_MUNICI,
+    a.BA1_ESTADO,
+    NVL(c.BIB_DESCRI, 'FALTA CADASTRAR') as BIB_DESCRI,
+    plano.BI3_DESCRI,
+    SUM(DECODE(a.BA1_SEXO, '1', 1, 0)) qtd_masc,
+    SUM(DECODE(a.BA1_SEXO, '2', 1, 0)) qtd_fem,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 0 and 18 THEN 1 ELSE 0 END) qtd_0_18,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 19 and 23 THEN 1 ELSE 0 END) qtd_19_23,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 24 and 28 THEN 1 ELSE 0 END) qtd_24_28,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 29 and 33 THEN 1 ELSE 0 END) qtd_29_33,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 34 and 38 THEN 1 ELSE 0 END) qtd_34_38,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 39 and 43 THEN 1 ELSE 0 END) qtd_39_43,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 44 and 48 THEN 1 ELSE 0 END) qtd_44_48,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 49 and 53 THEN 1 ELSE 0 END) qtd_49_53,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) between 54 and 58 THEN 1 ELSE 0 END) qtd_54_58,
+    SUM(CASE WHEN trunc((SYSDATE - to_date(a.BA1_DATNAS,'YYYYMMDD'))/365, 0) &gt; 59 THEN 1 ELSE 0 END) qtd_59,
+		COUNT(a.BA1_MATEMP) qtd_total,
+    null faixa_etaria,
+		null ds_parentesco,
+		null dt_inicio_vigencia,
+		null dt_termino_vigencia
+	</Fields>
+	<From>
+    VW_PR_FAMILIA_ATUAL f,
+    VW_PR_USUARIO_ATUAL a,
+    VW_PR_REGIAO c,
+    VW_PR_GRAU_PARENTESCO p,
+    VW_PR_VIDA_ATUAL d,
+    VW_PR_PRODUTO_SAUDE plano
+  </From>
+	<OrderBy>COUNT(a.BA1_MATEMP) desc</OrderBy>
+	<GroupBy>
+    a.BA1_MUNICI,
+    a.BA1_ESTADO,
+    c.BIB_DESCRI,
+    plano.BI3_DESCRI
+  </GroupBy>
+	<FixedFilter>
+		<![CDATA[
+      trim(f.BA3_CODINT) = trim(a.BA1_CODINT) AND trim(f.BA3_CODEMP) = trim(a.BA1_CODEMP) AND trim(f.BA3_MATRIC) = trim(a.BA1_MATRIC)
+      AND trim(f.BA3_YREGIO) = c.BIB_CODREG (+)
+			AND trim(a.BA1_MATEMP) NOT LIKE ('99999%')
+			AND a.BA1_DATBLO = '        ' --PLANO VIGENTE
+			AND trim(a.BA1_GRAUPA) = p.BRP_CODIGO (+)
+			AND trim(a.BA1_MATVID) = trim(d.BTS_MATVID)
+      AND trim(f.BA3_CODPLA) = trim(plano.BI3_CODIGO)      
+	]]>
+	</FixedFilter>
+	<Filters>
+    <!-->ReportFilterQuery>
+			<Name>regional</Name>
+      <Expression>trim(f.BA3_YREGIO) IN (:regional)</Expression>
+		</ReportFilterQuery-->
+		<ReportFilterQuery>
+			<Name>uf</Name>
+			<Expression>trim(a.BA1_ESTADO) IN (:uf)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>parentesco</Name>
+			<Expression>replace(trim(a.BA1_GRAUPA), '00', '01') IN (:parentesco)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>plano</Name>
+			<Expression>trim(plano.BI3_CODIGO) IN (:plano)</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>deficiente</Name>
+			<Expression>((trim(d.BTS_DEFFIS) IN ('1', 'S') and (:deficiente) = 'S') or (trim(d.BTS_DEFFIS) IN ('0', 'N', '') and (:deficiente) = 'N'))</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>estudante</Name>
+			<Expression>((trim(d.BTS_UNIVER) IN ('1', 'S') and (:estudante) = 'S') or (trim(d.BTS_UNIVER) IN ('0', 'N', '') and (:estudante) = 'N'))</Expression>
+		</ReportFilterQuery>
+		
+	</Filters>
+</ReportQuery>

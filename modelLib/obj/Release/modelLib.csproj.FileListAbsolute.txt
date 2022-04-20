@@ -1,0 +1,10 @@
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\eVidaGeneralLib.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\eVidaGeneralLib.pdb
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\log4net.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\Microsoft.Practices.ObjectBuilder.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\bin\Release\log4net.xml
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\obj\Release\modelLib.csprojResolveAssemblyReference.cache
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\obj\Release\eVidaGeneralLib.dll
+D:\Aplicacoes\MIGRAÇÃO INTRANET\DESENVOLVIMENTO\FONTE\intranetmigdes\modelLib\obj\Release\eVidaGeneralLib.pdb

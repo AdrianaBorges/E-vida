@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* Fontes */
+
+@font-face {
+	font-family: 'Calibri';
+	src: url('../fonts/Calibri.eot');
+	src: local('?'), url('../fonts/Calibri.woff') format('woff'), url('../fonts/Calibri.ttf') format('truetype'), url('../fonts/Calibri.svg') format('svg');
+}

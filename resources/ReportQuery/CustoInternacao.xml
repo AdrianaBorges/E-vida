@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+		a.dt_ano_mes_ref, 
+		b.cd_alternativo,
+		b.nm_beneficiario,
+		a.nr_autorizacao, 
+		i.cd_plano_cob,
+		SUM(i.vl_item) vl_item,
+		t.dt_inicio_autorizacao,
+		t.dt_termino_autorizacao
+	</Fields>
+	<From>
+		isa_hc.hc_atendimento      a,
+		isa_hc.hc_item_atendimento i,
+		isa_hc.hc_autorizacao      t,
+		isa_hc.hc_v_beneficiario   b
+	</From>
+	<OrderBy>a.nr_autorizacao,a.dt_ano_mes_ref,b.cd_alternativo,b.nm_beneficiario</OrderBy>
+	<GroupBy>
+		a.dt_ano_mes_ref,
+		b.cd_alternativo,
+		b.nm_beneficiario,
+		a.nr_autorizacao,
+		i.cd_plano_cob,
+		a.cd_beneficiario,
+		t.dt_inicio_autorizacao,
+		t.dt_termino_autorizacao
+	</GroupBy>
+	<FixedFilter>
+		<![CDATA[
+			a.cd_organizacao = i.cd_organizacao
+			AND a.nr_atendimento = i.nr_atendimento
+			AND t.nr_autorizacao = a.nr_autorizacao
+			AND t.tp_autorizacao = 'INTERN'
+			AND b.cd_beneficiario = a.cd_beneficiario
+			AND i.cd_motivo_glosa IS NULL
+	]]>
+	</FixedFilter>
+	<Filters>
+		<ReportFilterQuery>
+			<Name>dataRef</Name>
+			<Expression>a.dt_ano_mes_ref = :dataRef</Expression>
+		</ReportFilterQuery>		
+		<ReportFilterQuery>
+			<Name>cartao</Name>
+			<Expression>b.cd_alternativo = :cartao</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>nomeBenef</Name>
+			<Expression>b.nm_beneficiario like :nomeBenef</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>nroAutorizacao</Name>
+			<Expression>a.nr_autorizacao = :nroAutorizacao</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>plano</Name>
+			<Expression>i.cd_plano_cob IN (:plano)</Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

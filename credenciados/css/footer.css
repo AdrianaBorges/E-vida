@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#footer {
+	background:url(../images/bg-footer.png) no-repeat;
+	width:930px;
+	height:55px;
+	margin:20px auto;
+	font-size:12px;
+	padding:15px;}
+	
+#footer .left {
+	width:280px;
+	float:left;}
+	
+#footer .left ul {
+	margin:10px 0 0 0;}
+	
+#footer .left li {
+	display:inline;
+	list-style-type:none;
+	padding:0 5px;
+	border-right:1px solid #e8e9e7}
+	
+#footer .left li:last-child {
+	border:0;}
+	
+#footer .left li:first-child {
+	padding:0 5px 0 0;}
+	
+#footer .right {
+	float:right;
+	margin:-10px 0 0 200px}

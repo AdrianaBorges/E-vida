@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    a.BA1_NOMUSR,    
+    a.BA1_EMAIL
+  </Fields>
+  <From>
+    VW_PR_FAMILIA_ATUAL f, 
+    VW_PR_USUARIO_ATUAL a,
+    VW_PR_VIDA_ATUAL d 
+  </From>
+  <OrderBy>a.BA1_NOMUSR</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+    <![CDATA[
+      trim(f.BA3_CODINT) = trim(a.BA1_CODINT) AND trim(f.BA3_CODEMP) = trim(a.BA1_CODEMP) AND trim(f.BA3_MATRIC) = trim(a.BA1_MATRIC)
+			AND trim(a.BA1_MATEMP) NOT LIKE ('99999%')
+			AND trim(a.BA1_MATVID) = trim(d.BTS_MATVID)
+	]]>
+  </FixedFilter>
+  <Filters>
+    <!-->ReportFilterQuery>
+      <Name>regional</Name>
+      <Expression>f.BA3_YREGIO IN (:regional) </Expression>
+    </ReportFilterQuery-->
+    <ReportFilterQuery>
+      <Name>uf</Name>
+      <Expression>trim(a.BA1_ESTADO) IN (:uf)</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>parentesco</Name>
+      <Expression>replace(trim(a.BA1_GRAUPA), '00', '01') IN (:parentesco)</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>plano</Name>
+      <Expression>trim(f.BA3_CODPLA) IN (:plano)</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>deficiente</Name>
+      <Expression>((trim(d.BTS_DEFFIS) IN ('1', 'S') and (:deficiente) = 'S') or (trim(d.BTS_DEFFIS) IN ('0', 'N', '') and (:deficiente) = 'N'))</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>estudante</Name>
+      <Expression>((trim(d.BTS_UNIVER) IN ('1', 'S') and (:estudante) = 'S') or (trim(d.BTS_UNIVER) IN ('0', 'N', '') and (:estudante) = 'N'))</Expression>
+    </ReportFilterQuery>
+
+  </Filters>
+</ReportQuery>

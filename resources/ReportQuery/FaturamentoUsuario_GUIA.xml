@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    count(1) as qtd_item,
+    DECODE(a.tp_sistema_atend, 'CRED', 'FATURA', 'REEMB', 'REEMBOLSO') tp_sistema_atend,
+    au.cd_usuario user_update,
+    UPPER(c.nm_usuario) nm_usuario,
+    au.dt_auditoria date_update,
+    DECODE (a.tp_origem, 'DIG', 'DIGITADO', 'WEB', 'REEMBOLSO', 'XML', 'FATURAMENTO ELETRONICO', 'FATURAMENTO ELETRONICO') tp_origem,
+    au.tp_operacao
+  </Fields>
+  <From>
+    isa_hc.hc_atendimento a, isa_scl.scl_usuario c,
+    (select trunc(au.dt_auditoria, 'mi') dt_auditoria, au.cd_usuario, au.tp_operacao,
+    TO_number(TRIM(REPLACE(SUBSTR(ID_REGISTRO, INSTR(ID_REGISTRO,'NR_ATENDIMENTO', 1, 1)+16), ';',''))) NR_ATENDIMENTO,
+    TO_NUMBER(SUBSTR(ID_REGISTRO, 17, 2)) CD_ORGANIZACAO
+    FROM ISA_SCL.SCL_AUDITORIA au
+    WHERE au.ds_tabela = 'HC_ATENDIMENTO'
+    AND INSTR(ID_REGISTRO, 'NR_ATENDIMENTO') &gt; 0
+    AND tp_operacao &lt;&gt; 'E'
+    AND INSTR(ID_REGISTRO, 'CD_ORGANIZACAO: 0;') &lt;= 0) au
+  </From>
+  <OrderBy>
+    c.nm_usuario, au.dt_auditoria
+  </OrderBy>
+  <GroupBy>
+    a.tp_sistema_atend,
+    au.cd_usuario,
+    a.tp_origem,
+    c.nm_usuario,
+    au.dt_auditoria,
+    au.tp_operacao
+  </GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		au.cd_usuario = c.cd_usuario
+    and AU.NR_ATENDIMENTO = A.NR_ATENDIMENTO AND AU.CD_ORGANIZACAO = A.CD_ORGANIZACAO
+    
+ ]]></FixedFilter>
+  <Filters>    
+    <ReportFilterQuery>
+      <Name>data</Name>
+      <Expression>au.dt_auditoria BETWEEN :data1 AND :data2+1 </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>user</Name>
+      <Expression>au.cd_usuario IN (:user) </Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

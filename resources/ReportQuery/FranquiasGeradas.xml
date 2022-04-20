@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+		l.dt_ano_mes_ref,
+		b.cd_alternativo,
+		b.nm_beneficiario,
+		l.nr_autorizacao,
+		l.vl_lancto,
+		l.vl_beneficiario
+	</Fields>
+	<From>
+		isa_hc.hc_lancto_benef   l,
+       isa_hc.hc_v_beneficiario b
+	</From>
+	<OrderBy>l.nr_autorizacao ,l.dt_ano_mes_ref, b.cd_alternativo</OrderBy>
+	<GroupBy></GroupBy>
+	<FixedFilter>
+		<![CDATA[
+			l.nr_autorizacao IS NOT NULL
+			AND b.cd_beneficiario = l.cd_beneficiario
+			AND l.tp_lancto = 'VLFRIN'
+	]]>
+	</FixedFilter>
+	<Filters>
+		<ReportFilterQuery>
+			<Name>dataRef</Name>
+			<Expression>l.dt_ano_mes_ref = :dataRef</Expression>
+		</ReportFilterQuery>		
+		<ReportFilterQuery>
+			<Name>cartao</Name>
+			<Expression>b.cd_alternativo = :cartao</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>nomeBenef</Name>
+			<Expression>b.nm_beneficiario like :nomeBenef</Expression>
+		</ReportFilterQuery>
+		<ReportFilterQuery>
+			<Name>nroAutorizacao</Name>
+			<Expression>l.nr_autorizacao = :nroAutorizacao</Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

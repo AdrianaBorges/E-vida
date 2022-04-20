@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Fields>
+    b.cd_empresa,
+    b.cd_funcionario,
+    b.nm_titular,
+    b.nm_beneficiario,
+    isa_hc.F_MASCARA_CNPJ(lpad(nvl(b.nr_cpf,'0'), 11, '0'), 'F') nr_cpf,
+    b.dt_nascimento,
+    SUM(decode(a.tp_despesa_ir, 'PART', vl_despesa, 0)) vl_despesa_copart,
+    SUM(decode(p.cd_plano_empresa, '21', 0, decode(a.tp_despesa_ir, 'MENS', vl_despesa, 0))) vl_despesa_mens,
+    SUM(decode(a.tp_despesa_ir, 'DEDUT', vl_despesa, 0)) vl_despesa_dedut,
+    a.tp_despesa_ir,
+    decode(a.tp_despesa_ir, 'PART', 'CO-PARTICIPACAO', 'MENS', 'MENSALIDADE', 'DEDUT', 'REEMBOLSO') ds_tipo_despesa,
+    to_char(a.dt_ano_mes_ref, 'MM/RRRR') mes_ano,
+    c.cd_categoria,
+    dc.ds_categoria,
+    P.cd_plano_vinculado,
+    dp.ds_plano,
+    decode(p.cd_plano_empresa, '21', 'PID', null) ind_pid
+  </Fields>
+	<From>
+		isa_hc.hc_extrato_ir_beneficiario a,
+		isa_hc.hc_v_beneficiario          b,
+		isa_hc.hc_beneficiario_categoria  c,
+		isa_hc.hc_beneficiario_plano      p,
+    isa_hc.hc_categoria               dc,
+    isa_hc.hc_plano                   dp
+	</From>
+	<OrderBy>
+		b.cd_funcionario,
+		a.dt_ano_mes_ref,
+		b.nm_beneficiario
+	</OrderBy>
+	<GroupBy>
+    b.cd_empresa,
+		b.cd_funcionario,
+		b.nm_titular,
+		b.nm_beneficiario,
+		b.nr_cpf,
+		b.dt_nascimento,
+		a.tp_despesa_ir,
+		a.dt_ano_mes_ref,
+		c.cd_categoria,
+    dc.ds_categoria,
+		p.cd_plano_vinculado, 
+    dp.ds_plano,
+		p.cd_plano_empresa
+	</GroupBy>
+	<FixedFilter>
+		<![CDATA[
+		a.cd_beneficiario = b.cd_beneficiario
+		AND a.cd_beneficiario_titular = b.cd_beneficiario_titular
+		AND b.cd_empresa in (60, 61, 62, 65)
+		AND a.vl_despesa <> '0'
+		AND a.tp_despesa_ir IN ('PART', 'MENS')
+    AND (b.nr_cpf is not null or isa_hc.f_retorna_idade_benef(b.cd_beneficiario, to_date('20161231', 'rrrrMMdd')) < 18)
+		
+    AND dc.cd_categoria = c.cd_categoria
+    AND dp.cd_plano = p.cd_plano_vinculado
+    
+		--CATEGORIA TITULAR
+	   AND a.cd_beneficiario_titular = c.cd_beneficiario
+	   AND c.dt_inicio_vigencia <= a.dt_ano_mes_ref
+	   AND (c.dt_termino_vigencia IS NULL OR c.dt_termino_vigencia >= a.dt_ano_mes_ref)
+	   
+	   -- PLANO BENEF
+	   AND a.cd_beneficiario_titular = p.cd_beneficiario
+	   AND p.dt_inicio_vigencia <= a.dt_ano_mes_ref
+	   AND (p.dt_termino_vigencia IS NULL OR p.dt_termino_vigencia >= a.dt_ano_mes_ref)
+	   --AND (p.cd_plano_vinculado in (21,22) OR c.cd_categoria IN (3,16, 24,27, 28, 31, 32))
+	   ]]>
+	</FixedFilter>
+	<Filters>
+		<ReportFilterQuery>
+			<Name>empresa</Name>
+			<Expression>b.cd_empresa = :empresa</Expression>
+		</ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>matricula</Name>
+      <Expression>b.cd_funcionario = :matricula</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+			<Name>data</Name>
+			<Expression>a.dt_ano_mes_ref BETWEEN :data1 AND :data2 </Expression>
+		</ReportFilterQuery>
+	</Filters>
+</ReportQuery>

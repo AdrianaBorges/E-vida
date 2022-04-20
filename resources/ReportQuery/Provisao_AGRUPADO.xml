@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+	  a.nr_protocolo,
+	  CAST(x.nr_cnpj_cpf as varchar(16)) nr_cnpj_cpf,
+	  x.nm_razao_social,
+	  a.tp_docto,
+	  a.nr_docto,
+	  a.dt_recto_docto,
+	  a.dt_vencto_docto,
+	  a.dt_pagamento,
+	  a.vl_docto,
+	  SUM (DECODE (a.tp_sistema_atend, 'CRED', a.vl_item, a.vl_reembolso)) vl_despesa_saude,
+	  SUM (a.vl_glosa) vl_glosa,
+	  f.ds_natureza,
+	  a.nr_docto_complementar,
+	  a.vl_docto_complementar,
+	  NVL(bpTitular.tp_plano, bpAtend.tp_plano) tp_plano,
+	  NVL(bpTitular.ds_plano, bpAtend.ds_plano ) ds_plano ,
+	  NVL(bcTitular.ds_categoria, bcAtend.ds_categoria) ds_categoria,
+	  0 cd_empresa, 
+	  null ds_empresa
+  </Fields>
+  <From>
+	  (SELECT a.nr_protocolo, a.cd_organizacao, a.nr_atendimento, a.cd_beneficiario_titular, a.cd_beneficiario,
+	  a.cd_credenciado, a.nr_docto, a.vl_docto, a.tp_sistema_atend, a.dt_ano_mes_ref, a.dt_pagamento,
+	  a.dt_recto_docto, a.dt_vencto_docto, a.tp_docto, a.nr_docto_complementar, a.vl_docto_complementar,
+	  i.dt_atendimento_item, i.vl_item, i.vl_reembolso, i.vl_glosa
+	  FROM isa_hc.hc_atendimento a, isa_hc.hc_item_atendimento i
+	  WHERE a.cd_organizacao = i.cd_organizacao
+	  AND a.nr_atendimento = i.nr_atendimento
+	  AND a.tp_sistema_atend = 'CRED'
+	  AND a.tp_docto NOT IN ('SAP')
+	  AND i.cd_motivo_glosa is null) a,
+
+	  isa_hc.hc_beneficiario bTitular, isa_hc.hc_beneficiario bAtend,
+
+	  isa_hc.hc_funcionario d, isa_hc.hc_empresa_setup_int e, isa_hc.hc_v_credenciado x,
+	  isa_hc.hc_natureza_credenciado f,
+
+	  (SELECT bp.cd_beneficiario, bp.cd_plano_vinculado, bp.tp_plano, p.ds_plano, bp.dt_inicio_vigencia, NVL(bp.dt_termino_vigencia, SYSDATE+1) dt_termino_vigencia
+	  FROM isa_hc.hc_beneficiario_plano bp, isa_hc.hc_plano p
+	  WHERE p.cd_plano = bp.cd_plano_vinculado) bpTitular,
+
+	  (SELECT bp.cd_beneficiario, bp.cd_plano_vinculado, bp.tp_plano, p.ds_plano, bp.dt_inicio_vigencia, NVL(bp.dt_termino_vigencia, SYSDATE+1) dt_termino_vigencia
+	  FROM isa_hc.hc_beneficiario_plano bp, isa_hc.hc_plano p
+	  WHERE p.cd_plano = bp.cd_plano_vinculado) bpAtend,
+
+	  (SELECT bc.cd_beneficiario, bc.cd_categoria, cat.ds_categoria, bc.dt_inicio_vigencia, NVL(bc.dt_termino_vigencia, SYSDATE+1) dt_termino_vigencia
+	  FROM  isa_hc.hc_beneficiario_categoria bc, isa_hc.hc_categoria cat
+	  WHERE bc.cd_categoria = cat.cd_categoria) bcTitular,
+
+	  (SELECT bc.cd_beneficiario, bc.cd_categoria, cat.ds_categoria, bc.dt_inicio_vigencia, NVL(bc.dt_termino_vigencia, SYSDATE+1) dt_termino_vigencia
+	  FROM  isa_hc.hc_beneficiario_categoria bc, isa_hc.hc_categoria cat
+	  WHERE bc.cd_categoria = cat.cd_categoria) bcAtend
+  </From>
+  <OrderBy>
+	  x.nm_razao_social, a.nr_docto, a.dt_recto_docto, NVL(bpTitular.tp_plano, bpAtend.tp_plano),
+	  NVL(bpTitular.ds_plano, bpAtend.ds_plano ),
+	  NVL(bcTitular.ds_categoria, bcAtend.ds_categoria)
+  </OrderBy>
+  <GroupBy>
+	  a.nr_protocolo, x.nr_cnpj_cpf, x.nm_razao_social, a.tp_docto, a.nr_docto,
+	  a.dt_recto_docto, a.dt_vencto_docto, a.vl_docto, f.ds_natureza, a.nr_docto_complementar,
+	  a.vl_docto_complementar,  a.dt_pagamento, NVL(bpTitular.tp_plano, bpAtend.tp_plano),
+	  NVL(bpTitular.ds_plano, bpAtend.ds_plano ),
+	  NVL(bcTitular.ds_categoria, bcAtend.ds_categoria)
+  </GroupBy>
+  <FixedFilter>
+	  <![CDATA[
+		a.cd_beneficiario_titular = bTitular.cd_beneficiario
+		AND a.cd_beneficiario = bAtend.cd_beneficiario
+		
+		AND bTitular.cd_funcionario = d.cd_funcionario 
+		AND a.cd_credenciado = x.cd_credenciado 
+		AND x.cd_natureza_credenciado = f.cd_natureza(+) 
+		AND e.cd_empresa(+) = bTitular.cd_empresa 
+		AND e.cd_variavel(+) = 'CCUSTO' 
+		
+		AND bpTitular.cd_beneficiario(+) = a.cd_beneficiario_titular
+		AND bpTitular.dt_inicio_vigencia(+) <= a.dt_atendimento_item
+		AND bpTitular.dt_termino_vigencia(+) >= a.dt_atendimento_item
+
+		AND bpAtend.cd_beneficiario(+) = a.cd_beneficiario
+		AND bpAtend.dt_inicio_vigencia(+) <= a.dt_atendimento_item
+		AND bpAtend.dt_termino_vigencia(+) >= a.dt_atendimento_item
+		
+		AND bcTitular.cd_beneficiario(+) = a.cd_beneficiario_titular
+		AND bcTitular.dt_inicio_vigencia(+) <= a.dt_atendimento_item
+		AND bcTitular.dt_termino_vigencia(+) >= a.dt_atendimento_item
+
+		AND bcAtend.cd_beneficiario(+) = a.cd_beneficiario
+		AND bcAtend.dt_inicio_vigencia(+) <= a.dt_atendimento_item
+		AND bcAtend.dt_termino_vigencia(+) >= a.dt_atendimento_item
+	]]></FixedFilter>
+  <Filters>    
+    <ReportFilterQuery>
+      <Name>data</Name>
+      <Expression>a.dt_recto_docto BETWEEN :data1 AND :data2 </Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

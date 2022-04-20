@@ -1,0 +1,46 @@
+﻿.tabNoSelected
+{
+	display: block;
+	padding: 4px 18px 4px 18px;
+	float: left;
+	background-color: lightgray !important;
+	color: darkgray !important;
+	font-weight: normal !important;
+}
+.tabSelected
+{
+	display: block;
+	padding: 4px 18px 4px 18px;
+	float: left;
+	background-color: lightgray !important;
+	color: Black !important;
+}
+.tabSelected input:hover
+{
+	background-color: lightgray !important;
+	color: blue !important;
+}
+.tabelaTab tr.tabHeader input
+{
+	border-radius: 0px !important;
+	margin:1px;
+}
+.tabelaTab tr.tabHeader input:hover
+{
+	color: blue !important;
+	font-weight: bold;
+}
+.tabelaTab tr.tabHeader input:disabled {
+	background:#CCC;
+    cursor:not-allowed;
+    color: grey !important;
+}
+.tabelaTab
+{
+	min-width: 100%;
+}
+.tabelaTab td.tabContent
+{
+	border: 1px solid;
+	min-width: 100%;
+}

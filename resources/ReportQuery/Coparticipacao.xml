@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>DECODE(b.cd_situacao_benef, 'A', 'ATIVO', 'I', 'BLOQUEADO', b.cd_situacao_benef) situacao_benef, b.nr_cpf, b.ds_email,
+    b.ds_endereco || decode(b.nr_endereco, '', '', ' - N ' || b.nr_endereco) || decode(b.ds_complemento, '', '', '-' || b.ds_complemento) endereco, 
+    b.ds_bairro, b.ds_municipio, b.ds_uf, b.nr_cep,
+	  a.dt_ano_mes_ref,
+    b.cd_empresa,
+	  b.cd_funcionario,
+	  b.nm_beneficiario,
+	  a.cd_grupo_lancto,
+	  a.vl_total,
+	  a.vl_empresa,
+	  a.vl_beneficiario,
+	  DECODE (a.st_debito_beneficiario,
+	  'Q',
+	  'QUITADO',
+	  'C',
+	  'CANCELADO',
+	  'P',
+	  'PENDENTE',
+	  'R',
+	  'PARCIALMENTE QUITADO') situacao,
+	  a.vl_recebido,
+	  a.vl_a_receber,
+	  cat.cd_categoria,
+	  cat.ds_categoria,
+	  p.cd_plano,
+	  p.ds_plano,
+	  f_retorna_responsavel (b.cd_beneficiario, 'FAM', 'MAT') cd_mat_resp_familia,
+	  f_retorna_responsavel (b.cd_beneficiario, 'FIN', 'MAT') cd_mat_resp_financeiro,
+	  (select max(dt_recebimento) from isa_hc.hc_parcela_debito_benef par
+		where par.cd_beneficiario = a.cd_beneficiario and par.dt_ano_mes_ref = a.dt_ano_mes_ref and par.cd_grupo_lancto = a.cd_grupo_lancto) dt_rec
+  </Fields>
+  <From>
+	  isa_hc.hc_debito_beneficiario a, 
+	  isa_hc.hc_v_beneficiario b, 
+	  isa_hc.hc_beneficiario_plano y,
+	  isa_hc.hc_beneficiario_categoria z, 
+	  isa_hc.hc_plano p, 
+	  isa_hc.hc_categoria cat
+  </From>
+  <OrderBy>a.dt_ano_mes_ref, b.cd_empresa, b.cd_funcionario</OrderBy>
+  <GroupBy></GroupBy>
+		<FixedFilter>
+		  <![CDATA[
+			a.cd_beneficiario = b.cd_beneficiario
+			AND b.nm_beneficiario NOT LIKE ('MATRICUL%')
+			
+			and a.cd_beneficiario = y.cd_beneficiario 			
+			and a.cd_beneficiario = z.cd_beneficiario(+)
+
+			and y.cd_plano_vinculado = p.cd_plano
+			and z.cd_categoria = cat.cd_categoria(+)
+			
+			AND y.dt_inicio_vigencia <= a.dt_ano_mes_ref
+			AND y.dt_inicio_vigencia in (select max(dt_inicio_vigencia) from isa_hc.hc_beneficiario_plano where cd_beneficiario = b.cd_beneficiario)
+			
+			AND z.dt_inicio_vigencia(+) <= a.dt_ano_mes_ref
+			AND z.dt_inicio_vigencia in (select max(dt_inicio_vigencia) from isa_hc.hc_beneficiario_categoria where cd_beneficiario = b.cd_beneficiario)
+		]]></FixedFilter>	
+  <Filters>
+    <ReportFilterQuery>
+      <Name>dataRef</Name>
+      <Expression>a.dt_ano_mes_ref BETWEEN :dataRef1 AND :dataRef2</Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>situacao</Name>
+      <Expression>a.st_debito_beneficiario IN (:situacao)</Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>	

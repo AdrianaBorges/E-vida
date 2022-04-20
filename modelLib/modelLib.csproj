@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62C74910-3A39-4A0E-84D8-553C01394B1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eVidaGeneralLib</RootNamespace>
+    <AssemblyName>eVidaGeneralLib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\AdesaoBO.cs" />
+    <Compile Include="BO\AdministracaoBO.cs" />
+    <Compile Include="BO\AtestadoComparecimentoBO.cs" />
+    <Compile Include="BO\AutorizacaoBO.cs" />
+    <Compile Include="BO\AutorizacaoIsaBO.cs" />
+    <Compile Include="BO\AutorizacaoProvisoriaBO.cs" />
+    <Compile Include="BO\BeneficiarioBO.cs" />
+    <Compile Include="BO\BilhetagemBO.cs" />
+    <Compile Include="BO\CanalGestanteBO.cs" />
+    <Compile Include="BO\CartaPositivaCraBO.cs" />
+    <Compile Include="BO\ConfiguracaoIrBO.cs" />
+    <Compile Include="BO\ConselhoBO.cs" />
+    <Compile Include="BO\ControleEmailBO.cs" />
+    <Compile Include="BO\ControleEmail\DeclaracaoAnualDebito.cs" />
+    <Compile Include="BO\CredenciadoBO.cs" />
+    <Compile Include="BO\DeclaracaoAnualDebitoBO.cs" />
+    <Compile Include="BO\DeclaracaoUniversitarioBO.cs" />
+    <Compile Include="BO\DemonstrativoAnaliseContaBO.cs" />
+    <Compile Include="BO\EmpregadoEvidaBO.cs" />
+    <Compile Include="BO\Extensions\PDeclaracaoDependenteVoExtension.cs" />
+    <Compile Include="BO\Extensions\PDeclaracaoVoExtension.cs" />
+    <Compile Include="BO\Extensions\PUsuarioVoExtencion.cs" />
+    <Compile Include="BO\Extensions\PVidaVoExtension.cs" />
+    <Compile Include="BO\ExtratoIrBeneficiarioBO.cs" />
+    <Compile Include="BO\ControleEmail\ControleEmailAction.cs" />
+    <Compile Include="BO\FormExclusaoBO.cs" />
+    <Compile Include="BO\FormNegativaBO.cs" />
+    <Compile Include="BO\FuncionarioBO.cs" />
+    <Compile Include="BO\IndisponibilidadeRedeBO.cs" />
+    <Compile Include="BO\LocatorDataBO.cs" />
+    <Compile Include="BO\MedicamentoReembolsavelBO.cs" />
+    <Compile Include="BO\MotivoPendenciaBO.cs" />
+    <Compile Include="BO\OptumBO.cs" />
+    <Compile Include="BO\PAdesaoBO.cs" />
+    <Compile Include="BO\ParametroVariavelBO.cs" />
+    <Compile Include="BO\PLocatorDataBO.cs" />
+    <Compile Include="BO\ProcessoBO.cs" />
+    <Compile Include="BO\Protheus\BeneficiarioBO.cs" />
+    <Compile Include="BO\Protheus\PClienteBO.cs" />
+    <Compile Include="BO\Protheus\PFamiliaBO.cs" />
+    <Compile Include="BO\Protheus\PlanoBO.cs" />
+    <Compile Include="BO\Protheus\PRedeAtendimentoBO.cs" />
+    <Compile Include="BO\Protheus\PUsuarioBO.cs" />
+    <Compile Include="BO\Protheus\PUsuarioPortalBO.cs" />
+    <Compile Include="BO\Protheus\PVidaBO.cs" />
+    <Compile Include="BO\Protheus\ServicoBO.cs" />
+    <Compile Include="BO\ProtocoloFaturaBO.cs" />
+    <Compile Include="BO\QuitacaoBO.cs" />
+    <Compile Include="BO\RamalBO.cs" />
+    <Compile Include="BO\ReciprocidadeBO.cs" />
+    <Compile Include="BO\RelatorioBO.cs" />
+    <Compile Include="BO\ResponsavelBO.cs" />
+    <Compile Include="BO\ReuniaoBO.cs" />
+    <Compile Include="BO\RotinaBO.cs" />
+    <Compile Include="BO\SegViaCarteiraBO.cs" />
+    <Compile Include="BO\SetorUsuarioBO.cs" />
+    <Compile Include="BO\SistemaBO.cs" />
+    <Compile Include="BO\TemplateEmailBO.cs" />
+    <Compile Include="BO\TemplateEmail\TemplateEmailGerador.cs" />
+    <Compile Include="BO\TemplateEmail\TemplateEmailGeradorFacade.cs" />
+    <Compile Include="BO\TemplateEmail\TemplateEmailGeradorProtocoloFatura.cs" />
+    <Compile Include="BO\UsuarioBO.cs" />
+    <Compile Include="BO\ViagemBO.cs" />
+    <Compile Include="BO\ViagemHelper.cs" />
+    <Compile Include="DAO\Adesao\DeclaracaoDAO.cs" />
+    <Compile Include="DAO\Adesao\PDeclaracaoDAO.cs" />
+    <Compile Include="DAO\AdministracaoDAO.cs" />
+    <Compile Include="DAO\ArquivoSapDAO.cs" />
+    <Compile Include="DAO\AutorizacaoDAO.cs" />
+    <Compile Include="DAO\AutorizacaoProvisoriaDAO.cs" />
+    <Compile Include="DAO\BaseDAO.cs" />
+    <Compile Include="DAO\AtestadoComparecimentoDAO.cs" />
+    <Compile Include="DAO\BilhetagemDAO.cs" />
+    <Compile Include="DAO\CanalGestanteDAO.cs" />
+    <Compile Include="DAO\CartaPositivaCraDAO.cs" />
+    <Compile Include="DAO\ConfiguracaoIrDAO.cs" />
+    <Compile Include="DAO\ConselhoDAO.cs" />
+    <Compile Include="DAO\ControleEmailDAO.cs" />
+    <Compile Include="DAO\ControleProcessoDAO.cs" />
+    <Compile Include="DAO\DeclaracaoAnualDebitoDAO.cs" />
+    <Compile Include="DAO\DeclaracaoUniversitarioDAO.cs" />
+    <Compile Include="DAO\EmailConfigDAO.cs" />
+    <Compile Include="DAO\ExclusaoDAO.cs" />
+    <Compile Include="DAO\HC\HcAutorizacaoDAO.cs" />
+    <Compile Include="DAO\HC\HcBeneficiarioCategoriaDAO.cs" />
+    <Compile Include="DAO\HC\HcDemonstrativoAnaliseContaDAO.cs" />
+    <Compile Include="DAO\HC\HcDependenteDAO.cs" />
+    <Compile Include="DAO\HC\HcExtratoIrBeneficiarioDAO.cs" />
+    <Compile Include="DAO\FormNegativaDAO.cs" />
+    <Compile Include="DAO\HC\HcBeneficiarioPlanoDAO.cs" />
+    <Compile Include="DAO\HC\HcFuncionarioDAO.cs" />
+    <Compile Include="DAO\HC\HcVBeneficiarioDAO.cs" />
+    <Compile Include="DAO\HC\HcVCredenciadoDAO.cs" />
+    <Compile Include="DAO\HistoricoDadoPessoalDAO.cs" />
+    <Compile Include="DAO\IndisponibilidadeRedeDAO.cs" />
+    <Compile Include="DAO\LocatorDAO.cs" />
+    <Compile Include="DAO\MedicamentoReembolsavelDAO.cs" />
+    <Compile Include="DAO\MotivoPendenciaDAO.cs" />
+    <Compile Include="DAO\OptumDAO.cs" />
+    <Compile Include="DAO\ParametroDAO.cs" />
+    <Compile Include="DAO\PLocatorDAO.cs" />
+    <Compile Include="DAO\PrincipioAtivoDAO.cs" />
+    <Compile Include="DAO\Protheus\PBeneficiarioDAO.cs" />
+    <Compile Include="DAO\Protheus\CentroCustoDAO.cs" />
+    <Compile Include="DAO\Protheus\DepartamentoDAO.cs" />
+    <Compile Include="DAO\Protheus\EmpregadoEvidaDAO.cs" />
+    <Compile Include="DAO\Protheus\PBeneficiarioPlanoDAO.cs" />
+    <Compile Include="DAO\Protheus\PClienteDAO.cs" />
+    <Compile Include="DAO\Protheus\PFaixaEtariaBeneficiarioDAO.cs" />
+    <Compile Include="DAO\Protheus\PFaixaEtariaFormasFamiliaDAO.cs" />
+    <Compile Include="DAO\Protheus\PFamiliaDAO.cs" />
+    <Compile Include="DAO\Protheus\PFornecedorDAO.cs" />
+    <Compile Include="DAO\Protheus\PPlanoDAO.cs" />
+    <Compile Include="DAO\Protheus\PRedeAtendimentoDAO.cs" />
+    <Compile Include="DAO\Protheus\ProtheusDAOHelper.cs" />
+    <Compile Include="DAO\Protheus\PServicoDAO.cs" />
+    <Compile Include="DAO\Protheus\PFamiliaContratoDAO.cs" />
+    <Compile Include="DAO\Protheus\PUsuarioDAO.cs" />
+    <Compile Include="DAO\Protheus\PFamiliaProdutoDAO.cs" />
+    <Compile Include="DAO\Protheus\PUsuarioPortalDAO.cs" />
+    <Compile Include="DAO\Protheus\PVidaDAO.cs" />
+    <Compile Include="DAO\ProtocoloFaturaDAO.cs" />
+    <Compile Include="DAO\RamalDAO.cs" />
+    <Compile Include="DAO\ReciprocidadeDAO.cs" />
+    <Compile Include="DAO\RelatorioDAO.cs" />
+    <Compile Include="DAO\ResponsavelDAO.cs" />
+    <Compile Include="DAO\ReuniaoDAO.cs" />
+    <Compile Include="DAO\RotinaDAO.cs" />
+    <Compile Include="DAO\SCL\SclItemListaDAO.cs" />
+    <Compile Include="DAO\SCL\SclUsuarioDAO.cs" />
+    <Compile Include="DAO\SetorUsuarioDAO.cs" />
+    <Compile Include="DAO\SistemaDAO.cs" />
+    <Compile Include="DAO\SolicitacaoSegViaDAO.cs" />
+    <Compile Include="DAO\TemplateEmailDAO.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="DAO\Util\EvidaConnectionHolder.cs" />
+    <Compile Include="DAO\Util\EvidaDatabase.cs" />
+    <Compile Include="DAO\ViagemDAO.cs" />
+    <Compile Include="Exceptions\EvidaException.cs" />
+    <Compile Include="Exceptions\ParseFileException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAO\Reporting\DefaultReportBinder.cs" />
+    <Compile Include="DAO\Reporting\Externo\ReportConsultaPlanoExtBinder.cs" />
+    <Compile Include="DAO\Reporting\IReportBinder.cs" />
+    <Compile Include="DAO\Reporting\Report2aViaCarteiraBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportAtestadoComparecimentoBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportAutorizacaoProvisoriaBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportBilhetagemBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportCartaPositivaCraBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportDeclaracaoAnualDebitoBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportEnvioReciprocidadeBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportExclusaoBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportIrMensalidadeBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportIrReembolsoBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportNegativaBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportParams.cs" />
+    <Compile Include="DAO\Reporting\ReportProducaoFaturamentoBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportProtocoloFaturaCapaBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportSolicitacaoCanalGestanteBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportSolReciprocidadeBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportUniversitarioBinder.cs" />
+    <Compile Include="DAO\Reporting\ReportViagemBinder.cs" />
+    <Compile Include="Util\BeneficiarioUtil.cs" />
+    <Compile Include="Util\CacheHelper.cs" />
+    <Compile Include="Util\DateUtil.cs" />
+    <Compile Include="Util\EmailUtil.cs" />
+    <Compile Include="Util\Email\Configurator.cs" />
+    <Compile Include="Util\Email\EmailAdesao.cs" />
+    <Compile Include="Util\Email\EmailAutorizacao.cs" />
+    <Compile Include="Util\Email\EmailAutorizacaoProvisoria.cs" />
+    <Compile Include="Util\Email\EmailCanalGestante.cs" />
+    <Compile Include="Util\Email\EmailDeclaracaoAnual.cs" />
+    <Compile Include="Util\Email\EmailExclusao.cs" />
+    <Compile Include="Util\Email\EmailIndisponibilidadeRede.cs" />
+    <Compile Include="Util\Email\EmailNegativa.cs" />
+    <Compile Include="Util\Email\EmailOptum.cs" />
+    <Compile Include="Util\Email\EmailProtocoloFatura.cs" />
+    <Compile Include="Util\Email\EmailProvider.cs" />
+    <Compile Include="Util\Email\EmailReciprocidade.cs" />
+    <Compile Include="Util\Email\EmailReuniao.cs" />
+    <Compile Include="Util\Email\EmailSegundaVia.cs" />
+    <Compile Include="Util\Email\EmailTemplate.cs" />
+    <Compile Include="Util\Email\EmailUniversitario.cs" />
+    <Compile Include="Util\Email\EmailViagem.cs" />
+    <Compile Include="Util\Email\PEmailAdesao.cs" />
+    <Compile Include="Util\FileCsv.cs" />
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\FormatUtil.cs" />
+    <Compile Include="Util\FTPUtil.cs" />
+    <Compile Include="Util\LogHelper.cs" />
+    <Compile Include="Util\ParametroUtil.cs" />
+    <Compile Include="Util\ReportQueryUtil.cs" />
+    <Compile Include="Util\RowConverterUtil.cs" />
+    <Compile Include="Util\UploadConfig.cs" />
+    <Compile Include="Util\ValidateUtil.cs" />
+    <Compile Include="Util\ZipUtil.cs" />
+    <Compile Include="VO\Adesao\Dados.cs" />
+    <Compile Include="VO\Adesao\DeclaracaoVO.cs" />
+    <Compile Include="VO\Adesao\IntegracaoAdesaoVO.cs" />
+    <Compile Include="VO\Adesao\PDados.cs" />
+    <Compile Include="VO\Adesao\PDeclaracaoVO.cs" />
+    <Compile Include="VO\Adesao\PIntegracaoAdesaoVO.cs" />
+    <Compile Include="VO\AltAutorizacaoIsaVO.cs" />
+    <Compile Include="VO\ArquivoSapVO.cs" />
+    <Compile Include="VO\ArquivoTelaVO.cs" />
+    <Compile Include="VO\AtestadoComparecimentoVO.cs" />
+    <Compile Include="VO\AutorizacaoProvisoriaVO.cs" />
+    <Compile Include="VO\AutorizacaoVO.cs" />
+    <Compile Include="VO\BilhetagemVO.cs" />
+    <Compile Include="VO\CanalGestanteVO.cs" />
+    <Compile Include="VO\CartaPositivaCraVO.cs" />
+    <Compile Include="VO\CepVO.cs" />
+    <Compile Include="VO\ConfiguracaoIRVO.cs" />
+    <Compile Include="VO\ConselhoVO.cs" />
+    <Compile Include="VO\Constantes.cs" />
+    <Compile Include="VO\ControleEmailVO.cs" />
+    <Compile Include="VO\ControleProcessoVO.cs" />
+    <Compile Include="VO\CotacaoOpmeVO.cs" />
+    <Compile Include="VO\DeclaracaoAnualDebitoVO.cs" />
+    <Compile Include="VO\DeclaracaoUniversitarioVO.cs" />
+    <Compile Include="VO\EmailConfigVO.cs" />
+    <Compile Include="VO\EmpresaReciprocidadeVO.cs" />
+    <Compile Include="VO\ExclusaoVO.cs" />
+    <Compile Include="VO\Filter\FilterAutorizacaoVO.cs" />
+    <Compile Include="VO\FormNegativaVO.cs" />
+    <Compile Include="VO\HC\HcAutorizacaoVO.cs" />
+    <Compile Include="VO\HC\HcBancoVO.cs" />
+    <Compile Include="VO\HC\HcBeneficiarioCategoriaVO.cs" />
+    <Compile Include="VO\HC\HcBeneficiarioPlanoVO.cs" />
+    <Compile Include="VO\HC\HcBeneficiarioVO.cs" />
+    <Compile Include="VO\HC\HcCredenciadoVO.cs" />
+    <Compile Include="VO\HC\HcDemonstrativoAnaliseContaVO.cs" />
+    <Compile Include="VO\HC\HcDependenteVO.cs" />
+    <Compile Include="VO\HC\HcEmpresaVO.cs" />
+    <Compile Include="VO\HC\HcFuncionarioVO.cs" />
+    <Compile Include="VO\HC\HcNaturezaVO.cs" />
+    <Compile Include="VO\HC\HcPlanoVO.cs" />
+    <Compile Include="VO\HC\HcProfissionalVO.cs" />
+    <Compile Include="VO\HC\HcServicoVO.cs" />
+    <Compile Include="VO\HC\HcUnidadeOrganizacionalVO.cs" />
+    <Compile Include="VO\IndisponibilidadeRedeVO.cs" />
+    <Compile Include="VO\LotacaoVO.cs" />
+    <Compile Include="VO\MedicamentoReembolsavelVO.cs" />
+    <Compile Include="VO\MotivoPendenciaVO.cs" />
+    <Compile Include="VO\ParametroVO.cs" />
+    <Compile Include="VO\PCepVO.cs" />
+    <Compile Include="VO\PConstantes.cs" />
+    <Compile Include="VO\Protheus\CentroCustoVO.cs" />
+    <Compile Include="VO\Protheus\DepartamentoVO.cs" />
+    <Compile Include="VO\Protheus\EmpregadoEvidaVO.cs" />
+    <Compile Include="VO\Protheus\PBeneficiarioPlanoVO.cs" />
+    <Compile Include="VO\Protheus\PBeneficiarioVO.cs" />
+    <Compile Include="VO\Protheus\PCadastroOrganizacionalVO.cs" />
+    <Compile Include="VO\Protheus\PClasseRedeAtendimentoVO.cs" />
+    <Compile Include="VO\Protheus\PClienteVO.cs" />
+    <Compile Include="VO\Protheus\PContatoOperadoraVO.cs" />
+    <Compile Include="VO\Protheus\PEmpresaModalidadeCobrancaVO.cs" />
+    <Compile Include="VO\Protheus\PEspecialidadeVO.cs" />
+    <Compile Include="VO\Protheus\PFaixaEtariaBeneficiarioVO.cs" />
+    <Compile Include="VO\Protheus\PFaixaEtariaFormasFamiliaVO.cs" />
+    <Compile Include="VO\Protheus\PFamiliaVO.cs" />
+    <Compile Include="VO\Protheus\PFormaPagamentoVO.cs" />
+    <Compile Include="VO\Protheus\PFornecedorVO.cs" />
+    <Compile Include="VO\Protheus\PGrupoEmpresaVO.cs" />
+    <Compile Include="VO\Protheus\PModalidadeCobrancaVO.cs" />
+    <Compile Include="VO\Protheus\POperadoraSaudeVO.cs" />
+    <Compile Include="VO\Protheus\PPegVO.cs" />
+    <Compile Include="VO\Protheus\PPlanoVO.cs" />
+    <Compile Include="VO\Protheus\PProdutoSaudeVO.cs" />
+    <Compile Include="VO\Protheus\PProfissionalSaudeVO.cs" />
+    <Compile Include="VO\Protheus\PRedeAtendimentoVO.cs" />
+    <Compile Include="VO\Protheus\PRegiaoVO.cs" />
+    <Compile Include="VO\Protheus\PServicoVO.cs" />
+    <Compile Include="VO\Protheus\PFamiliaContratoVO.cs" />
+    <Compile Include="VO\Protheus\PFamiliaProdutoVO.cs" />
+    <Compile Include="VO\Protheus\PSubcontratoVO.cs" />
+    <Compile Include="VO\Protheus\PTabelaPadraoVO.cs" />
+    <Compile Include="VO\Protheus\PUsuarioPortalVO.cs" />
+    <Compile Include="VO\Protheus\PUsuarioVO.cs" />
+    <Compile Include="VO\Protheus\PVidaVO.cs" />
+    <Compile Include="VO\ProtocoloFaturaVO.cs" />
+    <Compile Include="VO\RamalVO.cs" />
+    <Compile Include="VO\ReciprocidadeVO.cs" />
+    <Compile Include="VO\ResponsavelVO.cs" />
+    <Compile Include="VO\ReuniaoVO.cs" />
+    <Compile Include="VO\RotinaVO.cs" />
+    <Compile Include="VO\SCL\SclItemListaVO.cs" />
+    <Compile Include="VO\SCL\SclUsuarioVO.cs" />
+    <Compile Include="VO\Seguranca.cs" />
+    <Compile Include="VO\SetorUsuarioVO.cs" />
+    <Compile Include="VO\SolicitacaoSegViaCarteiraVO.cs" />
+    <Compile Include="VO\TemplateEmailVO.cs" />
+    <Compile Include="VO\UsuarioVO.cs" />
+    <Compile Include="VO\ViagemVO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAO\WSM\" />
+    <Folder Include="VO\WSM\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

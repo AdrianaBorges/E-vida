@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4D8E66B-430E-4F88-AED3-076FDFA30912}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eVidaIntranet</RootNamespace>
+    <AssemblyName>eVidaIntranet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SkyExcelFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\SkyExcelFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="SkyReportFramework, Version=1.0.5204.5059, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\SkyReportFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Adesao\BuscaAdesoes.aspx" />
+    <Content Include="Adesao\IntegrarAdesao.aspx" />
+    <Content Include="Adesao\PopValidarAdesao.aspx" />
+    <Content Include="Admin\AlterarSenhaUsuarioScl.aspx" />
+    <Content Include="Admin\BuscaEnderecoCobranca.aspx" />
+    <Content Include="Admin\BuscarTemplatesEmail.aspx" />
+    <Content Include="Admin\BuscarUsuariosScl.aspx" />
+    <Content Include="Admin\CanalGestante.aspx" />
+    <Content Include="Admin\CriarUsuarioScl.aspx" />
+    <Content Include="Admin\EditarEmpresaReciprocidade.aspx" />
+    <Content Include="Admin\EditarUsuario.aspx" />
+    <Content Include="Admin\FormEnderecoCobranca.aspx" />
+    <Content Include="Admin\GerenciarEmpresaReciprocidade.aspx" />
+    <Content Include="Admin\GerenciarUsuario.aspx" />
+    <Content Include="Admin\MotivosPendencia.aspx" />
+    <Content Include="Admin\ParametroViagem.aspx" />
+    <Content Include="Admin\PerfilModulo.aspx" />
+    <Content Include="Admin\PlantaoSocial.aspx" />
+    <Content Include="Admin\PopResumoPermUsuario.aspx" />
+    <Content Include="Admin\SetoresUsuario.aspx" />
+    <Content Include="Admin\TemplateEmail.aspx" />
+    <Content Include="controls\Header.ascx" />
+    <Content Include="controls\Menu.ascx" />
+    <Content Include="css\content.css" />
+    <Content Include="css\eVida.css" />
+    <Content Include="css\eVida\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="css\eVida\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="css\eVida\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="css\eVida\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="css\eVida\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="css\eVida\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="css\eVida\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="css\eVida\images\ui-bg_highlight-soft_75_cccccc_1x100 - Cópia.png" />
+    <Content Include="css\eVida\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="css\eVida\images\ui-icons_222222_256x240.png" />
+    <Content Include="css\eVida\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="css\eVida\images\ui-icons_454545_256x240.png" />
+    <Content Include="css\eVida\images\ui-icons_888888_256x240.png" />
+    <Content Include="css\eVida\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="css\eVida\jquery-te.png" />
+    <Content Include="css\eVida\jquery-ui-1.9.1.custom.css" />
+    <Content Include="css\eVida\jquery-ui-1.9.1.custom.min.css" />
+    <Content Include="css\eVida\jquery.fileupload-ui.css" />
+    <Content Include="css\eVida\jquery.fileupload.css" />
+    <Content Include="css\fonts.css" />
+    <Content Include="css\footer.css" />
+    <Content Include="css\header.css" />
+    <Content Include="css\eVida\jquery-te-1.4.0.css" />
+    <Content Include="css\tabs.css" />
+    <Content Include="fonts\Calibri.svg" />
+    <Content Include="FormsPop\PopAutorizacaoHistorico.aspx" />
+    <Content Include="FormsPop\PopAutorizacaoRevalidar.aspx" />
+    <Content Include="FormsPop\PopCancelGeneric.aspx" />
+    <Content Include="FormsSearch\BuscaCartaPosCra.aspx" />
+    <Content Include="Forms\BuscaAutorizacao.aspx" />
+    <Content Include="Forms\BuscaAutorizacaoProvisoria.aspx" />
+    <Content Include="Forms\BuscaCanalGestante.aspx" />
+    <Content Include="Forms\BuscaCotacaoOpme.aspx" />
+    <Content Include="Forms\BuscaFormNegativa.aspx" />
+    <Content Include="Forms\BuscaIndisponibilidadeRede.aspx" />
+    <Content Include="Forms\BuscaProtocoloFatura.aspx" />
+    <Content Include="Forms\BuscaReciprocidade.aspx" />
+    <Content Include="Forms\BuscaExclusao.aspx" />
+    <Content Include="Forms\BuscaUniversitario.aspx" />
+    <Content Include="Forms\BuscaAtestadoComparecimento.aspx" />
+    <Content Include="Forms\BuscaViagem.aspx" />
+    <Content Include="Forms\FormCartaPosCra.aspx" />
+    <Content Include="Forms\FormAutorizacaoProvisoria.aspx" />
+    <Content Include="Forms\FormExclusao.aspx" />
+    <Content Include="Forms\FormNegativaReanalise.aspx" />
+    <Content Include="Forms\FormViagem.aspx" />
+    <Content Include="Forms\IndisponibilidadeRede.aspx" />
+    <Content Include="Forms\PopAutorizacaoAprov.aspx" />
+    <Content Include="Forms\FormAutorizacao.aspx" />
+    <Content Include="Forms\PopAutorizacaoChanger.aspx" />
+    <Content Include="Forms\PopAutorizacaoProvChanger.aspx" />
+    <Content Include="FormsPop\PopCancelIndisponibilidadeRede.aspx" />
+    <Content Include="Forms\PopCancelProtocoloFatura.aspx" />
+    <Content Include="Forms\PopCancelSegViaCarteira.aspx" />
+    <Content Include="Forms\FormProtocoloFaturaNova.aspx" />
+    <Content Include="Forms\PopDemoAnaliseConta.aspx" />
+    <Content Include="Forms\PopFinalizarCanalGestante.aspx" />
+    <Content Include="Forms\PopImprimirProtocoloFatura.aspx" />
+    <Content Include="Forms\FormProtocoloFatura.aspx" />
+    <Content Include="Forms\ViewAtestadoComparecimento.aspx" />
+    <Content Include="Forms\FormAtestadoComparecimento.aspx" />
+    <Content Include="Forms\ViewUniversitario.aspx" />
+    <Content Include="Forms\PopCancelUniversitario.aspx" />
+    <Content Include="Forms\ViewExclusao.aspx" />
+    <Content Include="Forms\PopCancelExclusao.aspx" />
+    <Content Include="Forms\FormNewReciprocidade.aspx" />
+    <Content Include="Forms\PopAprovReciprocidade.aspx" />
+    <Content Include="Forms\FormNegativa.aspx" />
+    <Content Include="Forms\FormReciprocidade.aspx" />
+    <Content Include="FormsPop\PopCancelNegativa.aspx" />
+    <Content Include="Forms\PopCancelReciprocidade.aspx" />
+    <Content Include="FormsPop\PopViewFormNegativa.aspx" />
+    <Content Include="Forms\ViewReciprocidade.aspx" />
+    <Content Include="Forms\ViewSegViaCarteira.aspx" />
+    <Content Include="GenPops\PopBeneficiario.aspx" />
+    <Content Include="GenPops\PopCredenciado.aspx" />
+    <Content Include="GenPops\PopDoenca.aspx" />
+    <Content Include="GenPops\PopEmailTemplate.aspx" />
+    <Content Include="GenPops\PopGenericCancel.aspx" />
+    <Content Include="GenPops\PopMotivoGlosa.aspx" />
+    <Content Include="GenPops\PopPrincipioAtivo.aspx" />
+    <Content Include="GenPops\PopProfissional.aspx" />
+    <Content Include="GenPops\PopServico.aspx" />
+    <Content Include="GenPops\PopUpload.aspx" />
+    <Content Include="GenPops\PopUploadClassico.aspx" />
+    <Content Include="GenPops\PopUsuario.aspx" />
+    <Content Include="Gestao\AjusteAutorizacao.aspx" />
+    <Content Include="Gestao\BuscaBenefResponsavel.aspx" />
+    <Content Include="Gestao\BuscaDebitoAnual.aspx" />
+    <Content Include="Gestao\CadastroResponsavel.aspx" />
+    <Content Include="Gestao\BuscaMedicamentoReembolsavel.aspx" />
+    <Content Include="Gestao\MedicamentoReembolsavel.aspx" />
+    <Content Include="Gestao\PopResponsavel.aspx" />
+    <Content Include="Gestao\BuscaQuitacao.aspx" />
+    <Content Include="Gestao\Quitacao.aspx" />
+    <Content Include="img\analise.png" />
+    <Content Include="img\assinatura.jpg" />
+    <Content Include="img\cancel.png" />
+    <Content Include="img\download24.png" />
+    <Content Include="img\email.png" />
+    <Content Include="img\lupa.gif" />
+    <Content Include="img\newDoc.png" />
+    <Content Include="img\pericia.jpg" />
+    <Content Include="img\process-info.png" />
+    <Content Include="img\progress_alert.png" />
+    <Content Include="img\progress_fail.png" />
+    <Content Include="img\progress_ok.png" />
+    <Content Include="img\refresh.png" />
+    <Content Include="img\reuniao.png" />
+    <Content Include="img\seta_direita.png" />
+    <Content Include="img\upload24.png" />
+    <Content Include="Internal\Negado.aspx" />
+    <Content Include="IR\ConfiguracaoIr.aspx" />
+    <Content Include="IR\IrBeneficiarios.aspx" />
+    <Content Include="IR\IrBeneficiariosTable.aspx" />
+    <Content Include="IR\IrCredenciados.aspx" />
+    <Content Include="Relatorios\RelatorioBeneficiariosCco.aspx" />
+    <Content Include="Relatorios\RelatorioBeneficiariosEmLista.aspx" />
+    <Content Include="Relatorios\RelatorioCoparticipacaoParcela.aspx" />
+    <Content Include="Relatorios\RelatorioCredenciadosEmLista.aspx" />
+    <Content Include="Relatorios\RelatorioDebitoCongelado.aspx" />
+    <Content Include="Relatorios\RelatorioDespesasCEA.aspx" />
+    <Content Include="Relatorios\RelatorioFranquiasGeradas.aspx" />
+    <Content Include="Relatorios\RelatorioParcelamento.aspx" />
+    <Content Include="Relatorios\RelatorioCreditoBeneficiario.aspx" />
+    <Content Include="Relatorios\RelatorioServicoPrestador.aspx" />
+    <Content Include="Relatorios\RelatorioBeneficiariosPorLocal.aspx" />
+    <Content Include="Relatorios\RelatorioBoletosNaoQuitados.aspx" />
+    <Content Include="Relatorios\RelatorioBoletosVencimento.aspx" />
+    <Content Include="Relatorios\RelatorioCoparticipacao.aspx" />
+    <Content Include="Relatorios\PopUsuarioAtendimento.aspx" />
+    <Content Include="Relatorios\RelatorioAutorizacao.aspx" />
+    <Content Include="Relatorios\RelatorioCustoInternacao.aspx" />
+    <Content Include="Relatorios\RelatorioFaturamentoUsuario.aspx" />
+    <Content Include="Relatorios\RelatorioMensalidade.aspx" />
+    <Content Include="Relatorios\RelatorioReciprocidade.aspx" />
+    <Content Include="Forms\SegViaCarteira.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="img\ans-sized.jpg" />
+    <Content Include="img\ans.png" />
+    <Content Include="img\bg-header.png" />
+    <Content Include="img\bg-header2.gif" />
+    <Content Include="img\bg-img-feature.png" />
+    <Content Include="img\fundo.png" />
+    <Content Include="img\ico_editar.gif" />
+    <Content Include="img\logo-ans.png" />
+    <Content Include="img\logo-eletrobras-sized.jpg" />
+    <Content Include="img\logo-eletrobras.png" />
+    <Content Include="img\logo-evida2.jpg" />
+    <Content Include="img\logo-sized.jpg" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\ok.jpg" />
+    <Content Include="img\PDF.png" />
+    <Content Include="img\print.png" />
+    <Content Include="img\progress.gif" />
+    <Content Include="img\remove.png" />
+    <Content Include="index.html" />
+    <Content Include="Internal\Inicial.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Relatorios\RelatorioContabilizacao.aspx" />
+    <Content Include="Relatorios\Exporter.aspx" />
+    <Content Include="Relatorios\RelatorioPagamento.aspx" />
+    <Content Include="Relatorios\RelatorioProvisao.aspx" />
+    <Content Include="Relatorios\RelatorioTravamentoISA.aspx" />
+    <Content Include="Reuniao\AreaReuniao.aspx" />
+    <Content Include="Reuniao\ArquivosConselho.aspx" />
+    <Content Include="Reuniao\BuscaReuniao.aspx" />
+    <Content Include="Admin\Conselhos.aspx" />
+    <Content Include="Reuniao\Calendario.aspx" />
+    <Content Include="Reuniao\PopEmail.aspx" />
+    <Content Include="Rotinas\ExecutarRotina.aspx" />
+    <Content Include="Scripts\internal.js" />
+    <Content Include="Scripts\locator.js" />
+    <Content Include="Scripts\upload.js" />
+    <Content Include="Scripts\eVida.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-te-1.4.0.js" />
+    <Content Include="Scripts\jquery-ui-1.9.1.custom.min.js" />
+    <Content Include="Scripts\upload\jquery.fileupload-process.js" />
+    <Content Include="Scripts\upload\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\upload\jquery.fileupload-validate.js" />
+    <Content Include="Scripts\upload\jquery.fileupload.js" />
+    <Content Include="Scripts\upload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\util.js" />
+    <Content Include="ShwCnfg.aspx" />
+    <Content Include="Telefonia\Ramais.aspx" />
+    <Content Include="Telefonia\RelatorioGerencial.aspx" />
+    <Content Include="templates\adesaoValidada.htm" />
+    <Content Include="templates\negativa\solNegativaReanaliseAprov.htm" />
+    <Content Include="templates\negativa\solNegativaReanaliseDev.htm" />
+    <Content Include="templates\negativa\solNegativaReanalise.htm" />
+    <Content Include="templates\solIndispRedeAlerta.htm" />
+    <Content Include="templates\solIndispRedeEncerrada.htm" />
+    <Content Include="templates\solIndispRedeCriada.htm" />
+    <Content Include="templates\solIndispRedeEncaminhar.htm" />
+    <Content Include="templates\solReuniao.htm" />
+    <Content Include="templates\solAutorizacaoProvisoriaAprov.htm" />
+    <Content Include="templates\solAutorizacaoProvisoria.htm" />
+    <Content Include="templates\solAutorizacaoPericia.htm" />
+    <Content Include="templates\solAutorizacaoAlterada.htm" />
+    <Content Include="templates\solAutorizacaoCriada.htm" />
+    <Content Include="templates\solAutorizacaoNegCred.htm" />
+    <Content Include="templates\solAutorizacaoCotacao.htm" />
+    <Content Include="templates\solAutorizacaoAprov.htm" />
+    <Content Include="templates\solAutorizacaoNeg.htm" />
+    <Content Include="templates\solAutorizacaoCancel.htm" />
+    <Content Include="templates\solAutorizacaoDoc.htm" />
+    <Content Include="templates\solAutorizacaoAnalise.htm" />
+    <Content Include="templates\negativa\solNegativaAprov.htm" />
+    <Content Include="templates\solSegViaCancel.htm" />
+    <Content Include="templates\solExclusaoCancel.htm" />
+    <Content Include="templates\solExclusaoAprovFunc.htm" />
+    <Content Include="templates\solExclusaoAprovFinanceiro.htm" />
+    <Content Include="templates\solReciprocidadeAprovFunc.htm" />
+    <Content Include="templates\solReciprocidadeFunc.htm" />
+    <Content Include="templates\negativa\solNegativa.htm" />
+    <Content Include="templates\solReciprocidadeEmp.htm" />
+    <Content Include="templates\solUniversitarioAprov.htm" />
+    <Content Include="templates\solUniversitarioCancel.htm" />
+    <Content Include="templates\viagem\solViagemComprovanteFinanceiro.htm" />
+    <Content Include="templates\viagem\solViagemCompraEfetuada.htm" />
+    <Content Include="templates\viagem\solViagemCompraPassagem.htm" />
+    <Content Include="templates\viagem\solViagemPcNegarDir.htm" />
+    <Content Include="templates\viagem\solViagemPcAprovFin.htm" />
+    <Content Include="templates\viagem\solViagemPcPendDir.htm" />
+    <Content Include="templates\viagem\solViagemPcAprovDir.htm" />
+    <Content Include="templates\viagem\solViagemSolAprovDir.htm" />
+    <Content Include="templates\viagem\solViagemPcNegarFin.htm" />
+    <Content Include="templates\viagem\solViagemSolNegarDir.htm" />
+    <Content Include="templates\viagem\solViagemSolNegarCoord.htm" />
+    <Content Include="templates\viagem\solViagemSolAprovCoord.htm" />
+    <Content Include="templates\viagem\solViagemCriada.htm" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adesao\BuscaAdesoes.aspx.cs">
+      <DependentUpon>BuscaAdesoes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adesao\BuscaAdesoes.aspx.designer.cs">
+      <DependentUpon>BuscaAdesoes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adesao\IntegrarAdesao.aspx.cs">
+      <DependentUpon>IntegrarAdesao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adesao\IntegrarAdesao.aspx.designer.cs">
+      <DependentUpon>IntegrarAdesao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adesao\PopValidarAdesao.aspx.cs">
+      <DependentUpon>PopValidarAdesao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adesao\PopValidarAdesao.aspx.designer.cs">
+      <DependentUpon>PopValidarAdesao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AlterarSenhaUsuarioScl.aspx.cs">
+      <DependentUpon>AlterarSenhaUsuarioScl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AlterarSenhaUsuarioScl.aspx.designer.cs">
+      <DependentUpon>AlterarSenhaUsuarioScl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BuscaEnderecoCobranca.aspx.cs">
+      <DependentUpon>BuscaEnderecoCobranca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BuscaEnderecoCobranca.aspx.designer.cs">
+      <DependentUpon>BuscaEnderecoCobranca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BuscarTemplatesEmail.aspx.cs">
+      <DependentUpon>BuscarTemplatesEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BuscarTemplatesEmail.aspx.designer.cs">
+      <DependentUpon>BuscarTemplatesEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\BuscarUsuariosScl.aspx.cs">
+      <DependentUpon>BuscarUsuariosScl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\BuscarUsuariosScl.aspx.designer.cs">
+      <DependentUpon>BuscarUsuariosScl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CanalGestante.aspx.cs">
+      <DependentUpon>CanalGestante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CanalGestante.aspx.designer.cs">
+      <DependentUpon>CanalGestante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CriarUsuarioScl.aspx.cs">
+      <DependentUpon>CriarUsuarioScl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CriarUsuarioScl.aspx.designer.cs">
+      <DependentUpon>CriarUsuarioScl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditarEmpresaReciprocidade.aspx.cs">
+      <DependentUpon>EditarEmpresaReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarEmpresaReciprocidade.aspx.designer.cs">
+      <DependentUpon>EditarEmpresaReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EditarUsuario.aspx.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditarUsuario.aspx.designer.cs">
+      <DependentUpon>EditarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\FormEnderecoCobranca.aspx.cs">
+      <DependentUpon>FormEnderecoCobranca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\FormEnderecoCobranca.aspx.designer.cs">
+      <DependentUpon>FormEnderecoCobranca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GerenciarEmpresaReciprocidade.aspx.cs">
+      <DependentUpon>GerenciarEmpresaReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GerenciarEmpresaReciprocidade.aspx.designer.cs">
+      <DependentUpon>GerenciarEmpresaReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GerenciarUsuario.aspx.cs">
+      <DependentUpon>GerenciarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\GerenciarUsuario.aspx.designer.cs">
+      <DependentUpon>GerenciarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MotivosPendencia.aspx.cs">
+      <DependentUpon>MotivosPendencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MotivosPendencia.aspx.designer.cs">
+      <DependentUpon>MotivosPendencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ParametroViagem.aspx.cs">
+      <DependentUpon>ParametroViagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ParametroViagem.aspx.designer.cs">
+      <DependentUpon>ParametroViagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PerfilModulo.aspx.cs">
+      <DependentUpon>PerfilModulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PerfilModulo.aspx.designer.cs">
+      <DependentUpon>PerfilModulo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PlantaoSocial.aspx.cs">
+      <DependentUpon>PlantaoSocial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PlantaoSocial.aspx.designer.cs">
+      <DependentUpon>PlantaoSocial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PopResumoPermUsuario.aspx.cs">
+      <DependentUpon>PopResumoPermUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PopResumoPermUsuario.aspx.designer.cs">
+      <DependentUpon>PopResumoPermUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SetoresUsuario.aspx.cs">
+      <DependentUpon>SetoresUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SetoresUsuario.aspx.designer.cs">
+      <DependentUpon>SetoresUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TemplateEmail.aspx.cs">
+      <DependentUpon>TemplateEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TemplateEmail.aspx.designer.cs">
+      <DependentUpon>TemplateEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\FormPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Classes\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Classes\PopUpPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Classes\RelatorioExcelPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Classes\UserControlBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\Menu.ascx.designer.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopAutorizacaoHistorico.aspx.cs">
+      <DependentUpon>PopAutorizacaoHistorico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopAutorizacaoHistorico.aspx.designer.cs">
+      <DependentUpon>PopAutorizacaoHistorico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopAutorizacaoRevalidar.aspx.cs">
+      <DependentUpon>PopAutorizacaoRevalidar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopAutorizacaoRevalidar.aspx.designer.cs">
+      <DependentUpon>PopAutorizacaoRevalidar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelGeneric.aspx.cs">
+      <DependentUpon>PopCancelGeneric.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelGeneric.aspx.designer.cs">
+      <DependentUpon>PopCancelGeneric.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSearch\BuscaCartaPosCra.aspx.cs">
+      <DependentUpon>BuscaCartaPosCra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsSearch\BuscaCartaPosCra.aspx.designer.cs">
+      <DependentUpon>BuscaCartaPosCra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaAutorizacao.aspx.cs">
+      <DependentUpon>BuscaAutorizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaAutorizacao.aspx.designer.cs">
+      <DependentUpon>BuscaAutorizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaAutorizacaoProvisoria.aspx.cs">
+      <DependentUpon>BuscaAutorizacaoProvisoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaAutorizacaoProvisoria.aspx.designer.cs">
+      <DependentUpon>BuscaAutorizacaoProvisoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaCanalGestante.aspx.cs">
+      <DependentUpon>BuscaCanalGestante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaCanalGestante.aspx.designer.cs">
+      <DependentUpon>BuscaCanalGestante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaCotacaoOpme.aspx.cs">
+      <DependentUpon>BuscaCotacaoOpme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaCotacaoOpme.aspx.designer.cs">
+      <DependentUpon>BuscaCotacaoOpme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaFormNegativa.aspx.cs">
+      <DependentUpon>BuscaFormNegativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaFormNegativa.aspx.designer.cs">
+      <DependentUpon>BuscaFormNegativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaIndisponibilidadeRede.aspx.cs">
+      <DependentUpon>BuscaIndisponibilidadeRede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaIndisponibilidadeRede.aspx.designer.cs">
+      <DependentUpon>BuscaIndisponibilidadeRede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaProtocoloFatura.aspx.cs">
+      <DependentUpon>BuscaProtocoloFatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaProtocoloFatura.aspx.designer.cs">
+      <DependentUpon>BuscaProtocoloFatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaReciprocidade.aspx.cs">
+      <DependentUpon>BuscaReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaReciprocidade.aspx.designer.cs">
+      <DependentUpon>BuscaReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaExclusao.aspx.cs">
+      <DependentUpon>BuscaExclusao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaExclusao.aspx.designer.cs">
+      <DependentUpon>BuscaExclusao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaUniversitario.aspx.cs">
+      <DependentUpon>BuscaUniversitario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaUniversitario.aspx.designer.cs">
+      <DependentUpon>BuscaUniversitario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaAtestadoComparecimento.aspx.cs">
+      <DependentUpon>BuscaAtestadoComparecimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaAtestadoComparecimento.aspx.designer.cs">
+      <DependentUpon>BuscaAtestadoComparecimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuscaViagem.aspx.cs">
+      <DependentUpon>BuscaViagem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BuscaViagem.aspx.designer.cs">
+      <DependentUpon>BuscaViagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCartaPosCra.aspx.cs">
+      <DependentUpon>FormCartaPosCra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCartaPosCra.aspx.designer.cs">
+      <DependentUpon>FormCartaPosCra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAutorizacaoProvisoria.aspx.cs">
+      <DependentUpon>FormAutorizacaoProvisoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAutorizacaoProvisoria.aspx.designer.cs">
+      <DependentUpon>FormAutorizacaoProvisoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormExclusao.aspx.cs">
+      <DependentUpon>FormExclusao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExclusao.aspx.designer.cs">
+      <DependentUpon>FormExclusao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNegativaReanalise.aspx.cs">
+      <DependentUpon>FormNegativaReanalise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNegativaReanalise.aspx.designer.cs">
+      <DependentUpon>FormNegativaReanalise.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormViagem.aspx.cs">
+      <DependentUpon>FormViagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormViagem.aspx.designer.cs">
+      <DependentUpon>FormViagem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IndisponibilidadeRede.aspx.cs">
+      <DependentUpon>IndisponibilidadeRede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\IndisponibilidadeRede.aspx.designer.cs">
+      <DependentUpon>IndisponibilidadeRede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoAprov.aspx.cs">
+      <DependentUpon>PopAutorizacaoAprov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoAprov.aspx.designer.cs">
+      <DependentUpon>PopAutorizacaoAprov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAutorizacao.aspx.cs">
+      <DependentUpon>FormAutorizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAutorizacao.aspx.designer.cs">
+      <DependentUpon>FormAutorizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoChanger.aspx.cs">
+      <DependentUpon>PopAutorizacaoChanger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoChanger.aspx.designer.cs">
+      <DependentUpon>PopAutorizacaoChanger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoProvChanger.aspx.cs">
+      <DependentUpon>PopAutorizacaoProvChanger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopAutorizacaoProvChanger.aspx.designer.cs">
+      <DependentUpon>PopAutorizacaoProvChanger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelIndisponibilidadeRede.aspx.cs">
+      <DependentUpon>PopCancelIndisponibilidadeRede.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelIndisponibilidadeRede.aspx.designer.cs">
+      <DependentUpon>PopCancelIndisponibilidadeRede.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopCancelProtocoloFatura.aspx.cs">
+      <DependentUpon>PopCancelProtocoloFatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopCancelProtocoloFatura.aspx.designer.cs">
+      <DependentUpon>PopCancelProtocoloFatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopCancelSegViaCarteira.aspx.cs">
+      <DependentUpon>PopCancelSegViaCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopCancelSegViaCarteira.aspx.designer.cs">
+      <DependentUpon>PopCancelSegViaCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProtocoloFaturaNova.aspx.cs">
+      <DependentUpon>FormProtocoloFaturaNova.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProtocoloFaturaNova.aspx.designer.cs">
+      <DependentUpon>FormProtocoloFaturaNova.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopDemoAnaliseConta.aspx.cs">
+      <DependentUpon>PopDemoAnaliseConta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopDemoAnaliseConta.aspx.designer.cs">
+      <DependentUpon>PopDemoAnaliseConta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopFinalizarCanalGestante.aspx.cs">
+      <DependentUpon>PopFinalizarCanalGestante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopFinalizarCanalGestante.aspx.designer.cs">
+      <DependentUpon>PopFinalizarCanalGestante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopImprimirProtocoloFatura.aspx.cs">
+      <DependentUpon>PopImprimirProtocoloFatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopImprimirProtocoloFatura.aspx.designer.cs">
+      <DependentUpon>PopImprimirProtocoloFatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormProtocoloFatura.aspx.cs">
+      <DependentUpon>FormProtocoloFatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormProtocoloFatura.aspx.designer.cs">
+      <DependentUpon>FormProtocoloFatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewAtestadoComparecimento.aspx.cs">
+      <DependentUpon>ViewAtestadoComparecimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewAtestadoComparecimento.aspx.designer.cs">
+      <DependentUpon>ViewAtestadoComparecimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAtestadoComparecimento.aspx.cs">
+      <DependentUpon>FormAtestadoComparecimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAtestadoComparecimento.aspx.designer.cs">
+      <DependentUpon>FormAtestadoComparecimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewUniversitario.aspx.cs">
+      <DependentUpon>ViewUniversitario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewUniversitario.aspx.designer.cs">
+      <DependentUpon>ViewUniversitario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopCancelUniversitario.aspx.cs">
+      <DependentUpon>PopCancelUniversitario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopCancelUniversitario.aspx.designer.cs">
+      <DependentUpon>PopCancelUniversitario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewExclusao.aspx.cs">
+      <DependentUpon>ViewExclusao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewExclusao.aspx.designer.cs">
+      <DependentUpon>ViewExclusao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopCancelExclusao.aspx.cs">
+      <DependentUpon>PopCancelExclusao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopCancelExclusao.aspx.designer.cs">
+      <DependentUpon>PopCancelExclusao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNewReciprocidade.aspx.cs">
+      <DependentUpon>FormNewReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNewReciprocidade.aspx.designer.cs">
+      <DependentUpon>FormNewReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopAprovReciprocidade.aspx.cs">
+      <DependentUpon>PopAprovReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopAprovReciprocidade.aspx.designer.cs">
+      <DependentUpon>PopAprovReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNegativa.aspx.cs">
+      <DependentUpon>FormNegativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNegativa.aspx.designer.cs">
+      <DependentUpon>FormNegativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormReciprocidade.aspx.cs">
+      <DependentUpon>FormReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\FormReciprocidade.aspx.designer.cs">
+      <DependentUpon>FormReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelNegativa.aspx.cs">
+      <DependentUpon>PopCancelNegativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopCancelNegativa.aspx.designer.cs">
+      <DependentUpon>PopCancelNegativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PopCancelReciprocidade.aspx.cs">
+      <DependentUpon>PopCancelReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\PopCancelReciprocidade.aspx.designer.cs">
+      <DependentUpon>PopCancelReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPop\PopViewFormNegativa.aspx.cs">
+      <DependentUpon>PopViewFormNegativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPop\PopViewFormNegativa.aspx.designer.cs">
+      <DependentUpon>PopViewFormNegativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewReciprocidade.aspx.cs">
+      <DependentUpon>ViewReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewReciprocidade.aspx.designer.cs">
+      <DependentUpon>ViewReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewSegViaCarteira.aspx.cs">
+      <DependentUpon>ViewSegViaCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewSegViaCarteira.aspx.designer.cs">
+      <DependentUpon>ViewSegViaCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopBeneficiario.aspx.cs">
+      <DependentUpon>PopBeneficiario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopBeneficiario.aspx.designer.cs">
+      <DependentUpon>PopBeneficiario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopCredenciado.aspx.cs">
+      <DependentUpon>PopCredenciado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopCredenciado.aspx.designer.cs">
+      <DependentUpon>PopCredenciado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopDoenca.aspx.cs">
+      <DependentUpon>PopDoenca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopDoenca.aspx.designer.cs">
+      <DependentUpon>PopDoenca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopEmailTemplate.aspx.cs">
+      <DependentUpon>PopEmailTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopEmailTemplate.aspx.designer.cs">
+      <DependentUpon>PopEmailTemplate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopGenericCancel.aspx.cs">
+      <DependentUpon>PopGenericCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopGenericCancel.aspx.designer.cs">
+      <DependentUpon>PopGenericCancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopMotivoGlosa.aspx.cs">
+      <DependentUpon>PopMotivoGlosa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopMotivoGlosa.aspx.designer.cs">
+      <DependentUpon>PopMotivoGlosa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopPrincipioAtivo.aspx.cs">
+      <DependentUpon>PopPrincipioAtivo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopPrincipioAtivo.aspx.designer.cs">
+      <DependentUpon>PopPrincipioAtivo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopProfissional.aspx.cs">
+      <DependentUpon>PopProfissional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopProfissional.aspx.designer.cs">
+      <DependentUpon>PopProfissional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopServico.aspx.cs">
+      <DependentUpon>PopServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopServico.aspx.designer.cs">
+      <DependentUpon>PopServico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopUpload.aspx.cs">
+      <DependentUpon>PopUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopUpload.aspx.designer.cs">
+      <DependentUpon>PopUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopUploadClassico.aspx.cs">
+      <DependentUpon>PopUploadClassico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopUploadClassico.aspx.designer.cs">
+      <DependentUpon>PopUploadClassico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GenPops\PopUsuario.aspx.cs">
+      <DependentUpon>PopUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GenPops\PopUsuario.aspx.designer.cs">
+      <DependentUpon>PopUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\AjusteAutorizacao.aspx.cs">
+      <DependentUpon>AjusteAutorizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\AjusteAutorizacao.aspx.designer.cs">
+      <DependentUpon>AjusteAutorizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\BuscaBenefResponsavel.aspx.cs">
+      <DependentUpon>BuscaBenefResponsavel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\BuscaBenefResponsavel.aspx.designer.cs">
+      <DependentUpon>BuscaBenefResponsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\BuscaDebitoAnual.aspx.cs">
+      <DependentUpon>BuscaDebitoAnual.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\BuscaDebitoAnual.aspx.designer.cs">
+      <DependentUpon>BuscaDebitoAnual.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\CadastroResponsavel.aspx.cs">
+      <DependentUpon>CadastroResponsavel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\CadastroResponsavel.aspx.designer.cs">
+      <DependentUpon>CadastroResponsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\BuscaMedicamentoReembolsavel.aspx.cs">
+      <DependentUpon>BuscaMedicamentoReembolsavel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\BuscaMedicamentoReembolsavel.aspx.designer.cs">
+      <DependentUpon>BuscaMedicamentoReembolsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\MedicamentoReembolsavel.aspx.cs">
+      <DependentUpon>MedicamentoReembolsavel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\MedicamentoReembolsavel.aspx.designer.cs">
+      <DependentUpon>MedicamentoReembolsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\PopResponsavel.aspx.cs">
+      <DependentUpon>PopResponsavel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\PopResponsavel.aspx.designer.cs">
+      <DependentUpon>PopResponsavel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\BuscaQuitacao.aspx.cs">
+      <DependentUpon>BuscaQuitacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\BuscaQuitacao.aspx.designer.cs">
+      <DependentUpon>BuscaQuitacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestao\Quitacao.aspx.cs">
+      <DependentUpon>Quitacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestao\Quitacao.aspx.designer.cs">
+      <DependentUpon>Quitacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\InternalPopup.Master.cs">
+      <DependentUpon>InternalPopup.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\InternalPopup.Master.designer.cs">
+      <DependentUpon>InternalPopup.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Negado.aspx.cs">
+      <DependentUpon>Negado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Negado.aspx.designer.cs">
+      <DependentUpon>Negado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IR\ConfiguracaoIr.aspx.cs">
+      <DependentUpon>ConfiguracaoIr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IR\ConfiguracaoIr.aspx.designer.cs">
+      <DependentUpon>ConfiguracaoIr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IR\IrBeneficiarios.aspx.cs">
+      <DependentUpon>IrBeneficiarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IR\IrBeneficiarios.aspx.designer.cs">
+      <DependentUpon>IrBeneficiarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IR\IrBeneficiariosTable.aspx.cs">
+      <DependentUpon>IrBeneficiariosTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IR\IrBeneficiariosTable.aspx.designer.cs">
+      <DependentUpon>IrBeneficiariosTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IR\IrCredenciados.aspx.cs">
+      <DependentUpon>IrCredenciados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IR\IrCredenciados.aspx.designer.cs">
+      <DependentUpon>IrCredenciados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosCco.aspx.cs">
+      <DependentUpon>RelatorioBeneficiariosCco.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosCco.aspx.designer.cs">
+      <DependentUpon>RelatorioBeneficiariosCco.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosEmLista.aspx.cs">
+      <DependentUpon>RelatorioBeneficiariosEmLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosEmLista.aspx.designer.cs">
+      <DependentUpon>RelatorioBeneficiariosEmLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCoparticipacaoParcela.aspx.cs">
+      <DependentUpon>RelatorioCoparticipacaoParcela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCoparticipacaoParcela.aspx.designer.cs">
+      <DependentUpon>RelatorioCoparticipacaoParcela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCredenciadosEmLista.aspx.cs">
+      <DependentUpon>RelatorioCredenciadosEmLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCredenciadosEmLista.aspx.designer.cs">
+      <DependentUpon>RelatorioCredenciadosEmLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioDebitoCongelado.aspx.cs">
+      <DependentUpon>RelatorioDebitoCongelado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioDebitoCongelado.aspx.designer.cs">
+      <DependentUpon>RelatorioDebitoCongelado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioDespesasCEA.aspx.cs">
+      <DependentUpon>RelatorioDespesasCEA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioDespesasCEA.aspx.designer.cs">
+      <DependentUpon>RelatorioDespesasCEA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFranquiasGeradas.aspx.cs">
+      <DependentUpon>RelatorioFranquiasGeradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFranquiasGeradas.aspx.designer.cs">
+      <DependentUpon>RelatorioFranquiasGeradas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioParcelamento.aspx.cs">
+      <DependentUpon>RelatorioParcelamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioParcelamento.aspx.designer.cs">
+      <DependentUpon>RelatorioParcelamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCreditoBeneficiario.aspx.cs">
+      <DependentUpon>RelatorioCreditoBeneficiario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCreditoBeneficiario.aspx.designer.cs">
+      <DependentUpon>RelatorioCreditoBeneficiario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioServicoPrestador.aspx.cs">
+      <DependentUpon>RelatorioServicoPrestador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioServicoPrestador.aspx.designer.cs">
+      <DependentUpon>RelatorioServicoPrestador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosPorLocal.aspx.cs">
+      <DependentUpon>RelatorioBeneficiariosPorLocal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBeneficiariosPorLocal.aspx.designer.cs">
+      <DependentUpon>RelatorioBeneficiariosPorLocal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBoletosNaoQuitados.aspx.cs">
+      <DependentUpon>RelatorioBoletosNaoQuitados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBoletosNaoQuitados.aspx.designer.cs">
+      <DependentUpon>RelatorioBoletosNaoQuitados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBoletosVencimento.aspx.cs">
+      <DependentUpon>RelatorioBoletosVencimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioBoletosVencimento.aspx.designer.cs">
+      <DependentUpon>RelatorioBoletosVencimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCoparticipacao.aspx.cs">
+      <DependentUpon>RelatorioCoparticipacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCoparticipacao.aspx.designer.cs">
+      <DependentUpon>RelatorioCoparticipacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\PopUsuarioAtendimento.aspx.cs">
+      <DependentUpon>PopUsuarioAtendimento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\PopUsuarioAtendimento.aspx.designer.cs">
+      <DependentUpon>PopUsuarioAtendimento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAutorizacao.aspx.cs">
+      <DependentUpon>RelatorioAutorizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioAutorizacao.aspx.designer.cs">
+      <DependentUpon>RelatorioAutorizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCustoInternacao.aspx.cs">
+      <DependentUpon>RelatorioCustoInternacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCustoInternacao.aspx.designer.cs">
+      <DependentUpon>RelatorioCustoInternacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFaturamentoUsuario.aspx.cs">
+      <DependentUpon>RelatorioFaturamentoUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioFaturamentoUsuario.aspx.designer.cs">
+      <DependentUpon>RelatorioFaturamentoUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioMensalidade.aspx.cs">
+      <DependentUpon>RelatorioMensalidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioMensalidade.aspx.designer.cs">
+      <DependentUpon>RelatorioMensalidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioReciprocidade.aspx.cs">
+      <DependentUpon>RelatorioReciprocidade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioReciprocidade.aspx.designer.cs">
+      <DependentUpon>RelatorioReciprocidade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SegViaCarteira.aspx.cs">
+      <DependentUpon>SegViaCarteira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\SegViaCarteira.aspx.designer.cs">
+      <DependentUpon>SegViaCarteira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Internal.Master.cs">
+      <DependentUpon>Internal.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Internal.Master.designer.cs">
+      <DependentUpon>Internal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Inicial.aspx.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Internal\Inicial.aspx.designer.cs">
+      <DependentUpon>Inicial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\RelatorioContabilizacao.aspx.cs">
+      <DependentUpon>RelatorioContabilizacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioContabilizacao.aspx.designer.cs">
+      <DependentUpon>RelatorioContabilizacao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Exporter.aspx.cs">
+      <DependentUpon>Exporter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\Exporter.aspx.designer.cs">
+      <DependentUpon>Exporter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioPagamento.aspx.cs">
+      <DependentUpon>RelatorioPagamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioPagamento.aspx.designer.cs">
+      <DependentUpon>RelatorioPagamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioProvisao.aspx.cs">
+      <DependentUpon>RelatorioProvisao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioProvisao.aspx.designer.cs">
+      <DependentUpon>RelatorioProvisao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioTravamentoISA.aspx.cs">
+      <DependentUpon>RelatorioTravamentoISA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioTravamentoISA.aspx.designer.cs">
+      <DependentUpon>RelatorioTravamentoISA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reuniao\AreaReuniao.aspx.cs">
+      <DependentUpon>AreaReuniao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reuniao\AreaReuniao.aspx.designer.cs">
+      <DependentUpon>AreaReuniao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reuniao\ArquivosConselho.aspx.cs">
+      <DependentUpon>ArquivosConselho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reuniao\ArquivosConselho.aspx.designer.cs">
+      <DependentUpon>ArquivosConselho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reuniao\BuscaReuniao.aspx.cs">
+      <DependentUpon>BuscaReuniao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reuniao\BuscaReuniao.aspx.designer.cs">
+      <DependentUpon>BuscaReuniao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Conselhos.aspx.cs">
+      <DependentUpon>Conselhos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Conselhos.aspx.designer.cs">
+      <DependentUpon>Conselhos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reuniao\Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reuniao\Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reuniao\PopEmail.aspx.cs">
+      <DependentUpon>PopEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reuniao\PopEmail.aspx.designer.cs">
+      <DependentUpon>PopEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Rotinas\ExecutarRotina.aspx.cs">
+      <DependentUpon>ExecutarRotina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rotinas\ExecutarRotina.aspx.designer.cs">
+      <DependentUpon>ExecutarRotina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShwCnfg.aspx.cs">
+      <DependentUpon>ShwCnfg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShwCnfg.aspx.designer.cs">
+      <DependentUpon>ShwCnfg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Telefonia\Ramais.aspx.cs">
+      <DependentUpon>Ramais.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Telefonia\Ramais.aspx.designer.cs">
+      <DependentUpon>Ramais.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Telefonia\RelatorioGerencial.aspx.cs">
+      <DependentUpon>RelatorioGerencial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Telefonia\RelatorioGerencial.aspx.designer.cs">
+      <DependentUpon>RelatorioGerencial.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <Content Include="fonts\Calibri.eot" />
+    <Content Include="fonts\Calibri.ttf" />
+    <Content Include="fonts\Calibri.woff" />
+    <Content Include="Internal\Internal.Master" />
+    <Content Include="Internal\InternalPopup.Master" />
+    <Content Include="docs\RELACAO_PROCEDIMENTO_AUTORIZACAO_PREVIA.pdf" />
+    <Content Include="log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\eVidaIntranet.pubxml" />
+    <None Include="Properties\PublishProfiles\intranet_mig.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\modelLib\modelLib.csproj">
+      <Project>{62c74910-3a39-4a0e-84d8-553c01394b1b}</Project>
+      <Name>modelLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\webLib\webLib.csproj">
+      <Project>{7e4dacaf-f04b-4c01-bb03-d6df419de1c8}</Project>
+      <Name>webLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Export\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12459/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

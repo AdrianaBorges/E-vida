@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    a.nr_protocolo,
+    a.nr_atendimento,
+    count(1) as qtd_item,
+    DECODE(a.tp_sistema_atend, 'CRED', 'FATURA', 'REEMB', 'REEMBOLSO') tp_sistema_atend,
+    au.cd_usuario user_update,
+    UPPER(c.nm_usuario) nm_usuario,
+    trunc(au.dt_auditoria, 'mi') date_update,
+    DECODE (a.tp_origem, 'DIG', 'DIGITADO', 'WEB', 'REEMBOLSO', 'XML', 'FATURAMENTO ELETRONICO', 'FATURAMENTO ELETRONICO') tp_origem,
+    au.tp_operacao
+  </Fields>
+  <From>
+    isa_hc.hc_atendimento a, isa_scl.scl_usuario c,
+    isa_hc.hc_item_atendimento ia,
+    (
+
+    (select trunc(au.dt_auditoria, 'mi') dt_auditoria, au.cd_usuario,
+    to_number(SUBSTR(ID_REGISTRO, INSTR(ID_REGISTRO,'Atend:', 1, 1)+7, INSTR(ID_REGISTRO, 'Item:',1,1)-INSTR(ID_REGISTRO,'Atend:', 1, 1)-9)) NR_ATENDIMENTO,
+    to_number(REPLACE(SUBSTR(ID_REGISTRO, 6, 2), ';', '')) CD_ORGANIZACAO,
+    to_number(REPLACE(SUBSTR(ID_REGISTRO, INSTR(ID_REGISTRO, 'Item:',1,1) + 6), ';', '')) NR_ITEM,
+    au.tp_operacao
+    FROM ISA_SCL.SCL_AUDITORIA au
+    WHERE au.ds_tabela = 'HC_ITEM_ATENDIMENTO' AND INSTR(ID_REGISTRO, 'Atend:') &gt; 0
+    AND tp_operacao &lt;&gt; 'E')
+
+    UNION
+
+    (SELECT DECODE (LENGTH(IA.DATE_CREATE), 8, to_date(ia.date_create, 'dd/MM/rr'),
+    10, to_date(ia.date_create, 'dd/MM/rrrr'),
+    16, to_date(ia.date_create, 'dd/MM/rrrr hh24:mi'),
+    19, to_date(SUBSTR(ia.date_create,1, 16), 'dd/MM/rrrr hh24:mi'),
+    TO_DATE(SUBSTR (ia.date_create, 1, 10))) dt_auditoria,
+    ia.user_create cd_usuario,
+    to_number(ia.nr_atendimento) NR_ATENDIMENTO,
+    to_number(ia.cd_organizacao) CD_ORGANIZACAO,
+    to_number(ia.nr_item_atendimento) nr_item,
+    'I' tp_operacao
+    FROM ISA_HC.HC_ITEM_ATENDIMENTO IA)
+    ) AU
+  </From>
+  <OrderBy>
+    c.nm_usuario, trunc(au.dt_auditoria, 'mi')
+  </OrderBy>
+  <GroupBy>
+    a.nr_protocolo,
+    a.nr_atendimento,
+    a.tp_sistema_atend,
+    au.cd_usuario,
+    a.tp_origem,
+    c.nm_usuario,
+    trunc(au.dt_auditoria, 'mi'),
+    au.tp_operacao
+  </GroupBy>
+  <FixedFilter>
+    <![CDATA[
+		au.cd_usuario = c.cd_usuario
+    and AU.NR_ATENDIMENTO = A.NR_ATENDIMENTO AND AU.CD_ORGANIZACAO = A.CD_ORGANIZACAO
+    and ia.cd_organizacao = a.cd_organizacao and ia.nr_atendimento = a.nr_atendimento AND ia.nr_item_Atendimento = au.nr_item
+ ]]>
+  </FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>data</Name>
+      <Expression>au.dt_auditoria BETWEEN :data1 AND :data2+1 </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>user</Name>
+      <Expression>au.cd_usuario IN (:user) </Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>

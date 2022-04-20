@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    c.BAU_NOME,
+    c.BAU_EMAIL
+  </Fields>
+  <From>
+    VW_PR_REDE_ATENDIMENTO c
+  </From>
+  <OrderBy>c.BAU_NOME</OrderBy>
+  <GroupBy></GroupBy>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>uf</Name>
+      <Expression>c.BAU_EST IN (:uf) </Expression>
+    </ReportFilterQuery>
+    <ReportFilterQuery>
+      <Name>status</Name>
+      <Expression>((:status = 'A' and (c.BAU_DATBLO in ('        ') or c.BAU_DATBLO is null)) or (:status = 'I' and (c.BAU_DATBLO not in ('        ') and c.BAU_DATBLO is not null)))</Expression>
+    </ReportFilterQuery>
+
+  </Filters>
+</ReportQuery>

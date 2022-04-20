@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ReportQuery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Fields>
+    b.BA1_CODCCO,
+    b.BA1_MATANT,
+    p.BI3_CODIGO,
+    p.BI3_DESCRI,
+    b.BA1_NOMUSR,
+    CASE
+    WHEN NVL(length(trim(f.BA1_DATCAR)), 0) = 0 THEN null
+    WHEN NVL(length(trim(f.BA1_DATCAR)), 0) > 0 THEN to_date(trim(f.BA1_DATCAR),'YYYYMMDD')
+    END BA1_DATCAR,
+    CASE
+    WHEN NVL(length(trim(f.BA1_DATBLO)), 0) = 0 THEN null
+    WHEN NVL(length(trim(f.BA1_DATBLO)), 0) > 0 THEN to_date(trim(f.BA1_DATBLO),'YYYYMMDD')
+    END BA1_DATBLO,
+    CASE
+    WHEN NVL(length(trim(b.BA1_DTVLCR)), 0) = 0 THEN null
+    WHEN NVL(length(trim(b.BA1_DTVLCR)), 0) > 0 THEN to_date(trim(b.BA1_DTVLCR),'YYYYMMDD')
+    END BA1_DTVLCR
+  </Fields>
+  <From>
+    VW_PR_USUARIO b,
+    VW_PR_USUARIO f,
+    VW_PR_PRODUTO_SAUDE p
+  </From>
+  <OrderBy>b.BA1_NOMUSR</OrderBy>
+  <GroupBy></GroupBy>
+  <FixedFilter>
+    <![CDATA[
+    trim(b.BA1_CODINT) = trim(f.BA3_CODINT) AND trim(b.BA1_CODEMP) = trim(f.BA3_CODEMP) AND trim(b.BA1_MATRIC) = trim(f.BA3_MATRIC)
+    AND trim(f.BA3_CODPLA) = trim(p.BI3_CODIGO) 
+    and trim(f.BA1_DATCAR) = (SELECT max(trim(f2.BA1_DATCAR)) 
+                              from TOTVSPRD12.BA1010 f2
+								              WHERE trim(f.BA1_CODINT) = trim(f2.BA1_CODINT) 
+								              and trim(f.BA1_CODEMP) = trim(f2.BA1_CODEMP)
+                              and trim(f.BA1_MATRIC) = trim(f2.BA1_MATRIC)
+                              and trim(f.BA1_TIPREG) = trim(f2.BA1_TIPREG))
+    AND b.D_E_L_E_T_ not like '%*%'
+	]]>
+  </FixedFilter>
+  <Filters>
+    <ReportFilterQuery>
+      <Name>cco</Name>
+      <Expression>trim(b.BA1_CODCCO) = trim(:cco)</Expression>
+    </ReportFilterQuery>
+  </Filters>
+</ReportQuery>

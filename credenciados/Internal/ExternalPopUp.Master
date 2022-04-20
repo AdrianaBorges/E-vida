@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ExternalPopUp.master.cs" Inherits="eVidaCredenciados.Internal.ExternalPopUp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+	<link href="~/css/eVida/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css" />
+	<link href="~/css/eVida.css" rel="stylesheet" type="text/css" />
+	<script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+	<script src="../Scripts/jquery-ui-1.9.1.custom.min.js" type="text/javascript"></script>
+	<script src="../Scripts/eVida.js" type="text/javascript"></script>
+	<script src="../Scripts/internal.js" type="text/javascript"></script>
+	<script src="../Scripts/util.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="height:95%">
+    <form id="form1" runat="server">
+    <div id="container" style="width:90%">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" OnAsyncPostBackError="scriptManager_OnAsyncPostBackError" EnablePartialRendering="true" AllowCustomErrorsRedirect="true"  />
+        <asp:UpdateProgress ID="updProgress" AssociatedUpdatePanelID="content" runat="server"  >
+			<ProgressTemplate>           
+				<div style="z-index:400; background-color:Gray; filter:alpha(opacity=80); opacity:0.80; width: 95%; top: 0px; left: 0px; position: fixed; height: 90%;">
+ 
+				</div>
+				<div align="center" style="width:95%; z-index:401; margin:auto; filter:alpha(opacity=100); opacity:1; vertical-align: middle; top: auto; position: absolute; right: auto;">
+					<table width="95%">
+						<tr>
+							<td align="center"><img src="../img/progress.gif" alt="Loading"  /></td>
+						</tr>
+					</table>
+				</div>      
+			</ProgressTemplate>
+		</asp:UpdateProgress>
+		<asp:UpdatePanel ID="content" runat="server" ClientIDMode="Static">
+			<ContentTemplate>
+				<div>
+				    <asp:ContentPlaceHolder ID="placeHolder" runat="server">
+        
+				    </asp:ContentPlaceHolder>
+				</div>
+			</ContentTemplate>
+		</asp:UpdatePanel>
+    </div>
+        <div id="dialog" title="Erro!">
+			<div id="msgErro" style="width: 95%; text-align: center"></div>
+		</div>
+
+    </form>
+</body>
+    
+</html>

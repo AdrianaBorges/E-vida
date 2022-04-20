@@ -1,0 +1,855 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Projetos\Pessoal\Cleiton\SVN\Fontes\eVida\sistema\trunk\intranet\..\deploys\intranet</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Adesao/BuscaAdesoes.aspx">
+      <publishTime>11/24/2016 09:25:59</publishTime>
+    </File>
+    <File Include="Adesao/IntegrarAdesao.aspx">
+      <publishTime>07/15/2016 09:51:54</publishTime>
+    </File>
+    <File Include="Adesao/PopValidarAdesao.aspx">
+      <publishTime>06/01/2015 11:08:02</publishTime>
+    </File>
+    <File Include="Admin/AlterarSenhaUsuarioScl.aspx">
+      <publishTime>02/15/2016 13:41:14</publishTime>
+    </File>
+    <File Include="Admin/BuscarTemplatesEmail.aspx">
+      <publishTime>07/13/2016 16:19:26</publishTime>
+    </File>
+    <File Include="Admin/BuscarUsuariosScl.aspx">
+      <publishTime>01/30/2016 11:56:58</publishTime>
+    </File>
+    <File Include="Admin/CanalGestante.aspx">
+      <publishTime>07/06/2015 17:04:45</publishTime>
+    </File>
+    <File Include="Admin/Conselhos.aspx">
+      <publishTime>03/15/2015 16:45:31</publishTime>
+    </File>
+    <File Include="Admin/CriarUsuarioScl.aspx">
+      <publishTime>01/30/2016 16:00:45</publishTime>
+    </File>
+    <File Include="Admin/EditarEmpresaReciprocidade.aspx">
+      <publishTime>05/05/2014 21:50:00</publishTime>
+    </File>
+    <File Include="Admin/EditarUsuario.aspx">
+      <publishTime>12/23/2016 17:47:08</publishTime>
+    </File>
+    <File Include="Admin/GerenciarEmpresaReciprocidade.aspx">
+      <publishTime>11/24/2014 05:08:18</publishTime>
+    </File>
+    <File Include="Admin/GerenciarUsuario.aspx">
+      <publishTime>06/01/2016 14:04:20</publishTime>
+    </File>
+    <File Include="Admin/MotivosPendencia.aspx">
+      <publishTime>06/27/2015 10:44:27</publishTime>
+    </File>
+    <File Include="Admin/ParametroViagem.aspx">
+      <publishTime>01/18/2017 15:30:38</publishTime>
+    </File>
+    <File Include="Admin/PerfilModulo.aspx">
+      <publishTime>05/05/2014 21:50:00</publishTime>
+    </File>
+    <File Include="Admin/PlantaoSocial.aspx">
+      <publishTime>11/20/2014 01:31:20</publishTime>
+    </File>
+    <File Include="Admin/PopResumoPermUsuario.aspx">
+      <publishTime>08/05/2016 19:03:35</publishTime>
+    </File>
+    <File Include="Admin/SetoresUsuario.aspx">
+      <publishTime>11/03/2015 10:39:56</publishTime>
+    </File>
+    <File Include="Admin/TemplateEmail.aspx">
+      <publishTime>07/02/2015 18:34:26</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>10/13/2015 12:25:12</publishTime>
+    </File>
+    <File Include="bin/eVidaGeneralLib.dll">
+      <publishTime>05/03/2017 21:49:09</publishTime>
+    </File>
+    <File Include="bin/eVidaGeneralLib.pdb">
+      <publishTime>05/03/2017 21:49:08</publishTime>
+    </File>
+    <File Include="bin/eVidaIntranet.dll">
+      <publishTime>05/04/2017 21:03:38</publishTime>
+    </File>
+    <File Include="bin/eVidaIntranet.pdb">
+      <publishTime>05/04/2017 21:03:37</publishTime>
+    </File>
+    <File Include="bin/eVidaWebLib.dll">
+      <publishTime>05/03/2017 21:49:13</publishTime>
+    </File>
+    <File Include="bin/eVidaWebLib.pdb">
+      <publishTime>05/03/2017 21:49:12</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>01/19/2014 06:04:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>04/25/2012 10:20:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>04/25/2012 10:20:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.ObjectBuilder.dll">
+      <publishTime>04/25/2012 10:20:26</publishTime>
+    </File>
+    <File Include="bin/SkyExcelFramework.dll">
+      <publishTime>01/21/2016 16:32:02</publishTime>
+    </File>
+    <File Include="bin/SkyExcelFramework.pdb">
+      <publishTime>01/21/2016 16:32:02</publishTime>
+    </File>
+    <File Include="bin/SkyReportFramework.dll">
+      <publishTime>07/06/2016 11:59:26</publishTime>
+    </File>
+    <File Include="bin/SkyReportFramework.pdb">
+      <publishTime>07/06/2016 11:59:26</publishTime>
+    </File>
+    <File Include="controls/Header.ascx">
+      <publishTime>12/10/2015 14:11:20</publishTime>
+    </File>
+    <File Include="controls/Menu.ascx">
+      <publishTime>05/03/2017 20:40:09</publishTime>
+    </File>
+    <File Include="css/content.css">
+      <publishTime>08/09/2016 19:08:14</publishTime>
+    </File>
+    <File Include="css/eVida.css">
+      <publishTime>07/18/2016 14:21:25</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_flat_0_aaaaaa_40x100.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_flat_75_ffffff_40x100.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_glass_55_fbf9ee_1x400.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_glass_65_ffffff_1x400.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_glass_75_dadada_1x400.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_glass_75_e6e6e6_1x400.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_glass_95_fef1ec_1x400.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_highlight-soft_75_cccccc_1x100 - Cópia.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-bg_highlight-soft_75_cccccc_1x100.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-icons_222222_256x240.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-icons_2e83ff_256x240.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-icons_454545_256x240.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-icons_888888_256x240.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/images/ui-icons_cd0a0a_256x240.png">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/jquery-te-1.4.0.css">
+      <publishTime>10/22/2013 03:40:24</publishTime>
+    </File>
+    <File Include="css/eVida/jquery-te.png">
+      <publishTime>10/22/2013 03:12:36</publishTime>
+    </File>
+    <File Include="css/eVida/jquery-ui-1.9.1.custom.css">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/jquery-ui-1.9.1.custom.min.css">
+      <publishTime>02/13/2013 11:04:02</publishTime>
+    </File>
+    <File Include="css/eVida/jquery.fileupload-ui.css">
+      <publishTime>12/26/2013 06:08:52</publishTime>
+    </File>
+    <File Include="css/eVida/jquery.fileupload.css">
+      <publishTime>12/26/2013 06:08:52</publishTime>
+    </File>
+    <File Include="css/fonts.css">
+      <publishTime>02/13/2013 10:59:53</publishTime>
+    </File>
+    <File Include="css/footer.css">
+      <publishTime>02/13/2013 10:59:53</publishTime>
+    </File>
+    <File Include="css/header.css">
+      <publishTime>07/08/2016 10:46:47</publishTime>
+    </File>
+    <File Include="css/tabs.css">
+      <publishTime>12/10/2015 19:20:14</publishTime>
+    </File>
+    <File Include="docs/PERICIA_REGIONAL.pdf">
+      <publishTime>03/09/2016 16:58:22</publishTime>
+    </File>
+    <File Include="docs/RELACAO_PROCEDIMENTO_AUTORIZACAO_PREVIA.pdf">
+      <publishTime>01/11/2016 10:32:51</publishTime>
+    </File>
+    <File Include="fonts/Calibri.eot">
+      <publishTime>11/19/2012 17:24:29</publishTime>
+    </File>
+    <File Include="fonts/Calibri.svg">
+      <publishTime>11/19/2012 17:27:14</publishTime>
+    </File>
+    <File Include="fonts/Calibri.ttf">
+      <publishTime>11/19/2012 17:26:33</publishTime>
+    </File>
+    <File Include="fonts/Calibri.woff">
+      <publishTime>11/19/2012 17:24:37</publishTime>
+    </File>
+    <File Include="Forms/BuscaAtestadoComparecimento.aspx">
+      <publishTime>10/06/2015 16:23:29</publishTime>
+    </File>
+    <File Include="Forms/BuscaAutorizacao.aspx">
+      <publishTime>06/08/2016 13:47:11</publishTime>
+    </File>
+    <File Include="Forms/BuscaAutorizacaoProvisoria.aspx">
+      <publishTime>05/05/2016 09:20:43</publishTime>
+    </File>
+    <File Include="Forms/BuscaCanalGestante.aspx">
+      <publishTime>07/04/2015 09:46:33</publishTime>
+    </File>
+    <File Include="Forms/BuscaCotacaoOpme.aspx">
+      <publishTime>08/25/2014 05:25:19</publishTime>
+    </File>
+    <File Include="Forms/BuscaExclusao.aspx">
+      <publishTime>04/22/2017 16:56:26</publishTime>
+    </File>
+    <File Include="Forms/BuscaFormNegativa.aspx">
+      <publishTime>07/19/2016 16:31:41</publishTime>
+    </File>
+    <File Include="Forms/BuscaIndisponibilidadeRede.aspx">
+      <publishTime>07/08/2016 15:39:22</publishTime>
+    </File>
+    <File Include="Forms/BuscaProtocoloFatura.aspx">
+      <publishTime>05/09/2016 13:01:05</publishTime>
+    </File>
+    <File Include="Forms/BuscaReciprocidade.aspx">
+      <publishTime>06/06/2016 16:01:28</publishTime>
+    </File>
+    <File Include="Forms/BuscaUniversitario.aspx">
+      <publishTime>09/10/2015 20:51:57</publishTime>
+    </File>
+    <File Include="Forms/BuscaViagem.aspx">
+      <publishTime>01/18/2017 16:54:25</publishTime>
+    </File>
+    <File Include="Forms/FormAtestadoComparecimento.aspx">
+      <publishTime>09/10/2015 21:22:56</publishTime>
+    </File>
+    <File Include="Forms/FormAutorizacao.aspx">
+      <publishTime>08/19/2016 18:29:58</publishTime>
+    </File>
+    <File Include="Forms/FormAutorizacaoProvisoria.aspx">
+      <publishTime>02/06/2015 15:22:59</publishTime>
+    </File>
+    <File Include="Forms/FormCartaPosCra.aspx">
+      <publishTime>08/12/2016 13:37:35</publishTime>
+    </File>
+    <File Include="Forms/FormExclusao.aspx">
+      <publishTime>02/14/2017 22:50:40</publishTime>
+    </File>
+    <File Include="Forms/FormNegativa.aspx">
+      <publishTime>07/06/2016 10:19:59</publishTime>
+    </File>
+    <File Include="Forms/FormNegativaReanalise.aspx">
+      <publishTime>07/19/2016 16:37:49</publishTime>
+    </File>
+    <File Include="Forms/FormNewReciprocidade.aspx">
+      <publishTime>01/18/2016 10:20:28</publishTime>
+    </File>
+    <File Include="Forms/FormProtocoloFatura.aspx">
+      <publishTime>04/18/2017 07:14:58</publishTime>
+    </File>
+    <File Include="Forms/FormProtocoloFaturaNova.aspx">
+      <publishTime>04/18/2017 07:14:53</publishTime>
+    </File>
+    <File Include="Forms/FormReciprocidade.aspx">
+      <publishTime>08/02/2016 11:18:17</publishTime>
+    </File>
+    <File Include="Forms/FormViagem.aspx">
+      <publishTime>01/12/2017 11:08:13</publishTime>
+    </File>
+    <File Include="Forms/IndisponibilidadeRede.aspx">
+      <publishTime>07/07/2016 14:48:48</publishTime>
+    </File>
+    <File Include="Forms/PopAprovReciprocidade.aspx">
+      <publishTime>11/25/2014 02:03:55</publishTime>
+    </File>
+    <File Include="Forms/PopAutorizacaoAprov.aspx">
+      <publishTime>11/03/2014 05:04:10</publishTime>
+    </File>
+    <File Include="Forms/PopAutorizacaoChanger.aspx">
+      <publishTime>08/11/2014 00:09:56</publishTime>
+    </File>
+    <File Include="Forms/PopAutorizacaoProvChanger.aspx">
+      <publishTime>11/17/2014 05:29:24</publishTime>
+    </File>
+    <File Include="Forms/PopCancelExclusao.aspx">
+      <publishTime>09/04/2015 22:00:18</publishTime>
+    </File>
+    <File Include="Forms/PopCancelIndisponibilidadeRede.aspx">
+      <publishTime>08/05/2015 15:28:05</publishTime>
+    </File>
+    <File Include="Forms/PopCancelNegativa.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Forms/PopCancelProtocoloFatura.aspx">
+      <publishTime>05/14/2015 12:38:48</publishTime>
+    </File>
+    <File Include="Forms/PopCancelReciprocidade.aspx">
+      <publishTime>11/25/2014 02:03:42</publishTime>
+    </File>
+    <File Include="Forms/PopCancelSegViaCarteira.aspx">
+      <publishTime>09/04/2015 22:00:24</publishTime>
+    </File>
+    <File Include="Forms/PopCancelUniversitario.aspx">
+      <publishTime>09/04/2015 21:26:07</publishTime>
+    </File>
+    <File Include="Forms/PopDemoAnaliseConta.aspx">
+      <publishTime>10/07/2015 15:23:21</publishTime>
+    </File>
+    <File Include="Forms/PopFinalizarCanalGestante.aspx">
+      <publishTime>07/02/2015 17:04:23</publishTime>
+    </File>
+    <File Include="Forms/PopImprimirProtocoloFatura.aspx">
+      <publishTime>07/02/2015 22:37:10</publishTime>
+    </File>
+    <File Include="Forms/PopViewFormNegativa.aspx">
+      <publishTime>06/17/2016 18:14:12</publishTime>
+    </File>
+    <File Include="Forms/SegViaCarteira.aspx">
+      <publishTime>06/06/2016 15:50:53</publishTime>
+    </File>
+    <File Include="Forms/ViewAtestadoComparecimento.aspx">
+      <publishTime>09/05/2015 12:29:01</publishTime>
+    </File>
+    <File Include="Forms/ViewExclusao.aspx">
+      <publishTime>09/05/2015 09:56:03</publishTime>
+    </File>
+    <File Include="Forms/ViewReciprocidade.aspx">
+      <publishTime>08/02/2016 11:19:21</publishTime>
+    </File>
+    <File Include="Forms/ViewSegViaCarteira.aspx">
+      <publishTime>06/06/2016 15:49:01</publishTime>
+    </File>
+    <File Include="Forms/ViewUniversitario.aspx">
+      <publishTime>09/04/2015 21:22:02</publishTime>
+    </File>
+    <File Include="FormsPop/PopAutorizacaoHistorico.aspx">
+      <publishTime>06/02/2016 13:36:08</publishTime>
+    </File>
+    <File Include="FormsPop/PopAutorizacaoRevalidar.aspx">
+      <publishTime>05/18/2016 09:13:06</publishTime>
+    </File>
+    <File Include="FormsPop/PopCancelGeneric.aspx">
+      <publishTime>08/16/2016 14:34:22</publishTime>
+    </File>
+    <File Include="FormsPop/PopCancelIndisponibilidadeRede.aspx">
+      <publishTime>08/05/2015 15:28:05</publishTime>
+    </File>
+    <File Include="FormsPop/PopCancelNegativa.aspx">
+      <publishTime>06/07/2016 11:04:41</publishTime>
+    </File>
+    <File Include="FormsPop/PopViewFormNegativa.aspx">
+      <publishTime>07/06/2016 10:19:41</publishTime>
+    </File>
+    <File Include="FormsSearch/BuscaCartaPosCra.aspx">
+      <publishTime>08/16/2016 14:42:22</publishTime>
+    </File>
+    <File Include="GenPops/PopBeneficiario.aspx">
+      <publishTime>09/24/2014 20:00:11</publishTime>
+    </File>
+    <File Include="GenPops/PopCredenciado.aspx">
+      <publishTime>08/12/2014 21:52:30</publishTime>
+    </File>
+    <File Include="GenPops/PopDoenca.aspx">
+      <publishTime>07/19/2014 09:32:47</publishTime>
+    </File>
+    <File Include="GenPops/PopEmailTemplate.aspx">
+      <publishTime>06/26/2015 18:03:29</publishTime>
+    </File>
+    <File Include="GenPops/PopGenericCancel.aspx">
+      <publishTime>12/14/2015 16:34:48</publishTime>
+    </File>
+    <File Include="GenPops/PopMotivoGlosa.aspx">
+      <publishTime>07/05/2016 13:44:41</publishTime>
+    </File>
+    <File Include="GenPops/PopPrincipioAtivo.aspx">
+      <publishTime>02/27/2017 12:06:10</publishTime>
+    </File>
+    <File Include="GenPops/PopProfissional.aspx">
+      <publishTime>11/25/2014 01:56:31</publishTime>
+    </File>
+    <File Include="GenPops/PopServico.aspx">
+      <publishTime>07/19/2014 09:09:59</publishTime>
+    </File>
+    <File Include="GenPops/PopUpload.aspx">
+      <publishTime>10/17/2014 01:08:16</publishTime>
+    </File>
+    <File Include="GenPops/PopUploadClassico.aspx">
+      <publishTime>10/17/2014 01:07:54</publishTime>
+    </File>
+    <File Include="GenPops/PopUsuario.aspx">
+      <publishTime>05/13/2015 15:41:41</publishTime>
+    </File>
+    <File Include="Gestao/AjusteAutorizacao.aspx">
+      <publishTime>01/18/2015 19:55:43</publishTime>
+    </File>
+    <File Include="Gestao/BuscaBenefResponsavel.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Gestao/BuscaDebitoAnual.aspx">
+      <publishTime>09/21/2015 22:54:35</publishTime>
+    </File>
+    <File Include="Gestao/BuscaMedicamentoReembolsavel.aspx">
+      <publishTime>02/06/2017 22:22:39</publishTime>
+    </File>
+    <File Include="Gestao/BuscaQuitacao.aspx">
+      <publishTime>12/01/2014 00:02:31</publishTime>
+    </File>
+    <File Include="Gestao/CadastroResponsavel.aspx">
+      <publishTime>11/06/2014 21:44:12</publishTime>
+    </File>
+    <File Include="Gestao/MedicamentoReembolsavel.aspx">
+      <publishTime>02/21/2017 22:38:43</publishTime>
+    </File>
+    <File Include="Gestao/PopResponsavel.aspx">
+      <publishTime>11/06/2014 21:34:48</publishTime>
+    </File>
+    <File Include="Gestao/Quitacao.aspx">
+      <publishTime>09/21/2015 22:56:28</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/05/2014 21:50:00</publishTime>
+    </File>
+    <File Include="img/analise.png">
+      <publishTime>10/07/2015 09:41:40</publishTime>
+    </File>
+    <File Include="img/ans-sized.jpg">
+      <publishTime>06/29/2013 09:48:26</publishTime>
+    </File>
+    <File Include="img/ans.png">
+      <publishTime>06/24/2013 17:11:20</publishTime>
+    </File>
+    <File Include="img/assinatura.jpg">
+      <publishTime>11/28/2013 04:13:22</publishTime>
+    </File>
+    <File Include="img/bg-header.png">
+      <publishTime>11/19/2012 15:04:18</publishTime>
+    </File>
+    <File Include="img/bg-header2.gif">
+      <publishTime>09/17/2013 03:50:50</publishTime>
+    </File>
+    <File Include="img/bg-img-feature.png">
+      <publishTime>11/17/2012 15:16:54</publishTime>
+    </File>
+    <File Include="img/cancel.png">
+      <publishTime>07/18/2014 06:28:51</publishTime>
+    </File>
+    <File Include="img/download24.png">
+      <publishTime>03/28/2014 00:46:05</publishTime>
+    </File>
+    <File Include="img/email.png">
+      <publishTime>02/03/2015 15:33:28</publishTime>
+    </File>
+    <File Include="img/fundo.png">
+      <publishTime>09/19/2013 11:11:53</publishTime>
+    </File>
+    <File Include="img/ico_editar.gif">
+      <publishTime>01/17/2013 22:10:21</publishTime>
+    </File>
+    <File Include="img/logo-ans.png">
+      <publishTime>11/17/2012 15:21:08</publishTime>
+    </File>
+    <File Include="img/logo-eletrobras-sized.jpg">
+      <publishTime>06/19/2013 18:28:24</publishTime>
+    </File>
+    <File Include="img/logo-eletrobras.png">
+      <publishTime>02/13/2013 11:24:33</publishTime>
+    </File>
+    <File Include="img/logo-evida2.jpg">
+      <publishTime>09/17/2013 03:52:04</publishTime>
+    </File>
+    <File Include="img/logo-sized.jpg">
+      <publishTime>06/19/2013 15:59:20</publishTime>
+    </File>
+    <File Include="img/logo.png">
+      <publishTime>02/13/2013 10:58:26</publishTime>
+    </File>
+    <File Include="img/lupa.gif">
+      <publishTime>10/05/2013 22:29:49</publishTime>
+    </File>
+    <File Include="img/newDoc.png">
+      <publishTime>07/18/2014 06:31:56</publishTime>
+    </File>
+    <File Include="img/ok.jpg">
+      <publishTime>07/06/2013 17:59:36</publishTime>
+    </File>
+    <File Include="img/PDF.png">
+      <publishTime>06/19/2013 18:33:58</publishTime>
+    </File>
+    <File Include="img/pericia.jpg">
+      <publishTime>09/20/2014 00:15:29</publishTime>
+    </File>
+    <File Include="img/print.png">
+      <publishTime>05/23/2013 13:18:48</publishTime>
+    </File>
+    <File Include="img/process-info.png">
+      <publishTime>06/17/2015 12:02:40</publishTime>
+    </File>
+    <File Include="img/progress.gif">
+      <publishTime>02/13/2013 11:02:34</publishTime>
+    </File>
+    <File Include="img/progress_alert.png">
+      <publishTime>07/25/2014 00:09:40</publishTime>
+    </File>
+    <File Include="img/progress_fail.png">
+      <publishTime>07/25/2014 00:10:39</publishTime>
+    </File>
+    <File Include="img/progress_ok.png">
+      <publishTime>07/25/2014 00:06:23</publishTime>
+    </File>
+    <File Include="img/refresh.png">
+      <publishTime>05/18/2016 15:50:31</publishTime>
+    </File>
+    <File Include="img/remove.png">
+      <publishTime>05/22/2013 17:34:53</publishTime>
+    </File>
+    <File Include="img/reuniao.png">
+      <publishTime>02/03/2015 15:22:03</publishTime>
+    </File>
+    <File Include="img/seta_direita.png">
+      <publishTime>10/04/2013 21:29:51</publishTime>
+    </File>
+    <File Include="img/upload24.png">
+      <publishTime>03/28/2014 00:46:05</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>09/09/2013 00:13:20</publishTime>
+    </File>
+    <File Include="Internal/Inicial.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Internal/Internal.Master">
+      <publishTime>02/02/2017 21:36:39</publishTime>
+    </File>
+    <File Include="Internal/InternalPopup.Master">
+      <publishTime>02/03/2015 21:42:25</publishTime>
+    </File>
+    <File Include="Internal/Negado.aspx">
+      <publishTime>07/24/2014 21:55:38</publishTime>
+    </File>
+    <File Include="IR/ConfiguracaoIr.aspx">
+      <publishTime>04/02/2017 15:29:07</publishTime>
+    </File>
+    <File Include="IR/IrBeneficiarios.aspx">
+      <publishTime>02/29/2016 21:47:41</publishTime>
+    </File>
+    <File Include="IR/IrCredenciados.aspx">
+      <publishTime>03/02/2015 13:49:14</publishTime>
+    </File>
+    <File Include="log4net.config">
+      <publishTime>06/27/2015 10:28:01</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>05/05/2014 21:50:00</publishTime>
+    </File>
+    <File Include="Relatorios/Exporter.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Relatorios/PopUsuarioAtendimento.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioAutorizacao.aspx">
+      <publishTime>09/10/2015 23:02:37</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioBeneficiariosCco.aspx">
+      <publishTime>07/14/2016 14:39:26</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioBeneficiariosPorLocal.aspx">
+      <publishTime>10/06/2015 14:25:33</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioBoletosNaoQuitados.aspx">
+      <publishTime>10/06/2015 15:06:59</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioBoletosVencimento.aspx">
+      <publishTime>10/06/2015 15:03:07</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioContabilizacao.aspx">
+      <publishTime>07/10/2014 21:30:11</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioCoparticipacao.aspx">
+      <publishTime>04/26/2017 23:27:22</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioCoparticipacaoParcela.aspx">
+      <publishTime>04/27/2017 22:20:46</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioCreditoBeneficiario.aspx">
+      <publishTime>10/10/2016 18:27:18</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioCustoInternacao.aspx">
+      <publishTime>10/06/2015 15:26:08</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioDebitoCongelado.aspx">
+      <publishTime>07/18/2016 14:21:39</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioFaturamentoUsuario.aspx">
+      <publishTime>09/27/2015 17:16:00</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioFranquiasGeradas.aspx">
+      <publishTime>09/24/2014 19:58:49</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioMensalidade.aspx">
+      <publishTime>10/06/2015 15:37:20</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioPagamento.aspx">
+      <publishTime>06/03/2015 12:48:34</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioParcelamento.aspx">
+      <publishTime>01/27/2015 15:58:27</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioProvisao.aspx">
+      <publishTime>05/05/2014 21:50:01</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioReciprocidade.aspx">
+      <publishTime>11/24/2014 05:04:59</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioReembolsoAtendimento.aspx">
+      <publishTime>10/03/2016 18:47:49</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioServicoPrestador.aspx">
+      <publishTime>01/19/2015 11:17:36</publishTime>
+    </File>
+    <File Include="Relatorios/RelatorioTravamentoISA.aspx">
+      <publishTime>05/01/2017 17:33:17</publishTime>
+    </File>
+    <File Include="Reuniao/AreaReuniao.aspx">
+      <publishTime>04/06/2015 15:41:03</publishTime>
+    </File>
+    <File Include="Reuniao/ArquivosConselho.aspx">
+      <publishTime>06/02/2015 13:12:50</publishTime>
+    </File>
+    <File Include="Reuniao/BuscaReuniao.aspx">
+      <publishTime>06/02/2015 13:14:58</publishTime>
+    </File>
+    <File Include="Reuniao/Calendario.aspx">
+      <publishTime>01/26/2016 17:05:43</publishTime>
+    </File>
+    <File Include="Reuniao/PopEmail.aspx">
+      <publishTime>02/26/2015 11:08:34</publishTime>
+    </File>
+    <File Include="Rotinas/ExecutarRotina.aspx">
+      <publishTime>02/12/2015 18:06:27</publishTime>
+    </File>
+    <File Include="Scripts/eVida.js">
+      <publishTime>12/15/2015 14:10:51</publishTime>
+    </File>
+    <File Include="Scripts/internal.js">
+      <publishTime>09/29/2016 18:46:24</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>02/13/2013 10:59:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-te-1.4.0.js">
+      <publishTime>10/22/2013 03:05:45</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.9.1.custom.min.js">
+      <publishTime>02/13/2013 10:59:26</publishTime>
+    </File>
+    <File Include="Scripts/locator.js">
+      <publishTime>08/05/2016 19:04:05</publishTime>
+    </File>
+    <File Include="Scripts/upload.js">
+      <publishTime>12/01/2014 03:03:57</publishTime>
+    </File>
+    <File Include="Scripts/upload/jquery.fileupload-process.js">
+      <publishTime>12/26/2013 06:09:18</publishTime>
+    </File>
+    <File Include="Scripts/upload/jquery.fileupload-ui.js">
+      <publishTime>12/26/2013 06:09:18</publishTime>
+    </File>
+    <File Include="Scripts/upload/jquery.fileupload-validate.js">
+      <publishTime>12/26/2013 06:09:18</publishTime>
+    </File>
+    <File Include="Scripts/upload/jquery.fileupload.js">
+      <publishTime>11/03/2014 04:16:35</publishTime>
+    </File>
+    <File Include="Scripts/upload/jquery.iframe-transport.js">
+      <publishTime>12/26/2013 06:09:18</publishTime>
+    </File>
+    <File Include="Scripts/util.js">
+      <publishTime>05/06/2015 10:39:42</publishTime>
+    </File>
+    <File Include="ShwCnfg.aspx">
+      <publishTime>05/05/2014 21:50:00</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>01/30/2016 11:33:56</publishTime>
+    </File>
+    <File Include="Telefonia/Ramais.aspx">
+      <publishTime>11/05/2015 12:24:24</publishTime>
+    </File>
+    <File Include="Telefonia/RelatorioGerencial.aspx">
+      <publishTime>12/01/2015 16:27:30</publishTime>
+    </File>
+    <File Include="templates/adesaoValidada.htm">
+      <publishTime>06/07/2016 10:13:50</publishTime>
+    </File>
+    <File Include="templates/negativa/solNegativa.htm">
+      <publishTime>11/22/2013 19:41:34</publishTime>
+    </File>
+    <File Include="templates/negativa/solNegativaAprov.htm">
+      <publishTime>07/08/2014 03:48:49</publishTime>
+    </File>
+    <File Include="templates/negativa/solNegativaReanalise.htm">
+      <publishTime>07/19/2016 14:25:31</publishTime>
+    </File>
+    <File Include="templates/negativa/solNegativaReanaliseAprov.htm">
+      <publishTime>07/19/2016 14:27:18</publishTime>
+    </File>
+    <File Include="templates/negativa/solNegativaReanaliseDev.htm">
+      <publishTime>07/19/2016 14:26:35</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoAlterada.htm">
+      <publishTime>06/07/2016 10:29:17</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoAnalise.htm">
+      <publishTime>06/07/2016 10:30:17</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoAprov.htm">
+      <publishTime>06/07/2016 10:30:23</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoCancel.htm">
+      <publishTime>06/07/2016 10:30:29</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoCotacao.htm">
+      <publishTime>06/07/2016 10:30:34</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoCriada.htm">
+      <publishTime>06/07/2016 10:30:39</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoDoc.htm">
+      <publishTime>06/07/2016 10:30:44</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoNeg.htm">
+      <publishTime>06/07/2016 10:30:50</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoNegCred.htm">
+      <publishTime>06/07/2016 10:30:54</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoPericia.htm">
+      <publishTime>06/07/2016 10:30:59</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoProvisoria.htm">
+      <publishTime>06/07/2016 10:32:07</publishTime>
+    </File>
+    <File Include="templates/solAutorizacaoProvisoriaAprov.htm">
+      <publishTime>06/07/2016 10:14:31</publishTime>
+    </File>
+    <File Include="templates/solExclusaoAprovFinanceiro.htm">
+      <publishTime>06/07/2016 10:22:51</publishTime>
+    </File>
+    <File Include="templates/solExclusaoAprovFunc.htm">
+      <publishTime>06/07/2016 10:31:05</publishTime>
+    </File>
+    <File Include="templates/solExclusaoCancel.htm">
+      <publishTime>06/07/2016 10:31:10</publishTime>
+    </File>
+    <File Include="templates/solIndispRedeCriada.htm">
+      <publishTime>06/07/2016 10:32:30</publishTime>
+    </File>
+    <File Include="templates/solIndispRedeEncaminhar.htm">
+      <publishTime>08/05/2015 16:30:26</publishTime>
+    </File>
+    <File Include="templates/solIndispRedeEncerrada.htm">
+      <publishTime>08/05/2015 16:30:20</publishTime>
+    </File>
+    <File Include="templates/solNegativa.htm">
+      <publishTime>11/22/2013 19:41:34</publishTime>
+    </File>
+    <File Include="templates/solNegativaAprov.htm">
+      <publishTime>07/08/2014 03:48:49</publishTime>
+    </File>
+    <File Include="templates/solReciprocidadeAprovFunc.htm">
+      <publishTime>06/07/2016 10:31:16</publishTime>
+    </File>
+    <File Include="templates/solReciprocidadeEmp.htm">
+      <publishTime>06/07/2016 10:31:21</publishTime>
+    </File>
+    <File Include="templates/solReciprocidadeFunc.htm">
+      <publishTime>06/07/2016 10:31:26</publishTime>
+    </File>
+    <File Include="templates/solReuniao.htm">
+      <publishTime>02/09/2015 17:20:24</publishTime>
+    </File>
+    <File Include="templates/solSegViaCancel.htm">
+      <publishTime>06/07/2016 10:31:31</publishTime>
+    </File>
+    <File Include="templates/solUniversitarioAprov.htm">
+      <publishTime>06/07/2016 10:31:36</publishTime>
+    </File>
+    <File Include="templates/solUniversitarioCancel.htm">
+      <publishTime>06/07/2016 10:31:42</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemCompraEfetuada.htm">
+      <publishTime>03/08/2016 11:37:41</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemCompraPassagem.htm">
+      <publishTime>03/08/2016 09:49:44</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemComprovanteFinanceiro.htm">
+      <publishTime>03/08/2016 15:38:44</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemCriada.htm">
+      <publishTime>02/19/2016 17:15:51</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemPcAprovDir.htm">
+      <publishTime>07/13/2016 10:51:44</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemPcAprovFin.htm">
+      <publishTime>07/13/2016 10:49:45</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemPcNegarDir.htm">
+      <publishTime>07/13/2016 10:52:29</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemPcNegarFin.htm">
+      <publishTime>07/13/2016 10:52:38</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemPcPendDir.htm">
+      <publishTime>07/13/2016 10:50:45</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemSolAprovCoord.htm">
+      <publishTime>12/28/2015 14:42:07</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemSolAprovDir.htm">
+      <publishTime>12/28/2015 14:44:52</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemSolNegarCoord.htm">
+      <publishTime>12/28/2015 14:43:07</publishTime>
+    </File>
+    <File Include="templates/viagem/solViagemSolNegarDir.htm">
+      <publishTime>12/28/2015 14:45:06</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/26/2017 00:47:40</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
